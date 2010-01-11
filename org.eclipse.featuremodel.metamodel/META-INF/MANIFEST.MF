@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Feature Model Meta Model Plug-in
+Bundle-SymbolicName: org.eclipse.featuremodel.metamodel
+Bundle-Version: 0.0.1
+Bundle-Activator: org.eclipse.featuremodel.metamodel.Activator
+Require-Bundle: org.eclipse.core.runtime
+Eclipse-AutoStart: true

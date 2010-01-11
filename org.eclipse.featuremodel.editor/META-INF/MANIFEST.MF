@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Feature Model Editor Plug-in
+Bundle-SymbolicName: org.eclipse.featuremodel.editor
+Bundle-Version: 1.0.0
+Bundle-Activator: org.eclipse.featuremodel.editor.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Eclipse-AutoStart: true

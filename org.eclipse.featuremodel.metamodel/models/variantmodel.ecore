@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="variantmodel"
-    nsURI="http://pure-variants.com/variantmodel" nsPrefix="variantmodel">
+    nsURI="http://www.eclipse.org/variantmodel" nsPrefix="variantmodel">
   <eClassifiers xsi:type="ecore:EClass" name="VariantModel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
         iD="true"/>

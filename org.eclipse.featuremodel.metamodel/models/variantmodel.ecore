@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="variantmodel"
+    nsURI="http://pure-variants.com/variantmodel" nsPrefix="variantmodel">
+  <eClassifiers xsi:type="ecore:EClass" name="VariantModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featuremodels" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass featuremodel.ecore#//FeatureModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selections" upperBound="-1"
+        eType="#//Selection" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Selection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" lowerBound="1" eType="#//SelectionState"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selector" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="ecore:EClass featuremodel.ecore#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+        eType="#//AttributeValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="ecore:EClass featuremodel.ecore#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ID" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="SelectionState">
+    <eLiterals name="unselected"/>
+    <eLiterals name="selected" value="1"/>
+    <eLiterals name="excluded" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

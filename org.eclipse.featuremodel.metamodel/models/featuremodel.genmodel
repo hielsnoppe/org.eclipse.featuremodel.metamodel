@@ -5,7 +5,8 @@
     modelPluginID="org.eclipse.featuremodel.metamodel" modelName="Featuremodel" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false">
   <foreignModel>featuremodel.ecore</foreignModel>
-  <genPackages prefix="Featuremodel" disposableProviderFactory="true" ecorePackage="featuremodel.ecore#/">
+  <genPackages prefix="Featuremodel" basePackage="org.eclipse.featuremodel.metamodel"
+      disposableProviderFactory="true" ecorePackage="featuremodel.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="featuremodel.ecore#//GroupType">
       <genEnumLiterals ecoreEnumLiteral="featuremodel.ecore#//GroupType/mandatory"/>
       <genEnumLiterals ecoreEnumLiteral="featuremodel.ecore#//GroupType/optional"/>

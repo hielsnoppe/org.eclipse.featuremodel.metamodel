@@ -22,9 +22,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
         eType="ecore:EClass featuremodel.ecore#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
-        eType="#//AttributeValue" containment="true"/>
+        eType="#//Value" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AttributeValue">
+  <eClassifiers xsi:type="ecore:EClass" name="Value">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"

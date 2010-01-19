@@ -32,12 +32,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute featuremodel.ecore#//Group/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute featuremodel.ecore#//Group/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference featuremodel.ecore#//Group/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference featuremodel.ecore#//Group/range"/>
     </genClasses>
     <genClasses ecoreClass="featuremodel.ecore#//Feature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute featuremodel.ecore#//Feature/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute featuremodel.ecore#//Feature/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute featuremodel.ecore#//Feature/type"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference featuremodel.ecore#//Feature/constraint"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference featuremodel.ecore#//Feature/parent"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference featuremodel.ecore#//Feature/children"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference featuremodel.ecore#//Feature/attributes"/>
@@ -53,6 +53,10 @@
     <genClasses ecoreClass="featuremodel.ecore#//Description">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute featuremodel.ecore#//Description/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute featuremodel.ecore#//Description/text"/>
+    </genClasses>
+    <genClasses ecoreClass="featuremodel.ecore#//GroupRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute featuremodel.ecore#//GroupRange/lower"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute featuremodel.ecore#//GroupRange/upper"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

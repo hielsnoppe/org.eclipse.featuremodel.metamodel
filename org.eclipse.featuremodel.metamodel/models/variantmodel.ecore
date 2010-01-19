@@ -8,12 +8,19 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="ecore:EClass featuremodel.ecore#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="featuremodels" lowerBound="1"
         upperBound="-1" eType="ecore:EClass featuremodel.ecore#//FeatureModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selections" upperBound="-1"
         eType="#//Selection" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="concretemodels" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass featuremodel.ecore#//FeatureModel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Selection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bounded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" lowerBound="1" eType="#//SelectionState"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="selector" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -25,6 +32,8 @@
         eType="#//Value" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Value">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
         eType="ecore:EClass featuremodel.ecore#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>

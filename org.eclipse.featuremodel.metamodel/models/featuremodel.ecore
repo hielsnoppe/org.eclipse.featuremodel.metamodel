@@ -8,14 +8,14 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" unique="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
-        eType="#//Constraint" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="root" lowerBound="1" eType="#//Feature"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//Description"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//Attribute" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//Description"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" lowerBound="1" eType="#//Feature"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
+        eType="#//Constraint" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
@@ -29,11 +29,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="Group">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//GroupType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upper" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
         upperBound="-1" eType="#//Feature" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="range" lowerBound="1" eType="#//GroupRange"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
@@ -41,13 +42,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" unique="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Feature"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
-        eType="#//Group" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//Description"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Group"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//Group" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
@@ -55,9 +56,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="setable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//Description"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Description">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
@@ -65,14 +66,4 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="ID" instanceClassName="java.lang.String"/>
-  <eClassifiers xsi:type="ecore:EEnum" name="GroupType">
-    <eLiterals name="mandatory"/>
-    <eLiterals name="optional" value="1"/>
-    <eLiterals name="alternative" value="2"/>
-    <eLiterals name="or" value="3"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GroupRange">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upper" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
 </ecore:EPackage>

@@ -18,6 +18,7 @@
         upperBound="-1" eType="ecore:EClass featuremodel.ecore#//FeatureModel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Selection">
+    <eOperations name="getModel" lowerBound="1" eType="#//VariantModel"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bounded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -34,9 +35,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="Value">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
         iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
         eType="ecore:EClass featuremodel.ecore#//Attribute" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="ID" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EEnum" name="SelectionState">

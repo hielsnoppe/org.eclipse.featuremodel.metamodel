@@ -1,9 +1,19 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Feature Model Editor Plug-in
-Bundle-SymbolicName: org.eclipse.featuremodel.editor
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.featuremodel.metamodel.editor; singleton:=true
 Bundle-Version: 1.0.0
-Bundle-Activator: org.eclipse.featuremodel.editor.Activator
-Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
-Eclipse-AutoStart: true
+Bundle-ClassPath: .
+Bundle-Activator: org.eclipse.featuremodel.presentation.FeatureModelEditorPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.eclipse.featuremodel.presentation,
+ org.eclipse.variantmodel.presentation
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources;visibility:=reexport,
+ org.eclipse.featuremodel.metamodel.edit;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.emf.edit.ui;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport
+Eclipse-LazyStart: true

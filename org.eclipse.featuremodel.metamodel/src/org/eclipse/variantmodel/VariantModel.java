@@ -1,0 +1,154 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package org.eclipse.variantmodel;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.featuremodel.Attribute;
+import org.eclipse.featuremodel.FeatureModel;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Variant Model</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link org.eclipse.variantmodel.VariantModel#getId <em>Id</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.VariantModel#getVersion <em>Version</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.VariantModel#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.VariantModel#getFeaturemodels <em>Featuremodels</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.VariantModel#getSelections <em>Selections</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.VariantModel#getConcretemodels <em>Concretemodels</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantModel()
+ * @model
+ * @generated
+ */
+public interface VariantModel extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantModel_Id()
+	 * @model id="true" dataType="org.eclipse.variantmodel.ID" required="true"
+	 * @generated
+	 */
+	String getId();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.variantmodel.VariantModel#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Version</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Version</em>' attribute.
+	 * @see #setVersion(String)
+	 * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantModel_Version()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getVersion();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.variantmodel.VariantModel#getVersion <em>Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Version</em>' attribute.
+	 * @see #getVersion()
+	 * @generated
+	 */
+	void setVersion(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.featuremodel.Attribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attributes</em>' containment reference list.
+	 * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantModel_Attributes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Attribute> getAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Featuremodels</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.featuremodel.FeatureModel}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Featuremodels</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Featuremodels</em>' reference list.
+	 * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantModel_Featuremodels()
+	 * @model required="true"
+	 * @generated
+	 */
+	EList<FeatureModel> getFeaturemodels();
+
+	/**
+	 * Returns the value of the '<em><b>Selections</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.variantmodel.Selection}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selections</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Selections</em>' containment reference list.
+	 * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantModel_Selections()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Selection> getSelections();
+
+	/**
+	 * Returns the value of the '<em><b>Concretemodels</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.featuremodel.FeatureModel}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Concretemodels</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Concretemodels</em>' reference list.
+	 * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantModel_Concretemodels()
+	 * @model required="true"
+	 * @generated
+	 */
+	EList<FeatureModel> getConcretemodels();
+
+} // VariantModel

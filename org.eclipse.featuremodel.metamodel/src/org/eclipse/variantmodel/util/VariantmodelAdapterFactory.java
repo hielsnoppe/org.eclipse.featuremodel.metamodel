@@ -76,12 +76,12 @@ public class VariantmodelAdapterFactory extends AdapterFactoryImpl {
 				return createVariantModelAdapter();
 			}
 			@Override
-			public Adapter caseSelection(Selection object) {
-				return createSelectionAdapter();
+			public Adapter caseFeatureSelection(FeatureSelection object) {
+				return createFeatureSelectionAdapter();
 			}
 			@Override
-			public Adapter caseValue(Value object) {
-				return createValueAdapter();
+			public Adapter caseAttributeValue(AttributeValue object) {
+				return createAttributeValueAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -118,30 +118,30 @@ public class VariantmodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.variantmodel.Selection <em>Selection</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.variantmodel.FeatureSelection <em>Feature Selection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.variantmodel.Selection
+	 * @see org.eclipse.variantmodel.FeatureSelection
 	 * @generated
 	 */
-	public Adapter createSelectionAdapter() {
+	public Adapter createFeatureSelectionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.variantmodel.Value <em>Value</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.variantmodel.AttributeValue <em>Attribute Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.variantmodel.Value
+	 * @see org.eclipse.variantmodel.AttributeValue
 	 * @generated
 	 */
-	public Adapter createValueAdapter() {
+	public Adapter createAttributeValueAdapter() {
 		return null;
 	}
 

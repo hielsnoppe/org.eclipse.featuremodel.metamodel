@@ -73,8 +73,7 @@ public class VariantModelItemProvider
 
 			addIdPropertyDescriptor(object);
 			addVersionPropertyDescriptor(object);
-			addFeaturemodelsPropertyDescriptor(object);
-			addConcretemodelsPropertyDescriptor(object);
+			addFeaturemodelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -124,41 +123,19 @@ public class VariantModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Featuremodels feature.
+	 * This adds a property descriptor for the Featuremodel feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFeaturemodelsPropertyDescriptor(Object object) {
+	protected void addFeaturemodelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_VariantModel_featuremodels_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VariantModel_featuremodels_feature", "_UI_VariantModel_type"),
-				 VariantmodelPackage.Literals.VARIANT_MODEL__FEATUREMODELS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Concretemodels feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConcretemodelsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VariantModel_concretemodels_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VariantModel_concretemodels_feature", "_UI_VariantModel_type"),
-				 VariantmodelPackage.Literals.VARIANT_MODEL__CONCRETEMODELS,
+				 getString("_UI_VariantModel_featuremodel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_VariantModel_featuremodel_feature", "_UI_VariantModel_type"),
+				 VariantmodelPackage.Literals.VARIANT_MODEL__FEATUREMODEL,
 				 true,
 				 false,
 				 true,
@@ -181,6 +158,7 @@ public class VariantModelItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(VariantmodelPackage.Literals.VARIANT_MODEL__ATTRIBUTES);
 			childrenFeatures.add(VariantmodelPackage.Literals.VARIANT_MODEL__SELECTIONS);
+			childrenFeatures.add(VariantmodelPackage.Literals.VARIANT_MODEL__VALUES);
 		}
 		return childrenFeatures;
 	}
@@ -241,6 +219,7 @@ public class VariantModelItemProvider
 				return;
 			case VariantmodelPackage.VARIANT_MODEL__ATTRIBUTES:
 			case VariantmodelPackage.VARIANT_MODEL__SELECTIONS:
+			case VariantmodelPackage.VARIANT_MODEL__VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -266,7 +245,12 @@ public class VariantModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(VariantmodelPackage.Literals.VARIANT_MODEL__SELECTIONS,
-				 VariantmodelFactory.eINSTANCE.createSelection()));
+				 VariantmodelFactory.eINSTANCE.createFeatureSelection()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VariantmodelPackage.Literals.VARIANT_MODEL__VALUES,
+				 VariantmodelFactory.eINSTANCE.createAttributeValue()));
 	}
 
 	/**

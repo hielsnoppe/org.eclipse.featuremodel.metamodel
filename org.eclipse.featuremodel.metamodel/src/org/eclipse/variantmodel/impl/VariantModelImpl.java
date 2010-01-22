@@ -20,13 +20,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.featuremodel.Attribute;
 import org.eclipse.featuremodel.FeatureModel;
 
-import org.eclipse.variantmodel.Selection;
+import org.eclipse.variantmodel.AttributeValue;
+import org.eclipse.variantmodel.FeatureSelection;
 import org.eclipse.variantmodel.VariantModel;
 import org.eclipse.variantmodel.VariantmodelPackage;
 
@@ -40,9 +40,9 @@ import org.eclipse.variantmodel.VariantmodelPackage;
  *   <li>{@link org.eclipse.variantmodel.impl.VariantModelImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.variantmodel.impl.VariantModelImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link org.eclipse.variantmodel.impl.VariantModelImpl#getAttributes <em>Attributes</em>}</li>
- *   <li>{@link org.eclipse.variantmodel.impl.VariantModelImpl#getFeaturemodels <em>Featuremodels</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.impl.VariantModelImpl#getFeaturemodel <em>Featuremodel</em>}</li>
  *   <li>{@link org.eclipse.variantmodel.impl.VariantModelImpl#getSelections <em>Selections</em>}</li>
- *   <li>{@link org.eclipse.variantmodel.impl.VariantModelImpl#getConcretemodels <em>Concretemodels</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.impl.VariantModelImpl#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,14 +100,14 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
 	protected EList<Attribute> attributes;
 
 	/**
-	 * The cached value of the '{@link #getFeaturemodels() <em>Featuremodels</em>}' reference list.
+	 * The cached value of the '{@link #getFeaturemodel() <em>Featuremodel</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFeaturemodels()
+	 * @see #getFeaturemodel()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FeatureModel> featuremodels;
+	protected FeatureModel featuremodel;
 
 	/**
 	 * The cached value of the '{@link #getSelections() <em>Selections</em>}' containment reference list.
@@ -117,17 +117,17 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Selection> selections;
+	protected EList<FeatureSelection> selections;
 
 	/**
-	 * The cached value of the '{@link #getConcretemodels() <em>Concretemodels</em>}' reference list.
+	 * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConcretemodels()
+	 * @see #getValues()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FeatureModel> concretemodels;
+	protected EList<AttributeValue> values;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,11 +207,16 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FeatureModel> getFeaturemodels() {
-		if (featuremodels == null) {
-			featuremodels = new EObjectResolvingEList<FeatureModel>(FeatureModel.class, this, VariantmodelPackage.VARIANT_MODEL__FEATUREMODELS);
+	public FeatureModel getFeaturemodel() {
+		if (featuremodel != null && featuremodel.eIsProxy()) {
+			InternalEObject oldFeaturemodel = (InternalEObject)featuremodel;
+			featuremodel = (FeatureModel)eResolveProxy(oldFeaturemodel);
+			if (featuremodel != oldFeaturemodel) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariantmodelPackage.VARIANT_MODEL__FEATUREMODEL, oldFeaturemodel, featuremodel));
+			}
 		}
-		return featuremodels;
+		return featuremodel;
 	}
 
 	/**
@@ -219,9 +224,30 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Selection> getSelections() {
+	public FeatureModel basicGetFeaturemodel() {
+		return featuremodel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFeaturemodel(FeatureModel newFeaturemodel) {
+		FeatureModel oldFeaturemodel = featuremodel;
+		featuremodel = newFeaturemodel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.VARIANT_MODEL__FEATUREMODEL, oldFeaturemodel, featuremodel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<FeatureSelection> getSelections() {
 		if (selections == null) {
-			selections = new EObjectContainmentEList<Selection>(Selection.class, this, VariantmodelPackage.VARIANT_MODEL__SELECTIONS);
+			selections = new EObjectContainmentEList<FeatureSelection>(FeatureSelection.class, this, VariantmodelPackage.VARIANT_MODEL__SELECTIONS);
 		}
 		return selections;
 	}
@@ -231,11 +257,11 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FeatureModel> getConcretemodels() {
-		if (concretemodels == null) {
-			concretemodels = new EObjectResolvingEList<FeatureModel>(FeatureModel.class, this, VariantmodelPackage.VARIANT_MODEL__CONCRETEMODELS);
+	public EList<AttributeValue> getValues() {
+		if (values == null) {
+			values = new EObjectContainmentEList<AttributeValue>(AttributeValue.class, this, VariantmodelPackage.VARIANT_MODEL__VALUES);
 		}
-		return concretemodels;
+		return values;
 	}
 
 	/**
@@ -250,6 +276,8 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
 				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
 			case VariantmodelPackage.VARIANT_MODEL__SELECTIONS:
 				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
+			case VariantmodelPackage.VARIANT_MODEL__VALUES:
+				return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -268,12 +296,13 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
 				return getVersion();
 			case VariantmodelPackage.VARIANT_MODEL__ATTRIBUTES:
 				return getAttributes();
-			case VariantmodelPackage.VARIANT_MODEL__FEATUREMODELS:
-				return getFeaturemodels();
+			case VariantmodelPackage.VARIANT_MODEL__FEATUREMODEL:
+				if (resolve) return getFeaturemodel();
+				return basicGetFeaturemodel();
 			case VariantmodelPackage.VARIANT_MODEL__SELECTIONS:
 				return getSelections();
-			case VariantmodelPackage.VARIANT_MODEL__CONCRETEMODELS:
-				return getConcretemodels();
+			case VariantmodelPackage.VARIANT_MODEL__VALUES:
+				return getValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,17 +326,16 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
 				getAttributes().clear();
 				getAttributes().addAll((Collection<? extends Attribute>)newValue);
 				return;
-			case VariantmodelPackage.VARIANT_MODEL__FEATUREMODELS:
-				getFeaturemodels().clear();
-				getFeaturemodels().addAll((Collection<? extends FeatureModel>)newValue);
+			case VariantmodelPackage.VARIANT_MODEL__FEATUREMODEL:
+				setFeaturemodel((FeatureModel)newValue);
 				return;
 			case VariantmodelPackage.VARIANT_MODEL__SELECTIONS:
 				getSelections().clear();
-				getSelections().addAll((Collection<? extends Selection>)newValue);
+				getSelections().addAll((Collection<? extends FeatureSelection>)newValue);
 				return;
-			case VariantmodelPackage.VARIANT_MODEL__CONCRETEMODELS:
-				getConcretemodels().clear();
-				getConcretemodels().addAll((Collection<? extends FeatureModel>)newValue);
+			case VariantmodelPackage.VARIANT_MODEL__VALUES:
+				getValues().clear();
+				getValues().addAll((Collection<? extends AttributeValue>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -330,14 +358,14 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
 			case VariantmodelPackage.VARIANT_MODEL__ATTRIBUTES:
 				getAttributes().clear();
 				return;
-			case VariantmodelPackage.VARIANT_MODEL__FEATUREMODELS:
-				getFeaturemodels().clear();
+			case VariantmodelPackage.VARIANT_MODEL__FEATUREMODEL:
+				setFeaturemodel((FeatureModel)null);
 				return;
 			case VariantmodelPackage.VARIANT_MODEL__SELECTIONS:
 				getSelections().clear();
 				return;
-			case VariantmodelPackage.VARIANT_MODEL__CONCRETEMODELS:
-				getConcretemodels().clear();
+			case VariantmodelPackage.VARIANT_MODEL__VALUES:
+				getValues().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -357,12 +385,12 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 			case VariantmodelPackage.VARIANT_MODEL__ATTRIBUTES:
 				return attributes != null && !attributes.isEmpty();
-			case VariantmodelPackage.VARIANT_MODEL__FEATUREMODELS:
-				return featuremodels != null && !featuremodels.isEmpty();
+			case VariantmodelPackage.VARIANT_MODEL__FEATUREMODEL:
+				return featuremodel != null;
 			case VariantmodelPackage.VARIANT_MODEL__SELECTIONS:
 				return selections != null && !selections.isEmpty();
-			case VariantmodelPackage.VARIANT_MODEL__CONCRETEMODELS:
-				return concretemodels != null && !concretemodels.isEmpty();
+			case VariantmodelPackage.VARIANT_MODEL__VALUES:
+				return values != null && !values.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

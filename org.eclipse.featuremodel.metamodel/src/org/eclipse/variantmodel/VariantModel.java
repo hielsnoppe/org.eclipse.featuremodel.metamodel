@@ -24,9 +24,9 @@ import org.eclipse.featuremodel.FeatureModel;
  *   <li>{@link org.eclipse.variantmodel.VariantModel#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.variantmodel.VariantModel#getVersion <em>Version</em>}</li>
  *   <li>{@link org.eclipse.variantmodel.VariantModel#getAttributes <em>Attributes</em>}</li>
- *   <li>{@link org.eclipse.variantmodel.VariantModel#getFeaturemodels <em>Featuremodels</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.VariantModel#getFeaturemodel <em>Featuremodel</em>}</li>
  *   <li>{@link org.eclipse.variantmodel.VariantModel#getSelections <em>Selections</em>}</li>
- *   <li>{@link org.eclipse.variantmodel.VariantModel#getConcretemodels <em>Concretemodels</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.VariantModel#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,24 +104,34 @@ public interface VariantModel extends EObject {
 	EList<Attribute> getAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Featuremodels</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.featuremodel.FeatureModel}.
+	 * Returns the value of the '<em><b>Featuremodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Featuremodels</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Featuremodel</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Featuremodels</em>' reference list.
-	 * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantModel_Featuremodels()
+	 * @return the value of the '<em>Featuremodel</em>' reference.
+	 * @see #setFeaturemodel(FeatureModel)
+	 * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantModel_Featuremodel()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<FeatureModel> getFeaturemodels();
+	FeatureModel getFeaturemodel();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.variantmodel.VariantModel#getFeaturemodel <em>Featuremodel</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Featuremodel</em>' reference.
+	 * @see #getFeaturemodel()
+	 * @generated
+	 */
+	void setFeaturemodel(FeatureModel value);
 
 	/**
 	 * Returns the value of the '<em><b>Selections</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.variantmodel.Selection}.
+	 * The list contents are of type {@link org.eclipse.variantmodel.FeatureSelection}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Selections</em>' containment reference list isn't clear,
@@ -133,22 +143,22 @@ public interface VariantModel extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Selection> getSelections();
+	EList<FeatureSelection> getSelections();
 
 	/**
-	 * Returns the value of the '<em><b>Concretemodels</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.featuremodel.FeatureModel}.
+	 * Returns the value of the '<em><b>Values</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.variantmodel.AttributeValue}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Concretemodels</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Values</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Concretemodels</em>' reference list.
-	 * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantModel_Concretemodels()
-	 * @model required="true"
+	 * @return the value of the '<em>Values</em>' containment reference list.
+	 * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantModel_Values()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<FeatureModel> getConcretemodels();
+	EList<AttributeValue> getValues();
 
 } // VariantModel

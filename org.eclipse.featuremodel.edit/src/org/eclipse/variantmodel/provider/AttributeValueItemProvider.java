@@ -32,17 +32,17 @@ import org.eclipse.featuremodel.FeaturemodelFactory;
 
 import org.eclipse.featuremodel.provider.FeatureModelEditPlugin;
 
-import org.eclipse.variantmodel.Selection;
+import org.eclipse.variantmodel.AttributeValue;
 import org.eclipse.variantmodel.VariantmodelFactory;
 import org.eclipse.variantmodel.VariantmodelPackage;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.variantmodel.Selection} object.
+ * This is the item provider adapter for a {@link org.eclipse.variantmodel.AttributeValue} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SelectionItemProvider
+public class AttributeValueItemProvider
 	extends ItemProviderAdapter
 	implements	
 		IEditingDomainItemProvider,	
@@ -56,7 +56,7 @@ public class SelectionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionItemProvider(AdapterFactory adapterFactory) {
+	public AttributeValueItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -72,10 +72,6 @@ public class SelectionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addIdPropertyDescriptor(object);
-			addBoundedPropertyDescriptor(object);
-			addStatePropertyDescriptor(object);
-			addSelectorPropertyDescriptor(object);
-			addFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,101 +87,13 @@ public class SelectionItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Selection_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_id_feature", "_UI_Selection_type"),
-				 VariantmodelPackage.Literals.SELECTION__ID,
+				 getString("_UI_AttributeValue_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AttributeValue_id_feature", "_UI_AttributeValue_type"),
+				 VariantmodelPackage.Literals.ATTRIBUTE_VALUE__ID,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Bounded feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBoundedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Selection_bounded_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_bounded_feature", "_UI_Selection_type"),
-				 VariantmodelPackage.Literals.SELECTION__BOUNDED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the State feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStatePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Selection_state_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_state_feature", "_UI_Selection_type"),
-				 VariantmodelPackage.Literals.SELECTION__STATE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Selector feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSelectorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Selection_selector_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_selector_feature", "_UI_Selection_type"),
-				 VariantmodelPackage.Literals.SELECTION__SELECTOR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Feature feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Selection_feature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_feature_feature", "_UI_Selection_type"),
-				 VariantmodelPackage.Literals.SELECTION__FEATURE,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -202,8 +110,8 @@ public class SelectionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(VariantmodelPackage.Literals.SELECTION__ATTRIBUTES);
-			childrenFeatures.add(VariantmodelPackage.Literals.SELECTION__VALUES);
+			childrenFeatures.add(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__ATTRIBUTE);
+			childrenFeatures.add(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT);
 		}
 		return childrenFeatures;
 	}
@@ -222,14 +130,14 @@ public class SelectionItemProvider
 	}
 
 	/**
-	 * This returns Selection.gif.
+	 * This returns AttributeValue.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Selection"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AttributeValue"));
 	}
 
 	/**
@@ -240,10 +148,10 @@ public class SelectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Selection)object).getId();
+		String label = ((AttributeValue)object).getId();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Selection_type") :
-			getString("_UI_Selection_type") + " " + label;
+			getString("_UI_AttributeValue_type") :
+			getString("_UI_AttributeValue_type") + " " + label;
 	}
 
 	/**
@@ -257,15 +165,12 @@ public class SelectionItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Selection.class)) {
-			case VariantmodelPackage.SELECTION__ID:
-			case VariantmodelPackage.SELECTION__BOUNDED:
-			case VariantmodelPackage.SELECTION__STATE:
-			case VariantmodelPackage.SELECTION__SELECTOR:
+		switch (notification.getFeatureID(AttributeValue.class)) {
+			case VariantmodelPackage.ATTRIBUTE_VALUE__ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case VariantmodelPackage.SELECTION__ATTRIBUTES:
-			case VariantmodelPackage.SELECTION__VALUES:
+			case VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
+			case VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -285,13 +190,76 @@ public class SelectionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(VariantmodelPackage.Literals.SELECTION__ATTRIBUTES,
+				(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__ATTRIBUTE,
 				 FeaturemodelFactory.eINSTANCE.createAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(VariantmodelPackage.Literals.SELECTION__VALUES,
-				 VariantmodelFactory.eINSTANCE.createValue()));
+				(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+				 VariantmodelFactory.eINSTANCE.createVariantModel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+				 VariantmodelFactory.eINSTANCE.createFeatureSelection()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+				 VariantmodelFactory.eINSTANCE.createAttributeValue()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+				 FeaturemodelFactory.eINSTANCE.createFeatureModel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+				 FeaturemodelFactory.eINSTANCE.createConstraint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+				 FeaturemodelFactory.eINSTANCE.createGroup()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+				 FeaturemodelFactory.eINSTANCE.createFeature()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+				 FeaturemodelFactory.eINSTANCE.createAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+				 FeaturemodelFactory.eINSTANCE.createDescription()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == VariantmodelPackage.Literals.ATTRIBUTE_VALUE__ATTRIBUTE ||
+			childFeature == VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

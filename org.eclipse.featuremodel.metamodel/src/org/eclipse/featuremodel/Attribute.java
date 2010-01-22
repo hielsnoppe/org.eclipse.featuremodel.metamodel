@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.featuremodel.Attribute#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.Attribute#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.Attribute#isSetable <em>Setable</em>}</li>
- *   <li>{@link org.eclipse.featuremodel.Attribute#getValue <em>Value</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.Attribute#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.eclipse.featuremodel.Attribute#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,32 +109,6 @@ public interface Attribute extends EObject {
 	void setSetable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see org.eclipse.featuremodel.FeaturemodelPackage#getAttribute_Value()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getValue();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.featuremodel.Attribute#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -159,5 +133,31 @@ public interface Attribute extends EObject {
 	 * @generated
 	 */
 	void setDescription(Description value);
+
+	/**
+	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Value</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Value</em>' containment reference.
+	 * @see #setValue(EObject)
+	 * @see org.eclipse.featuremodel.FeaturemodelPackage#getAttribute_Value()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	EObject getValue();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.featuremodel.Attribute#getValue <em>Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value</em>' containment reference.
+	 * @see #getValue()
+	 * @generated
+	 */
+	void setValue(EObject value);
 
 } // Attribute

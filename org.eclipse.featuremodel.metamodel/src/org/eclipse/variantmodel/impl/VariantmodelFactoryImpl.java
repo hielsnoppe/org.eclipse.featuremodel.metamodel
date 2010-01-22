@@ -62,8 +62,8 @@ public class VariantmodelFactoryImpl extends EFactoryImpl implements Variantmode
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case VariantmodelPackage.VARIANT_MODEL: return createVariantModel();
-			case VariantmodelPackage.SELECTION: return createSelection();
-			case VariantmodelPackage.VALUE: return createValue();
+			case VariantmodelPackage.FEATURE_SELECTION: return createFeatureSelection();
+			case VariantmodelPackage.ATTRIBUTE_VALUE: return createAttributeValue();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -118,9 +118,9 @@ public class VariantmodelFactoryImpl extends EFactoryImpl implements Variantmode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Selection createSelection() {
-		SelectionImpl selection = new SelectionImpl();
-		return selection;
+	public FeatureSelection createFeatureSelection() {
+		FeatureSelectionImpl featureSelection = new FeatureSelectionImpl();
+		return featureSelection;
 	}
 
 	/**
@@ -128,9 +128,9 @@ public class VariantmodelFactoryImpl extends EFactoryImpl implements Variantmode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Value createValue() {
-		ValueImpl value = new ValueImpl();
-		return value;
+	public AttributeValue createAttributeValue() {
+		AttributeValueImpl attributeValue = new AttributeValueImpl();
+		return attributeValue;
 	}
 
 	/**

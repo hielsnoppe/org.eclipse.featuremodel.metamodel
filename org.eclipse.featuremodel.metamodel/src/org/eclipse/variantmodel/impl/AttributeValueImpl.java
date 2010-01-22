@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -17,25 +18,25 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.featuremodel.Attribute;
 
-import org.eclipse.variantmodel.Value;
+import org.eclipse.variantmodel.AttributeValue;
 import org.eclipse.variantmodel.VariantmodelPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Value</b></em>'.
+ * An implementation of the model object '<em><b>Attribute Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.variantmodel.impl.ValueImpl#getId <em>Id</em>}</li>
- *   <li>{@link org.eclipse.variantmodel.impl.ValueImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.eclipse.variantmodel.impl.ValueImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.impl.AttributeValueImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.impl.AttributeValueImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.impl.AttributeValueImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ValueImpl extends EObjectImpl implements Value {
+public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -57,26 +58,6 @@ public class ValueImpl extends EObjectImpl implements Value {
 	protected String id = ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,11 +68,21 @@ public class ValueImpl extends EObjectImpl implements Value {
 	protected Attribute attribute;
 
 	/**
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EObject content;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ValueImpl() {
+	protected AttributeValueImpl() {
 		super();
 	}
 
@@ -102,7 +93,7 @@ public class ValueImpl extends EObjectImpl implements Value {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return VariantmodelPackage.Literals.VALUE;
+		return VariantmodelPackage.Literals.ATTRIBUTE_VALUE;
 	}
 
 	/**
@@ -123,28 +114,7 @@ public class ValueImpl extends EObjectImpl implements Value {
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.VALUE__ID, oldId, id));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(String newValue) {
-		String oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.VALUE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.ATTRIBUTE_VALUE__ID, oldId, id));
 	}
 
 	/**
@@ -165,7 +135,7 @@ public class ValueImpl extends EObjectImpl implements Value {
 		Attribute oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VariantmodelPackage.VALUE__ATTRIBUTE, oldAttribute, newAttribute);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE, oldAttribute, newAttribute);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -180,14 +150,57 @@ public class ValueImpl extends EObjectImpl implements Value {
 		if (newAttribute != attribute) {
 			NotificationChain msgs = null;
 			if (attribute != null)
-				msgs = ((InternalEObject)attribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VariantmodelPackage.VALUE__ATTRIBUTE, null, msgs);
+				msgs = ((InternalEObject)attribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE, null, msgs);
 			if (newAttribute != null)
-				msgs = ((InternalEObject)newAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VariantmodelPackage.VALUE__ATTRIBUTE, null, msgs);
+				msgs = ((InternalEObject)newAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE, null, msgs);
 			msgs = basicSetAttribute(newAttribute, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.VALUE__ATTRIBUTE, newAttribute, newAttribute));
+			eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE, newAttribute, newAttribute));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EObject getContent() {
+		return content;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetContent(EObject newContent, NotificationChain msgs) {
+		EObject oldContent = content;
+		content = newContent;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT, oldContent, newContent);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContent(EObject newContent) {
+		if (newContent != content) {
+			NotificationChain msgs = null;
+			if (content != null)
+				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT, null, msgs);
+			if (newContent != null)
+				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT, null, msgs);
+			msgs = basicSetContent(newContent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT, newContent, newContent));
 	}
 
 	/**
@@ -198,8 +211,10 @@ public class ValueImpl extends EObjectImpl implements Value {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case VariantmodelPackage.VALUE__ATTRIBUTE:
+			case VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
 				return basicSetAttribute(null, msgs);
+			case VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT:
+				return basicSetContent(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -212,12 +227,12 @@ public class ValueImpl extends EObjectImpl implements Value {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VariantmodelPackage.VALUE__ID:
+			case VariantmodelPackage.ATTRIBUTE_VALUE__ID:
 				return getId();
-			case VariantmodelPackage.VALUE__VALUE:
-				return getValue();
-			case VariantmodelPackage.VALUE__ATTRIBUTE:
+			case VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
 				return getAttribute();
+			case VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT:
+				return getContent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -230,14 +245,14 @@ public class ValueImpl extends EObjectImpl implements Value {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VariantmodelPackage.VALUE__ID:
+			case VariantmodelPackage.ATTRIBUTE_VALUE__ID:
 				setId((String)newValue);
 				return;
-			case VariantmodelPackage.VALUE__VALUE:
-				setValue((String)newValue);
-				return;
-			case VariantmodelPackage.VALUE__ATTRIBUTE:
+			case VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
 				setAttribute((Attribute)newValue);
+				return;
+			case VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT:
+				setContent((EObject)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -251,14 +266,14 @@ public class ValueImpl extends EObjectImpl implements Value {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VariantmodelPackage.VALUE__ID:
+			case VariantmodelPackage.ATTRIBUTE_VALUE__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case VariantmodelPackage.VALUE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
-			case VariantmodelPackage.VALUE__ATTRIBUTE:
+			case VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
 				setAttribute((Attribute)null);
+				return;
+			case VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT:
+				setContent((EObject)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -272,12 +287,12 @@ public class ValueImpl extends EObjectImpl implements Value {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VariantmodelPackage.VALUE__ID:
+			case VariantmodelPackage.ATTRIBUTE_VALUE__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case VariantmodelPackage.VALUE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-			case VariantmodelPackage.VALUE__ATTRIBUTE:
+			case VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
 				return attribute != null;
+			case VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT:
+				return content != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -294,10 +309,8 @@ public class ValueImpl extends EObjectImpl implements Value {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
 		result.append(id);
-		result.append(", value: ");
-		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ValueImpl
+} //AttributeValueImpl

@@ -355,22 +355,22 @@ public interface FeaturemodelPackage extends EPackage {
 	int ATTRIBUTE__SETABLE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__VALUE = 3;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__DESCRIPTION = 4;
+	int ATTRIBUTE__DESCRIPTION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__VALUE = 4;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -743,17 +743,6 @@ public interface FeaturemodelPackage extends EPackage {
 	EAttribute getAttribute_Setable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.featuremodel.Attribute#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.eclipse.featuremodel.Attribute#getValue()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	EAttribute getAttribute_Value();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.eclipse.featuremodel.Attribute#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -763,6 +752,17 @@ public interface FeaturemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAttribute_Description();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.featuremodel.Attribute#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see org.eclipse.featuremodel.Attribute#getValue()
+	 * @see #getAttribute()
+	 * @generated
+	 */
+	EReference getAttribute_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.featuremodel.Description <em>Description</em>}'.
@@ -1074,20 +1074,20 @@ public interface FeaturemodelPackage extends EPackage {
 		EAttribute ATTRIBUTE__SETABLE = eINSTANCE.getAttribute_Setable();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ATTRIBUTE__VALUE = eINSTANCE.getAttribute_Value();
-
-		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ATTRIBUTE__DESCRIPTION = eINSTANCE.getAttribute_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTRIBUTE__VALUE = eINSTANCE.getAttribute_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.featuremodel.impl.DescriptionImpl <em>Description</em>}' class.

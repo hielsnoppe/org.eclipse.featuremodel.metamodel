@@ -93,15 +93,15 @@ public class VariantmodelSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VariantmodelPackage.SELECTION: {
-				Selection selection = (Selection)theEObject;
-				T result = caseSelection(selection);
+			case VariantmodelPackage.FEATURE_SELECTION: {
+				FeatureSelection featureSelection = (FeatureSelection)theEObject;
+				T result = caseFeatureSelection(featureSelection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VariantmodelPackage.VALUE: {
-				Value value = (Value)theEObject;
-				T result = caseValue(value);
+			case VariantmodelPackage.ATTRIBUTE_VALUE: {
+				AttributeValue attributeValue = (AttributeValue)theEObject;
+				T result = caseAttributeValue(attributeValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -125,32 +125,32 @@ public class VariantmodelSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Selection</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Selection</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Selection</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Selection</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSelection(Selection object) {
+	public T caseFeatureSelection(FeatureSelection object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Value</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Value</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseValue(Value object) {
+	public T caseAttributeValue(AttributeValue object) {
 		return null;
 	}
 

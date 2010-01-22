@@ -281,6 +281,18 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Group> getChildren() {
+		if (children == null) {
+			children = new EObjectContainmentEList<Group>(Group.class, this, FeaturemodelPackage.FEATURE__CHILDREN);
+		}
+		return children;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Feature getParent() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -292,11 +304,10 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Group> getChildren() {
-		if (children == null) {
-			children = new EObjectContainmentEList<Group>(Group.class, this, FeaturemodelPackage.FEATURE__CHILDREN);
-		}
-		return children;
+	public Group getParentGroup() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

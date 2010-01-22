@@ -422,8 +422,8 @@ public class FeaturemodelPackageImpl extends EPackageImpl implements Featuremode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAttribute_Value() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(3);
+	public EReference getAttribute_Description() {
+		return (EReference)attributeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -431,7 +431,7 @@ public class FeaturemodelPackageImpl extends EPackageImpl implements Featuremode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAttribute_Description() {
+	public EReference getAttribute_Value() {
 		return (EReference)attributeEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -540,8 +540,8 @@ public class FeaturemodelPackageImpl extends EPackageImpl implements Featuremode
 		createEAttribute(attributeEClass, ATTRIBUTE__ID);
 		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
 		createEAttribute(attributeEClass, ATTRIBUTE__SETABLE);
-		createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
 		createEReference(attributeEClass, ATTRIBUTE__DESCRIPTION);
+		createEReference(attributeEClass, ATTRIBUTE__VALUE);
 
 		descriptionEClass = createEClass(DESCRIPTION);
 		createEAttribute(descriptionEClass, DESCRIPTION__ID);
@@ -616,6 +616,8 @@ public class FeaturemodelPackageImpl extends EPackageImpl implements Featuremode
 
 		addEOperation(featureEClass, this.getFeature(), "getParent", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(featureEClass, this.getGroup(), "getParentGroup", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		addEOperation(featureEClass, this.getFeatureModel(), "getModel", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(featureEClass, this.getVariabilityType(), "getVariabilityType", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -624,8 +626,8 @@ public class FeaturemodelPackageImpl extends EPackageImpl implements Featuremode
 		initEAttribute(getAttribute_Id(), this.getID(), "id", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Setable(), ecorePackage.getEBoolean(), "setable", "false", 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAttribute_Description(), this.getDescription(), null, "description", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttribute_Value(), ecorePackage.getEObject(), null, "value", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(descriptionEClass, Description.class, "Description", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDescription_Id(), this.getID(), "id", null, 1, 1, Description.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

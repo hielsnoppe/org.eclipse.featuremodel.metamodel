@@ -99,49 +99,49 @@ public class VariantmodelItemProviderAdapterFactory extends VariantmodelAdapterF
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.variantmodel.Selection} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.variantmodel.FeatureSelection} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SelectionItemProvider selectionItemProvider;
+	protected FeatureSelectionItemProvider featureSelectionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.variantmodel.Selection}.
+	 * This creates an adapter for a {@link org.eclipse.variantmodel.FeatureSelection}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSelectionAdapter() {
-		if (selectionItemProvider == null) {
-			selectionItemProvider = new SelectionItemProvider(this);
+	public Adapter createFeatureSelectionAdapter() {
+		if (featureSelectionItemProvider == null) {
+			featureSelectionItemProvider = new FeatureSelectionItemProvider(this);
 		}
 
-		return selectionItemProvider;
+		return featureSelectionItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.variantmodel.Value} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.variantmodel.AttributeValue} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ValueItemProvider valueItemProvider;
+	protected AttributeValueItemProvider attributeValueItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.variantmodel.Value}.
+	 * This creates an adapter for a {@link org.eclipse.variantmodel.AttributeValue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createValueAdapter() {
-		if (valueItemProvider == null) {
-			valueItemProvider = new ValueItemProvider(this);
+	public Adapter createAttributeValueAdapter() {
+		if (attributeValueItemProvider == null) {
+			attributeValueItemProvider = new AttributeValueItemProvider(this);
 		}
 
-		return valueItemProvider;
+		return attributeValueItemProvider;
 	}
 
 	/**
@@ -244,8 +244,8 @@ public class VariantmodelItemProviderAdapterFactory extends VariantmodelAdapterF
 	 */
 	public void dispose() {
 		if (variantModelItemProvider != null) variantModelItemProvider.dispose();
-		if (selectionItemProvider != null) selectionItemProvider.dispose();
-		if (valueItemProvider != null) valueItemProvider.dispose();
+		if (featureSelectionItemProvider != null) featureSelectionItemProvider.dispose();
+		if (attributeValueItemProvider != null) attributeValueItemProvider.dispose();
 	}
 
 }

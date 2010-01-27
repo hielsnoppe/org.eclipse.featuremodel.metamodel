@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package org.eclipse.featuremodel.presentation;
+package org.eclipse.resultmodel.presentation;
 
 
 import java.util.ArrayList;
@@ -72,12 +72,14 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import org.eclipse.featuremodel.FeaturemodelFactory;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.resultmodel.ResultmodelFactory;
+import org.eclipse.resultmodel.ResultmodelPackage;
 import org.eclipse.featuremodel.provider.FeatureModelEditPlugin;
 
 
 import org.eclipse.core.runtime.Path;
+
+import org.eclipse.featuremodel.presentation.FeatureModelEditorPlugin;
 
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -94,14 +96,14 @@ import org.eclipse.ui.PartInitException;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeaturemodelModelWizard extends Wizard implements INewWizard {
+public class ResultmodelModelWizard extends Wizard implements INewWizard {
   /**
    * This caches an instance of the model package.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FeaturemodelPackage featuremodelPackage = FeaturemodelPackage.eINSTANCE;
+  protected ResultmodelPackage resultmodelPackage = ResultmodelPackage.eINSTANCE;
 
   /**
    * This caches an instance of the model factory.
@@ -109,7 +111,7 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FeaturemodelFactory featuremodelFactory = featuremodelPackage.getFeaturemodelFactory();
+  protected ResultmodelFactory resultmodelFactory = resultmodelPackage.getResultmodelFactory();
 
   /**
    * This is the file creation page.
@@ -117,7 +119,7 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FeaturemodelModelWizardNewFileCreationPage newFileCreationPage;
+  protected ResultmodelModelWizardNewFileCreationPage newFileCreationPage;
 
   /**
    * This is the initial object creation page.
@@ -125,7 +127,7 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FeaturemodelModelWizardInitialObjectCreationPage initialObjectCreationPage;
+  protected ResultmodelModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
   /**
    * Remember the selection during initialization for populating the default container.
@@ -161,7 +163,7 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
     this.workbench = workbench;
     this.selection = selection;
     setWindowTitle(FeatureModelEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-    setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(FeatureModelEditorPlugin.INSTANCE.getImage("full/wizban/NewFeaturemodel")));
+    setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(FeatureModelEditorPlugin.INSTANCE.getImage("full/wizban/NewResultmodel")));
   }
 
   /**
@@ -173,7 +175,7 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
   protected Collection<String> getInitialObjectNames() {
     if (initialObjectNames == null) {
       initialObjectNames = new ArrayList<String>();
-      for (EClassifier eClassifier : featuremodelPackage.getEClassifiers()) {
+      for (EClassifier eClassifier : resultmodelPackage.getEClassifiers()) {
         if (eClassifier instanceof EClass) {
           EClass eClass = (EClass)eClassifier;
           if (!eClass.isAbstract()) {
@@ -193,8 +195,8 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
    * @generated
    */
   protected EObject createInitialModel() {
-    EClass eClass = (EClass)featuremodelPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-    EObject rootObject = featuremodelFactory.create(eClass);
+    EClass eClass = (EClass)resultmodelPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+    EObject rootObject = resultmodelFactory.create(eClass);
     return rootObject;
   }
 
@@ -295,14 +297,14 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
    * <!-- end-user-doc -->
    * @generated
    */
-  public class FeaturemodelModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+  public class ResultmodelModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
     /**
      * Pass in the selection.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public FeaturemodelModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+    public ResultmodelModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
       super(pageId, selection);
     }
 
@@ -315,9 +317,9 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
   @Override
     protected boolean validatePage() {
       if (super.validatePage()) {
-        // Make sure the file ends in ".featuremodel".
+        // Make sure the file ends in ".resultmodel".
         //
-        String requiredExt = FeatureModelEditorPlugin.INSTANCE.getString("_UI_FeaturemodelEditorFilenameExtension");
+        String requiredExt = FeatureModelEditorPlugin.INSTANCE.getString("_UI_ResultmodelEditorFilenameExtension");
         String enteredExt = new Path(getFileName()).getFileExtension();
         if (enteredExt == null || !enteredExt.equals(requiredExt)) {
           setErrorMessage(FeatureModelEditorPlugin.INSTANCE.getString("_WARN_FilenameExtension", new Object [] { requiredExt }));
@@ -348,7 +350,7 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
    * <!-- end-user-doc -->
    * @generated
    */
-  public class FeaturemodelModelWizardInitialObjectCreationPage extends WizardPage {
+  public class ResultmodelModelWizardInitialObjectCreationPage extends WizardPage {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -376,7 +378,7 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
      * <!-- end-user-doc -->
      * @generated
      */
-    public FeaturemodelModelWizardInitialObjectCreationPage(String pageId) {
+    public ResultmodelModelWizardInitialObjectCreationPage(String pageId) {
       super(pageId);
     }
 
@@ -561,10 +563,10 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
   public void addPages() {
     // Create a page, set the title, and the initial model file name.
     //
-    newFileCreationPage = new FeaturemodelModelWizardNewFileCreationPage("Whatever", selection);
-    newFileCreationPage.setTitle(FeatureModelEditorPlugin.INSTANCE.getString("_UI_FeaturemodelModelWizard_label"));
-    newFileCreationPage.setDescription(FeatureModelEditorPlugin.INSTANCE.getString("_UI_FeaturemodelModelWizard_description"));
-    newFileCreationPage.setFileName(FeatureModelEditorPlugin.INSTANCE.getString("_UI_FeaturemodelEditorFilenameDefaultBase") + "." + FeatureModelEditorPlugin.INSTANCE.getString("_UI_FeaturemodelEditorFilenameExtension"));
+    newFileCreationPage = new ResultmodelModelWizardNewFileCreationPage("Whatever", selection);
+    newFileCreationPage.setTitle(FeatureModelEditorPlugin.INSTANCE.getString("_UI_ResultmodelModelWizard_label"));
+    newFileCreationPage.setDescription(FeatureModelEditorPlugin.INSTANCE.getString("_UI_ResultmodelModelWizard_description"));
+    newFileCreationPage.setFileName(FeatureModelEditorPlugin.INSTANCE.getString("_UI_ResultmodelEditorFilenameDefaultBase") + "." + FeatureModelEditorPlugin.INSTANCE.getString("_UI_ResultmodelEditorFilenameExtension"));
     addPage(newFileCreationPage);
 
     // Try and get the resource selection to determine a current directory for the file dialog.
@@ -590,8 +592,8 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
 
           // Make up a unique new name here.
           //
-          String defaultModelBaseFilename = FeatureModelEditorPlugin.INSTANCE.getString("_UI_FeaturemodelEditorFilenameDefaultBase");
-          String defaultModelFilenameExtension = FeatureModelEditorPlugin.INSTANCE.getString("_UI_FeaturemodelEditorFilenameExtension");
+          String defaultModelBaseFilename = FeatureModelEditorPlugin.INSTANCE.getString("_UI_ResultmodelEditorFilenameDefaultBase");
+          String defaultModelFilenameExtension = FeatureModelEditorPlugin.INSTANCE.getString("_UI_ResultmodelEditorFilenameExtension");
           String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
           for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
             modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
@@ -600,8 +602,8 @@ public class FeaturemodelModelWizard extends Wizard implements INewWizard {
         }
       }
     }
-    initialObjectCreationPage = new FeaturemodelModelWizardInitialObjectCreationPage("Whatever2");
-    initialObjectCreationPage.setTitle(FeatureModelEditorPlugin.INSTANCE.getString("_UI_FeaturemodelModelWizard_label"));
+    initialObjectCreationPage = new ResultmodelModelWizardInitialObjectCreationPage("Whatever2");
+    initialObjectCreationPage.setTitle(FeatureModelEditorPlugin.INSTANCE.getString("_UI_ResultmodelModelWizard_label"));
     initialObjectCreationPage.setDescription(FeatureModelEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
     addPage(initialObjectCreationPage);
   }

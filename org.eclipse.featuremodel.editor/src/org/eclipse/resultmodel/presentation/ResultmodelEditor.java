@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package org.eclipse.featuremodel.presentation;
+package org.eclipse.resultmodel.presentation;
 
 
 import java.io.IOException;
@@ -157,9 +157,11 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
-import org.eclipse.featuremodel.provider.FeaturemodelItemProviderAdapterFactory;
-
 import org.eclipse.resultmodel.provider.ResultmodelItemProviderAdapterFactory;
+
+import org.eclipse.featuremodel.presentation.FeatureModelEditorPlugin;
+
+import org.eclipse.featuremodel.provider.FeaturemodelItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
@@ -167,12 +169,12 @@ import org.eclipse.variantmodel.provider.VariantmodelItemProviderAdapterFactory;
 
 
 /**
- * This is an example of a Featuremodel model editor.
+ * This is an example of a Resultmodel model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeaturemodelEditor
+public class ResultmodelEditor
   extends MultiPageEditorPart
   implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
   /**
@@ -334,18 +336,18 @@ public class FeaturemodelEditor
       public void partActivated(IWorkbenchPart p) {
         if (p instanceof ContentOutline) {
           if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
-            getActionBarContributor().setActiveEditor(FeaturemodelEditor.this);
+            getActionBarContributor().setActiveEditor(ResultmodelEditor.this);
 
             setCurrentViewer(contentOutlineViewer);
           }
         }
         else if (p instanceof PropertySheet) {
           if (((PropertySheet)p).getCurrentPage() == propertySheetPage) {
-            getActionBarContributor().setActiveEditor(FeaturemodelEditor.this);
+            getActionBarContributor().setActiveEditor(ResultmodelEditor.this);
             handleActivate();
           }
         }
-        else if (p == FeaturemodelEditor.this) {
+        else if (p == ResultmodelEditor.this) {
           handleActivate();
         }
       }
@@ -511,8 +513,8 @@ public class FeaturemodelEditor
                 getSite().getShell().getDisplay().asyncExec
                   (new Runnable() {
                      public void run() {
-                       getSite().getPage().closeEditor(FeaturemodelEditor.this, false);
-                       FeaturemodelEditor.this.dispose();
+                       getSite().getPage().closeEditor(ResultmodelEditor.this, false);
+                       ResultmodelEditor.this.dispose();
                      }
                    });
               }
@@ -520,7 +522,7 @@ public class FeaturemodelEditor
 
             if (!visitor.getChangedResources().isEmpty()) {
               changedResources.addAll(visitor.getChangedResources());
-              if (getSite().getPage().getActiveEditor() == FeaturemodelEditor.this) {
+              if (getSite().getPage().getActiveEditor() == ResultmodelEditor.this) {
                 getSite().getShell().getDisplay().asyncExec
                   (new Runnable() {
                      public void run() {
@@ -556,8 +558,8 @@ public class FeaturemodelEditor
 
     if (!removedResources.isEmpty()) {
       if (handleDirtyConflict()) {
-        getSite().getPage().closeEditor(FeaturemodelEditor.this, false);
-        FeaturemodelEditor.this.dispose();
+        getSite().getPage().closeEditor(ResultmodelEditor.this, false);
+        ResultmodelEditor.this.dispose();
       }
       else {
         removedResources.clear();
@@ -679,7 +681,7 @@ public class FeaturemodelEditor
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeaturemodelEditor() {
+  public ResultmodelEditor() {
     super();
     initializeEditingDomain();
   }
@@ -1018,7 +1020,7 @@ public class FeaturemodelEditor
       //
       {
         ViewerPane viewerPane =
-          new ViewerPane(getSite().getPage(), FeaturemodelEditor.this) {
+          new ViewerPane(getSite().getPage(), ResultmodelEditor.this) {
             @Override
             public Viewer createViewer(Composite composite) {
               Tree tree = new Tree(composite, SWT.MULTI);
@@ -1052,7 +1054,7 @@ public class FeaturemodelEditor
       //
       {
         ViewerPane viewerPane =
-          new ViewerPane(getSite().getPage(), FeaturemodelEditor.this) {
+          new ViewerPane(getSite().getPage(), ResultmodelEditor.this) {
             @Override
             public Viewer createViewer(Composite composite) {
               Tree tree = new Tree(composite, SWT.MULTI);
@@ -1081,7 +1083,7 @@ public class FeaturemodelEditor
       //
       {
         ViewerPane viewerPane =
-          new ViewerPane(getSite().getPage(), FeaturemodelEditor.this) {
+          new ViewerPane(getSite().getPage(), ResultmodelEditor.this) {
             @Override
             public Viewer createViewer(Composite composite) {
               return new ListViewer(composite);
@@ -1106,7 +1108,7 @@ public class FeaturemodelEditor
       //
       {
         ViewerPane viewerPane =
-          new ViewerPane(getSite().getPage(), FeaturemodelEditor.this) {
+          new ViewerPane(getSite().getPage(), ResultmodelEditor.this) {
             @Override
             public Viewer createViewer(Composite composite) {
               return new TreeViewer(composite);
@@ -1133,7 +1135,7 @@ public class FeaturemodelEditor
       //
       {
         ViewerPane viewerPane =
-          new ViewerPane(getSite().getPage(), FeaturemodelEditor.this) {
+          new ViewerPane(getSite().getPage(), ResultmodelEditor.this) {
             @Override
             public Viewer createViewer(Composite composite) {
               return new TableViewer(composite);
@@ -1176,7 +1178,7 @@ public class FeaturemodelEditor
       //
       {
         ViewerPane viewerPane =
-          new ViewerPane(getSite().getPage(), FeaturemodelEditor.this) {
+          new ViewerPane(getSite().getPage(), ResultmodelEditor.this) {
             @Override
             public Viewer createViewer(Composite composite) {
               return new TreeViewer(composite);
@@ -1397,8 +1399,8 @@ public class FeaturemodelEditor
         new ExtendedPropertySheetPage(editingDomain) {
           @Override
           public void setSelectionToViewer(List<?> selection) {
-            FeaturemodelEditor.this.setSelectionToViewer(selection);
-            FeaturemodelEditor.this.setFocus();
+            ResultmodelEditor.this.setSelectionToViewer(selection);
+            ResultmodelEditor.this.setFocus();
           }
 
           @Override

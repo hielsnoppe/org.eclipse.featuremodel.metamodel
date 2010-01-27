@@ -37,287 +37,311 @@ import org.eclipse.featuremodel.util.FeaturemodelAdapterFactory;
  * @generated
  */
 public class FeaturemodelItemProviderAdapterFactory extends FeaturemodelAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
-	/**
-	 * This keeps track of the root adapter factory that delegates to this adapter factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComposedAdapterFactory parentAdapterFactory;
+  /**
+   * This keeps track of the root adapter factory that delegates to this adapter factory.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected ComposedAdapterFactory parentAdapterFactory;
 
-	/**
-	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IChangeNotifier changeNotifier = new ChangeNotifier();
+  /**
+   * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
-	/**
-	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Collection<Object> supportedTypes = new ArrayList<Object>();
+  /**
+   * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
-	/**
-	 * This constructs an instance.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FeaturemodelItemProviderAdapterFactory() {
-		supportedTypes.add(IEditingDomainItemProvider.class);
-		supportedTypes.add(IStructuredItemContentProvider.class);
-		supportedTypes.add(ITreeItemContentProvider.class);
-		supportedTypes.add(IItemLabelProvider.class);
-		supportedTypes.add(IItemPropertySource.class);
-	}
+  /**
+   * This constructs an instance.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FeaturemodelItemProviderAdapterFactory() {
+    supportedTypes.add(IEditingDomainItemProvider.class);
+    supportedTypes.add(IStructuredItemContentProvider.class);
+    supportedTypes.add(ITreeItemContentProvider.class);
+    supportedTypes.add(IItemLabelProvider.class);
+    supportedTypes.add(IItemPropertySource.class);
+  }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.FeatureModel} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeatureModelItemProvider featureModelItemProvider;
+  /**
+   * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.Rule} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected RuleItemProvider ruleItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.eclipse.featuremodel.FeatureModel}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeatureModelAdapter() {
-		if (featureModelItemProvider == null) {
-			featureModelItemProvider = new FeatureModelItemProvider(this);
-		}
+  /**
+   * This creates an adapter for a {@link org.eclipse.featuremodel.Rule}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createRuleAdapter() {
+    if (ruleItemProvider == null) {
+      ruleItemProvider = new RuleItemProvider(this);
+    }
 
-		return featureModelItemProvider;
-	}
+    return ruleItemProvider;
+  }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.Constraint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConstraintItemProvider constraintItemProvider;
+  /**
+   * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.FeatureModel} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected FeatureModelItemProvider featureModelItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.eclipse.featuremodel.Constraint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConstraintAdapter() {
-		if (constraintItemProvider == null) {
-			constraintItemProvider = new ConstraintItemProvider(this);
-		}
+  /**
+   * This creates an adapter for a {@link org.eclipse.featuremodel.FeatureModel}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createFeatureModelAdapter() {
+    if (featureModelItemProvider == null) {
+      featureModelItemProvider = new FeatureModelItemProvider(this);
+    }
 
-		return constraintItemProvider;
-	}
+    return featureModelItemProvider;
+  }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.Group} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected GroupItemProvider groupItemProvider;
+  /**
+   * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.Constraint} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected ConstraintItemProvider constraintItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.eclipse.featuremodel.Group}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createGroupAdapter() {
-		if (groupItemProvider == null) {
-			groupItemProvider = new GroupItemProvider(this);
-		}
+  /**
+   * This creates an adapter for a {@link org.eclipse.featuremodel.Constraint}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createConstraintAdapter() {
+    if (constraintItemProvider == null) {
+      constraintItemProvider = new ConstraintItemProvider(this);
+    }
 
-		return groupItemProvider;
-	}
+    return constraintItemProvider;
+  }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.Feature} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeatureItemProvider featureItemProvider;
+  /**
+   * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.Group} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected GroupItemProvider groupItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.eclipse.featuremodel.Feature}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeatureAdapter() {
-		if (featureItemProvider == null) {
-			featureItemProvider = new FeatureItemProvider(this);
-		}
+  /**
+   * This creates an adapter for a {@link org.eclipse.featuremodel.Group}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createGroupAdapter() {
+    if (groupItemProvider == null) {
+      groupItemProvider = new GroupItemProvider(this);
+    }
 
-		return featureItemProvider;
-	}
+    return groupItemProvider;
+  }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.Attribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AttributeItemProvider attributeItemProvider;
+  /**
+   * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.Feature} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected FeatureItemProvider featureItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.eclipse.featuremodel.Attribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAttributeAdapter() {
-		if (attributeItemProvider == null) {
-			attributeItemProvider = new AttributeItemProvider(this);
-		}
+  /**
+   * This creates an adapter for a {@link org.eclipse.featuremodel.Feature}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createFeatureAdapter() {
+    if (featureItemProvider == null) {
+      featureItemProvider = new FeatureItemProvider(this);
+    }
 
-		return attributeItemProvider;
-	}
+    return featureItemProvider;
+  }
 
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.Description} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DescriptionItemProvider descriptionItemProvider;
+  /**
+   * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.Attribute} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected AttributeItemProvider attributeItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.eclipse.featuremodel.Description}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDescriptionAdapter() {
-		if (descriptionItemProvider == null) {
-			descriptionItemProvider = new DescriptionItemProvider(this);
-		}
+  /**
+   * This creates an adapter for a {@link org.eclipse.featuremodel.Attribute}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createAttributeAdapter() {
+    if (attributeItemProvider == null) {
+      attributeItemProvider = new AttributeItemProvider(this);
+    }
 
-		return descriptionItemProvider;
-	}
+    return attributeItemProvider;
+  }
 
-	/**
-	 * This returns the root adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-	}
+  /**
+   * This keeps track of the one adapter used for all {@link org.eclipse.featuremodel.Description} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected DescriptionItemProvider descriptionItemProvider;
 
-	/**
-	 * This sets the composed adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
-		this.parentAdapterFactory = parentAdapterFactory;
-	}
+  /**
+   * This creates an adapter for a {@link org.eclipse.featuremodel.Description}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createDescriptionAdapter() {
+    if (descriptionItemProvider == null) {
+      descriptionItemProvider = new DescriptionItemProvider(this);
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isFactoryForType(Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
+    return descriptionItemProvider;
+  }
 
-	/**
-	 * This implementation substitutes the factory itself as the key for the adapter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter adapt(Notifier notifier, Object type) {
-		return super.adapt(notifier, this);
-	}
+  /**
+   * This returns the root adapter factory that contains this factory.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ComposeableAdapterFactory getRootAdapterFactory() {
+    return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class) || (((Class<?>)type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
+  /**
+   * This sets the composed adapter factory that contains this factory.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+    this.parentAdapterFactory = parentAdapterFactory;
+  }
 
-		return null;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isFactoryForType(Object type) {
+    return supportedTypes.contains(type) || super.isFactoryForType(type);
+  }
 
-	/**
-	 * This adds a listener.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void addListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.addListener(notifyChangedListener);
-	}
+  /**
+   * This implementation substitutes the factory itself as the key for the adapter.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter adapt(Notifier notifier, Object type) {
+    return super.adapt(notifier, this);
+  }
 
-	/**
-	 * This removes a listener.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void removeListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.removeListener(notifyChangedListener);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object adapt(Object object, Object type) {
+    if (isFactoryForType(type)) {
+      Object adapter = super.adapt(object, type);
+      if (!(type instanceof Class) || (((Class<?>)type).isInstance(adapter))) {
+        return adapter;
+      }
+    }
 
-	/**
-	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void fireNotifyChanged(Notification notification) {
-		changeNotifier.fireNotifyChanged(notification);
+    return null;
+  }
 
-		if (parentAdapterFactory != null) {
-			parentAdapterFactory.fireNotifyChanged(notification);
-		}
-	}
+  /**
+   * This adds a listener.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void addListener(INotifyChangedListener notifyChangedListener) {
+    changeNotifier.addListener(notifyChangedListener);
+  }
 
-	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void dispose() {
-		if (featureModelItemProvider != null) featureModelItemProvider.dispose();
-		if (constraintItemProvider != null) constraintItemProvider.dispose();
-		if (groupItemProvider != null) groupItemProvider.dispose();
-		if (featureItemProvider != null) featureItemProvider.dispose();
-		if (attributeItemProvider != null) attributeItemProvider.dispose();
-		if (descriptionItemProvider != null) descriptionItemProvider.dispose();
-	}
+  /**
+   * This removes a listener.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void removeListener(INotifyChangedListener notifyChangedListener) {
+    changeNotifier.removeListener(notifyChangedListener);
+  }
+
+  /**
+   * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void fireNotifyChanged(Notification notification) {
+    changeNotifier.fireNotifyChanged(notification);
+
+    if (parentAdapterFactory != null) {
+      parentAdapterFactory.fireNotifyChanged(notification);
+    }
+  }
+
+  /**
+   * This disposes all of the item providers created by this factory. 
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void dispose() {
+    if (ruleItemProvider != null) ruleItemProvider.dispose();
+    if (featureModelItemProvider != null) featureModelItemProvider.dispose();
+    if (constraintItemProvider != null) constraintItemProvider.dispose();
+    if (groupItemProvider != null) groupItemProvider.dispose();
+    if (featureItemProvider != null) featureItemProvider.dispose();
+    if (attributeItemProvider != null) attributeItemProvider.dispose();
+    if (descriptionItemProvider != null) descriptionItemProvider.dispose();
+  }
 
 }

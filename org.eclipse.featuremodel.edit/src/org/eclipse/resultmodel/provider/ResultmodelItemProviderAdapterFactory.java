@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package org.eclipse.variantmodel.provider;
+package org.eclipse.resultmodel.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,7 +25,7 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import org.eclipse.variantmodel.util.VariantmodelAdapterFactory;
+import org.eclipse.resultmodel.util.ResultmodelAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -36,7 +36,7 @@ import org.eclipse.variantmodel.util.VariantmodelAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class VariantmodelItemProviderAdapterFactory extends VariantmodelAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class ResultmodelItemProviderAdapterFactory extends ResultmodelAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
   /**
    * This keeps track of the root adapter factory that delegates to this adapter factory.
    * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public class VariantmodelItemProviderAdapterFactory extends VariantmodelAdapterF
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariantmodelItemProviderAdapterFactory() {
+  public ResultmodelItemProviderAdapterFactory() {
     supportedTypes.add(IEditingDomainItemProvider.class);
     supportedTypes.add(IStructuredItemContentProvider.class);
     supportedTypes.add(ITreeItemContentProvider.class);
@@ -76,95 +76,49 @@ public class VariantmodelItemProviderAdapterFactory extends VariantmodelAdapterF
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link org.eclipse.variantmodel.VariantSelection} instances.
+   * This keeps track of the one adapter used for all {@link org.eclipse.resultmodel.ResultModel} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VariantSelectionItemProvider variantSelectionItemProvider;
+  protected ResultModelItemProvider resultModelItemProvider;
 
   /**
-   * This creates an adapter for a {@link org.eclipse.variantmodel.VariantSelection}.
+   * This creates an adapter for a {@link org.eclipse.resultmodel.ResultModel}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   @Override
-  public Adapter createVariantSelectionAdapter() {
-    if (variantSelectionItemProvider == null) {
-      variantSelectionItemProvider = new VariantSelectionItemProvider(this);
+  public Adapter createResultModelAdapter() {
+    if (resultModelItemProvider == null) {
+      resultModelItemProvider = new ResultModelItemProvider(this);
     }
 
-    return variantSelectionItemProvider;
+    return resultModelItemProvider;
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link org.eclipse.variantmodel.VariantModel} instances.
+   * This keeps track of the one adapter used for all {@link org.eclipse.resultmodel.ResultSelection} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VariantModelItemProvider variantModelItemProvider;
+  protected ResultSelectionItemProvider resultSelectionItemProvider;
 
   /**
-   * This creates an adapter for a {@link org.eclipse.variantmodel.VariantModel}.
+   * This creates an adapter for a {@link org.eclipse.resultmodel.ResultSelection}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   @Override
-  public Adapter createVariantModelAdapter() {
-    if (variantModelItemProvider == null) {
-      variantModelItemProvider = new VariantModelItemProvider(this);
+  public Adapter createResultSelectionAdapter() {
+    if (resultSelectionItemProvider == null) {
+      resultSelectionItemProvider = new ResultSelectionItemProvider(this);
     }
 
-    return variantModelItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link org.eclipse.variantmodel.FeatureSelection} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected FeatureSelectionItemProvider featureSelectionItemProvider;
-
-  /**
-   * This creates an adapter for a {@link org.eclipse.variantmodel.FeatureSelection}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createFeatureSelectionAdapter() {
-    if (featureSelectionItemProvider == null) {
-      featureSelectionItemProvider = new FeatureSelectionItemProvider(this);
-    }
-
-    return featureSelectionItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link org.eclipse.variantmodel.AttributeValue} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected AttributeValueItemProvider attributeValueItemProvider;
-
-  /**
-   * This creates an adapter for a {@link org.eclipse.variantmodel.AttributeValue}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createAttributeValueAdapter() {
-    if (attributeValueItemProvider == null) {
-      attributeValueItemProvider = new AttributeValueItemProvider(this);
-    }
-
-    return attributeValueItemProvider;
+    return resultSelectionItemProvider;
   }
 
   /**
@@ -266,10 +220,8 @@ public class VariantmodelItemProviderAdapterFactory extends VariantmodelAdapterF
    * @generated
    */
   public void dispose() {
-    if (variantSelectionItemProvider != null) variantSelectionItemProvider.dispose();
-    if (variantModelItemProvider != null) variantModelItemProvider.dispose();
-    if (featureSelectionItemProvider != null) featureSelectionItemProvider.dispose();
-    if (attributeValueItemProvider != null) attributeValueItemProvider.dispose();
+    if (resultModelItemProvider != null) resultModelItemProvider.dispose();
+    if (resultSelectionItemProvider != null) resultSelectionItemProvider.dispose();
   }
 
 }

@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package org.eclipse.variantmodel.provider;
+package org.eclipse.featuremodel.provider;
 
 
 import java.util.Collection;
@@ -23,21 +23,20 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eclipse.featuremodel.provider.FeatureModelEditPlugin;
-
-import org.eclipse.variantmodel.FeatureSelection;
-import org.eclipse.variantmodel.VariantmodelPackage;
+import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.Rule;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.variantmodel.FeatureSelection} object.
+ * This is the item provider adapter for a {@link org.eclipse.featuremodel.Rule} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureSelectionItemProvider
-  extends VariantSelectionItemProvider
+public class RuleItemProvider
+  extends ItemProviderAdapter
   implements	
     IEditingDomainItemProvider,	
     IStructuredItemContentProvider,	
@@ -50,7 +49,7 @@ public class FeatureSelectionItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeatureSelectionItemProvider(AdapterFactory adapterFactory) {
+  public RuleItemProvider(AdapterFactory adapterFactory) {
     super(adapterFactory);
   }
 
@@ -65,26 +64,26 @@ public class FeatureSelectionItemProvider
     if (itemPropertyDescriptors == null) {
       super.getPropertyDescriptors(object);
 
-      addIdPropertyDescriptor(object);
-      addBoundPropertyDescriptor(object);
+      addLanguagePropertyDescriptor(object);
+      addCodePropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
 
   /**
-   * This adds a property descriptor for the Id feature.
+   * This adds a property descriptor for the Language feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addIdPropertyDescriptor(Object object) {
+  protected void addLanguagePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_FeatureSelection_id_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_FeatureSelection_id_feature", "_UI_FeatureSelection_type"),
-         VariantmodelPackage.Literals.FEATURE_SELECTION__ID,
+         getString("_UI_Rule_language_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Rule_language_feature", "_UI_Rule_type"),
+         FeaturemodelPackage.Literals.RULE__LANGUAGE,
          true,
          false,
          false,
@@ -94,36 +93,36 @@ public class FeatureSelectionItemProvider
   }
 
   /**
-   * This adds a property descriptor for the Bound feature.
+   * This adds a property descriptor for the Code feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addBoundPropertyDescriptor(Object object) {
+  protected void addCodePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_FeatureSelection_bound_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_FeatureSelection_bound_feature", "_UI_FeatureSelection_type"),
-         VariantmodelPackage.Literals.FEATURE_SELECTION__BOUND,
+         getString("_UI_Rule_code_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_Rule_code_feature", "_UI_Rule_type"),
+         FeaturemodelPackage.Literals.RULE__CODE,
          true,
          false,
          false,
-         ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
          null,
          null));
   }
 
   /**
-   * This returns FeatureSelection.gif.
+   * This returns Rule.gif.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/FeatureSelection"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Rule"));
   }
 
   /**
@@ -134,10 +133,10 @@ public class FeatureSelectionItemProvider
    */
   @Override
   public String getText(Object object) {
-    String label = ((FeatureSelection)object).getId();
+    String label = ((Rule)object).getLanguage();
     return label == null || label.length() == 0 ?
-      getString("_UI_FeatureSelection_type") :
-      getString("_UI_FeatureSelection_type") + " " + label;
+      getString("_UI_Rule_type") :
+      getString("_UI_Rule_type") + " " + label;
   }
 
   /**
@@ -151,9 +150,9 @@ public class FeatureSelectionItemProvider
   public void notifyChanged(Notification notification) {
     updateChildren(notification);
 
-    switch (notification.getFeatureID(FeatureSelection.class)) {
-      case VariantmodelPackage.FEATURE_SELECTION__ID:
-      case VariantmodelPackage.FEATURE_SELECTION__BOUND:
+    switch (notification.getFeatureID(Rule.class)) {
+      case FeaturemodelPackage.RULE__LANGUAGE:
+      case FeaturemodelPackage.RULE__CODE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }

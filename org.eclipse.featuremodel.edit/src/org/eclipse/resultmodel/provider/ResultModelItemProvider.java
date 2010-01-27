@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package org.eclipse.featuremodel.provider;
+package org.eclipse.resultmodel.provider;
 
 
 import java.util.Collection;
@@ -14,8 +14,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -28,17 +26,18 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eclipse.featuremodel.Feature;
-import org.eclipse.featuremodel.FeaturemodelFactory;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.provider.FeatureModelEditPlugin;
+
+import org.eclipse.resultmodel.ResultModel;
+import org.eclipse.resultmodel.ResultmodelPackage;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.featuremodel.Feature} object.
+ * This is the item provider adapter for a {@link org.eclipse.resultmodel.ResultModel} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureItemProvider
+public class ResultModelItemProvider
   extends ItemProviderAdapter
   implements	
     IEditingDomainItemProvider,	
@@ -52,7 +51,7 @@ public class FeatureItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeatureItemProvider(AdapterFactory adapterFactory) {
+  public ResultModelItemProvider(AdapterFactory adapterFactory) {
     super(adapterFactory);
   }
 
@@ -68,8 +67,9 @@ public class FeatureItemProvider
       super.getPropertyDescriptors(object);
 
       addIdPropertyDescriptor(object);
-      addNamePropertyDescriptor(object);
-      addTypePropertyDescriptor(object);
+      addVersionPropertyDescriptor(object);
+      addVariantModelPropertyDescriptor(object);
+      addSelectionsPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -85,9 +85,9 @@ public class FeatureItemProvider
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_Feature_id_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Feature_id_feature", "_UI_Feature_type"),
-         FeaturemodelPackage.Literals.FEATURE__ID,
+         getString("_UI_ResultModel_id_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_ResultModel_id_feature", "_UI_ResultModel_type"),
+         ResultmodelPackage.Literals.RESULT_MODEL__ID,
          true,
          false,
          false,
@@ -97,19 +97,19 @@ public class FeatureItemProvider
   }
 
   /**
-   * This adds a property descriptor for the Name feature.
+   * This adds a property descriptor for the Version feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addNamePropertyDescriptor(Object object) {
+  protected void addVersionPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_Feature_name_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Feature_name_feature", "_UI_Feature_type"),
-         FeaturemodelPackage.Literals.FEATURE__NAME,
+         getString("_UI_ResultModel_version_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_ResultModel_version_feature", "_UI_ResultModel_type"),
+         ResultmodelPackage.Literals.RESULT_MODEL__VERSION,
          true,
          false,
          false,
@@ -119,68 +119,58 @@ public class FeatureItemProvider
   }
 
   /**
-   * This adds a property descriptor for the Type feature.
+   * This adds a property descriptor for the Variant Model feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addTypePropertyDescriptor(Object object) {
+  protected void addVariantModelPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_Feature_type_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Feature_type_feature", "_UI_Feature_type"),
-         FeaturemodelPackage.Literals.FEATURE__TYPE,
+         getString("_UI_ResultModel_variantModel_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_ResultModel_variantModel_feature", "_UI_ResultModel_type"),
+         ResultmodelPackage.Literals.RESULT_MODEL__VARIANT_MODEL,
          true,
          false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         true,
+         null,
          null,
          null));
   }
 
   /**
-   * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-   * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-   * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+   * This adds a property descriptor for the Selections feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-    if (childrenFeatures == null) {
-      super.getChildrenFeatures(object);
-      childrenFeatures.add(FeaturemodelPackage.Literals.FEATURE__DESCRIPTION);
-      childrenFeatures.add(FeaturemodelPackage.Literals.FEATURE__ATTRIBUTES);
-      childrenFeatures.add(FeaturemodelPackage.Literals.FEATURE__CHILDREN);
-    }
-    return childrenFeatures;
+  protected void addSelectionsPropertyDescriptor(Object object) {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_ResultModel_selections_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_ResultModel_selections_feature", "_UI_ResultModel_type"),
+         ResultmodelPackage.Literals.RESULT_MODEL__SELECTIONS,
+         true,
+         false,
+         true,
+         null,
+         null,
+         null));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EStructuralFeature getChildFeature(Object object, Object child) {
-    // Check the type of the specified child object and return the proper feature to use for
-    // adding (see {@link AddCommand}) it as a child.
-
-    return super.getChildFeature(object, child);
-  }
-
-  /**
-   * This returns Feature.gif.
+   * This returns ResultModel.gif.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Feature"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/ResultModel"));
   }
 
   /**
@@ -191,10 +181,10 @@ public class FeatureItemProvider
    */
   @Override
   public String getText(Object object) {
-    String label = ((Feature)object).getName();
+    String label = ((ResultModel)object).getId();
     return label == null || label.length() == 0 ?
-      getString("_UI_Feature_type") :
-      getString("_UI_Feature_type") + " " + label;
+      getString("_UI_ResultModel_type") :
+      getString("_UI_ResultModel_type") + " " + label;
   }
 
   /**
@@ -208,16 +198,10 @@ public class FeatureItemProvider
   public void notifyChanged(Notification notification) {
     updateChildren(notification);
 
-    switch (notification.getFeatureID(Feature.class)) {
-      case FeaturemodelPackage.FEATURE__ID:
-      case FeaturemodelPackage.FEATURE__NAME:
-      case FeaturemodelPackage.FEATURE__TYPE:
+    switch (notification.getFeatureID(ResultModel.class)) {
+      case ResultmodelPackage.RESULT_MODEL__ID:
+      case ResultmodelPackage.RESULT_MODEL__VERSION:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-        return;
-      case FeaturemodelPackage.FEATURE__DESCRIPTION:
-      case FeaturemodelPackage.FEATURE__ATTRIBUTES:
-      case FeaturemodelPackage.FEATURE__CHILDREN:
-        fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
     }
     super.notifyChanged(notification);
@@ -233,21 +217,6 @@ public class FeatureItemProvider
   @Override
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
     super.collectNewChildDescriptors(newChildDescriptors, object);
-
-    newChildDescriptors.add
-      (createChildParameter
-        (FeaturemodelPackage.Literals.FEATURE__DESCRIPTION,
-         FeaturemodelFactory.eINSTANCE.createDescription()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (FeaturemodelPackage.Literals.FEATURE__ATTRIBUTES,
-         FeaturemodelFactory.eINSTANCE.createAttribute()));
-
-    newChildDescriptors.add
-      (createChildParameter
-        (FeaturemodelPackage.Literals.FEATURE__CHILDREN,
-         FeaturemodelFactory.eINSTANCE.createGroup()));
   }
 
   /**

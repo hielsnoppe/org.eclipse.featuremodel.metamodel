@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package org.eclipse.featuremodel.presentation;
+package org.eclipse.resultmodel.presentation;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,6 +20,8 @@ import org.eclipse.emf.edit.ui.action.CreateSiblingAction;
 import org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor;
 import org.eclipse.emf.edit.ui.action.LoadResourceAction;
 import org.eclipse.emf.edit.ui.action.ValidateAction;
+
+import org.eclipse.featuremodel.presentation.FeatureModelEditorPlugin;
 
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.ActionContributionItem;
@@ -44,12 +46,12 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
 /**
- * This is the action bar contributor for the Featuremodel model editor.
+ * This is the action bar contributor for the Resultmodel model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeaturemodelActionBarContributor
+public class ResultmodelActionBarContributor
   extends EditingDomainActionBarContributor
   implements ISelectionChangedListener {
   /**
@@ -152,7 +154,7 @@ public class FeaturemodelActionBarContributor
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeaturemodelActionBarContributor() {
+  public ResultmodelActionBarContributor() {
     super(ADDITIONS_LAST_STYLE);
     loadResourceAction = new LoadResourceAction();
     validateAction = new ValidateAction();
@@ -167,8 +169,8 @@ public class FeaturemodelActionBarContributor
    */
   @Override
   public void contributeToToolBar(IToolBarManager toolBarManager) {
-    toolBarManager.add(new Separator("featuremodel-settings"));
-    toolBarManager.add(new Separator("featuremodel-additions"));
+    toolBarManager.add(new Separator("resultmodel-settings"));
+    toolBarManager.add(new Separator("resultmodel-additions"));
   }
 
   /**
@@ -182,7 +184,7 @@ public class FeaturemodelActionBarContributor
   public void contributeToMenu(IMenuManager menuManager) {
     super.contributeToMenu(menuManager);
 
-    IMenuManager submenuManager = new MenuManager(FeatureModelEditorPlugin.INSTANCE.getString("_UI_FeaturemodelEditor_menu"), "org.eclipse.featuremodelMenuID");
+    IMenuManager submenuManager = new MenuManager(FeatureModelEditorPlugin.INSTANCE.getString("_UI_ResultmodelEditor_menu"), "org.eclipse.resultmodelMenuID");
     menuManager.insertAfter("additions", submenuManager);
     submenuManager.add(new Separator("settings"));
     submenuManager.add(new Separator("actions"));

@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package org.eclipse.variantmodel.provider;
+package org.eclipse.resultmodel.provider;
 
 
 import java.util.Collection;
@@ -15,28 +15,28 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.featuremodel.provider.FeatureModelEditPlugin;
 
-import org.eclipse.variantmodel.FeatureSelection;
-import org.eclipse.variantmodel.VariantmodelPackage;
+import org.eclipse.resultmodel.ResultSelection;
+
+import org.eclipse.variantmodel.SelectionState;
+
+import org.eclipse.variantmodel.provider.VariantSelectionItemProvider;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.variantmodel.FeatureSelection} object.
+ * This is the item provider adapter for a {@link org.eclipse.resultmodel.ResultSelection} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureSelectionItemProvider
+public class ResultSelectionItemProvider
   extends VariantSelectionItemProvider
   implements	
     IEditingDomainItemProvider,	
@@ -50,7 +50,7 @@ public class FeatureSelectionItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeatureSelectionItemProvider(AdapterFactory adapterFactory) {
+  public ResultSelectionItemProvider(AdapterFactory adapterFactory) {
     super(adapterFactory);
   }
 
@@ -65,65 +65,19 @@ public class FeatureSelectionItemProvider
     if (itemPropertyDescriptors == null) {
       super.getPropertyDescriptors(object);
 
-      addIdPropertyDescriptor(object);
-      addBoundPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
 
   /**
-   * This adds a property descriptor for the Id feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addIdPropertyDescriptor(Object object) {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_FeatureSelection_id_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_FeatureSelection_id_feature", "_UI_FeatureSelection_type"),
-         VariantmodelPackage.Literals.FEATURE_SELECTION__ID,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
-   * This adds a property descriptor for the Bound feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addBoundPropertyDescriptor(Object object) {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_FeatureSelection_bound_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_FeatureSelection_bound_feature", "_UI_FeatureSelection_type"),
-         VariantmodelPackage.Literals.FEATURE_SELECTION__BOUND,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
-   * This returns FeatureSelection.gif.
+   * This returns ResultSelection.gif.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/FeatureSelection"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/ResultSelection"));
   }
 
   /**
@@ -134,10 +88,11 @@ public class FeatureSelectionItemProvider
    */
   @Override
   public String getText(Object object) {
-    String label = ((FeatureSelection)object).getId();
+    SelectionState labelValue = ((ResultSelection)object).getState();
+    String label = labelValue == null ? null : labelValue.toString();
     return label == null || label.length() == 0 ?
-      getString("_UI_FeatureSelection_type") :
-      getString("_UI_FeatureSelection_type") + " " + label;
+      getString("_UI_ResultSelection_type") :
+      getString("_UI_ResultSelection_type") + " " + label;
   }
 
   /**
@@ -150,13 +105,6 @@ public class FeatureSelectionItemProvider
   @Override
   public void notifyChanged(Notification notification) {
     updateChildren(notification);
-
-    switch (notification.getFeatureID(FeatureSelection.class)) {
-      case VariantmodelPackage.FEATURE_SELECTION__ID:
-      case VariantmodelPackage.FEATURE_SELECTION__BOUND:
-        fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-        return;
-    }
     super.notifyChanged(notification);
   }
 

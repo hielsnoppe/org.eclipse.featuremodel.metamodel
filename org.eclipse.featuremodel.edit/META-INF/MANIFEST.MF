@@ -9,6 +9,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.eclipse.featuremodel.provider,
+ org.eclipse.resultmodel.provider,
  org.eclipse.variantmodel.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.featuremodel.metamodel;visibility:=reexport,

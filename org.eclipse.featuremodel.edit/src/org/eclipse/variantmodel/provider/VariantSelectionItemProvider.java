@@ -23,21 +23,23 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.featuremodel.provider.FeatureModelEditPlugin;
 
-import org.eclipse.variantmodel.FeatureSelection;
+import org.eclipse.variantmodel.SelectionState;
+import org.eclipse.variantmodel.VariantSelection;
 import org.eclipse.variantmodel.VariantmodelPackage;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.variantmodel.FeatureSelection} object.
+ * This is the item provider adapter for a {@link org.eclipse.variantmodel.VariantSelection} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureSelectionItemProvider
-  extends VariantSelectionItemProvider
+public class VariantSelectionItemProvider
+  extends ItemProviderAdapter
   implements	
     IEditingDomainItemProvider,	
     IStructuredItemContentProvider,	
@@ -50,7 +52,7 @@ public class FeatureSelectionItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeatureSelectionItemProvider(AdapterFactory adapterFactory) {
+  public VariantSelectionItemProvider(AdapterFactory adapterFactory) {
     super(adapterFactory);
   }
 
@@ -65,26 +67,26 @@ public class FeatureSelectionItemProvider
     if (itemPropertyDescriptors == null) {
       super.getPropertyDescriptors(object);
 
-      addIdPropertyDescriptor(object);
-      addBoundPropertyDescriptor(object);
+      addStatePropertyDescriptor(object);
+      addFeaturePropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
 
   /**
-   * This adds a property descriptor for the Id feature.
+   * This adds a property descriptor for the State feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addIdPropertyDescriptor(Object object) {
+  protected void addStatePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_FeatureSelection_id_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_FeatureSelection_id_feature", "_UI_FeatureSelection_type"),
-         VariantmodelPackage.Literals.FEATURE_SELECTION__ID,
+         getString("_UI_VariantSelection_state_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_VariantSelection_state_feature", "_UI_VariantSelection_type"),
+         VariantmodelPackage.Literals.VARIANT_SELECTION__STATE,
          true,
          false,
          false,
@@ -94,36 +96,36 @@ public class FeatureSelectionItemProvider
   }
 
   /**
-   * This adds a property descriptor for the Bound feature.
+   * This adds a property descriptor for the Feature feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addBoundPropertyDescriptor(Object object) {
+  protected void addFeaturePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_FeatureSelection_bound_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_FeatureSelection_bound_feature", "_UI_FeatureSelection_type"),
-         VariantmodelPackage.Literals.FEATURE_SELECTION__BOUND,
+         getString("_UI_VariantSelection_feature_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_VariantSelection_feature_feature", "_UI_VariantSelection_type"),
+         VariantmodelPackage.Literals.VARIANT_SELECTION__FEATURE,
          true,
          false,
-         false,
-         ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+         true,
+         null,
          null,
          null));
   }
 
   /**
-   * This returns FeatureSelection.gif.
+   * This returns VariantSelection.gif.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/FeatureSelection"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/VariantSelection"));
   }
 
   /**
@@ -134,10 +136,11 @@ public class FeatureSelectionItemProvider
    */
   @Override
   public String getText(Object object) {
-    String label = ((FeatureSelection)object).getId();
+    SelectionState labelValue = ((VariantSelection)object).getState();
+    String label = labelValue == null ? null : labelValue.toString();
     return label == null || label.length() == 0 ?
-      getString("_UI_FeatureSelection_type") :
-      getString("_UI_FeatureSelection_type") + " " + label;
+      getString("_UI_VariantSelection_type") :
+      getString("_UI_VariantSelection_type") + " " + label;
   }
 
   /**
@@ -151,9 +154,8 @@ public class FeatureSelectionItemProvider
   public void notifyChanged(Notification notification) {
     updateChildren(notification);
 
-    switch (notification.getFeatureID(FeatureSelection.class)) {
-      case VariantmodelPackage.FEATURE_SELECTION__ID:
-      case VariantmodelPackage.FEATURE_SELECTION__BOUND:
+    switch (notification.getFeatureID(VariantSelection.class)) {
+      case VariantmodelPackage.VARIANT_SELECTION__STATE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }

@@ -19,10 +19,15 @@ import org.eclipse.featuremodel.FeaturemodelPackage;
 
 import org.eclipse.featuremodel.impl.FeaturemodelPackageImpl;
 
+import org.eclipse.resultmodel.ResultmodelPackage;
+
+import org.eclipse.resultmodel.impl.ResultmodelPackageImpl;
+
 import org.eclipse.variantmodel.AttributeValue;
 import org.eclipse.variantmodel.FeatureSelection;
 import org.eclipse.variantmodel.SelectionState;
 import org.eclipse.variantmodel.VariantModel;
+import org.eclipse.variantmodel.VariantSelection;
 import org.eclipse.variantmodel.VariantmodelFactory;
 import org.eclipse.variantmodel.VariantmodelPackage;
 
@@ -33,395 +38,423 @@ import org.eclipse.variantmodel.VariantmodelPackage;
  * @generated
  */
 public class VariantmodelPackageImpl extends EPackageImpl implements VariantmodelPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass variantModelEClass = null;
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variantSelectionEClass = null;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass featureSelectionEClass = null;
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variantModelEClass = null;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass attributeValueEClass = null;
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureSelectionEClass = null;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum selectionStateEEnum = null;
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass attributeValueEClass = null;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType idEDataType = null;
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum selectionStateEEnum = null;
 
-	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.eclipse.variantmodel.VariantmodelPackage#eNS_URI
-	 * @see #init()
-	 * @generated
-	 */
-	private VariantmodelPackageImpl() {
-		super(eNS_URI, VariantmodelFactory.eINSTANCE);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EDataType idEDataType = null;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private static boolean isInited = false;
+  /**
+   * Creates an instance of the model <b>Package</b>, registered with
+   * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+   * package URI value.
+   * <p>Note: the correct way to create the package is via the static
+   * factory method {@link #init init()}, which also performs
+   * initialization of the package, or returns the registered package,
+   * if one already exists.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipse.emf.ecore.EPackage.Registry
+   * @see org.eclipse.variantmodel.VariantmodelPackage#eNS_URI
+   * @see #init()
+   * @generated
+   */
+  private VariantmodelPackageImpl() {
+    super(eNS_URI, VariantmodelFactory.eINSTANCE);
+  }
 
-	/**
-	 * Creates, registers, and initializes the <b>Package</b> for this
-	 * model, and for any others upon which it depends.  Simple
-	 * dependencies are satisfied by calling this method on all
-	 * dependent packages before doing anything else.  This method drives
-	 * initialization for interdependent packages directly, in parallel
-	 * with this package, itself.
-	 * <p>Of this package and its interdependencies, all packages which
-	 * have not yet been registered by their URI values are first created
-	 * and registered.  The packages are then initialized in two steps:
-	 * meta-model objects for all of the packages are created before any
-	 * are initialized, since one package's meta-model objects may refer to
-	 * those of another.
-	 * <p>Invocation of this method will not affect any packages that have
-	 * already been initialized.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #eNS_URI
-	 * @see #createPackageContents()
-	 * @see #initializePackageContents()
-	 * @generated
-	 */
-	public static VariantmodelPackage init() {
-		if (isInited) return (VariantmodelPackage)EPackage.Registry.INSTANCE.getEPackage(VariantmodelPackage.eNS_URI);
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private static boolean isInited = false;
 
-		// Obtain or create and register package
-		VariantmodelPackageImpl theVariantmodelPackage = (VariantmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(eNS_URI) instanceof VariantmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(eNS_URI) : new VariantmodelPackageImpl());
+  /**
+   * Creates, registers, and initializes the <b>Package</b> for this
+   * model, and for any others upon which it depends.  Simple
+   * dependencies are satisfied by calling this method on all
+   * dependent packages before doing anything else.  This method drives
+   * initialization for interdependent packages directly, in parallel
+   * with this package, itself.
+   * <p>Of this package and its interdependencies, all packages which
+   * have not yet been registered by their URI values are first created
+   * and registered.  The packages are then initialized in two steps:
+   * meta-model objects for all of the packages are created before any
+   * are initialized, since one package's meta-model objects may refer to
+   * those of another.
+   * <p>Invocation of this method will not affect any packages that have
+   * already been initialized.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #eNS_URI
+   * @see #createPackageContents()
+   * @see #initializePackageContents()
+   * @generated
+   */
+  public static VariantmodelPackage init() {
+    if (isInited) return (VariantmodelPackage)EPackage.Registry.INSTANCE.getEPackage(VariantmodelPackage.eNS_URI);
 
-		isInited = true;
+    // Obtain or create and register package
+    VariantmodelPackageImpl theVariantmodelPackage = (VariantmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(eNS_URI) instanceof VariantmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(eNS_URI) : new VariantmodelPackageImpl());
 
-		// Obtain or create and register interdependencies
-		FeaturemodelPackageImpl theFeaturemodelPackage = (FeaturemodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelPackage.eNS_URI) instanceof FeaturemodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelPackage.eNS_URI) : FeaturemodelPackage.eINSTANCE);
+    isInited = true;
 
-		// Create package meta-data objects
-		theVariantmodelPackage.createPackageContents();
-		theFeaturemodelPackage.createPackageContents();
+    // Obtain or create and register interdependencies
+    FeaturemodelPackageImpl theFeaturemodelPackage = (FeaturemodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FeaturemodelPackage.eNS_URI) instanceof FeaturemodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FeaturemodelPackage.eNS_URI) : FeaturemodelPackage.eINSTANCE);
+    ResultmodelPackageImpl theResultmodelPackage = (ResultmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ResultmodelPackage.eNS_URI) instanceof ResultmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ResultmodelPackage.eNS_URI) : ResultmodelPackage.eINSTANCE);
 
-		// Initialize created meta-data
-		theVariantmodelPackage.initializePackageContents();
-		theFeaturemodelPackage.initializePackageContents();
+    // Create package meta-data objects
+    theVariantmodelPackage.createPackageContents();
+    theFeaturemodelPackage.createPackageContents();
+    theResultmodelPackage.createPackageContents();
 
-		// Mark meta-data to indicate it can't be changed
-		theVariantmodelPackage.freeze();
+    // Initialize created meta-data
+    theVariantmodelPackage.initializePackageContents();
+    theFeaturemodelPackage.initializePackageContents();
+    theResultmodelPackage.initializePackageContents();
 
-		return theVariantmodelPackage;
-	}
+    // Mark meta-data to indicate it can't be changed
+    theVariantmodelPackage.freeze();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getVariantModel() {
-		return variantModelEClass;
-	}
+    return theVariantmodelPackage;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVariantModel_Id() {
-		return (EAttribute)variantModelEClass.getEStructuralFeatures().get(0);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVariantSelection() {
+    return variantSelectionEClass;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVariantModel_Version() {
-		return (EAttribute)variantModelEClass.getEStructuralFeatures().get(1);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVariantSelection_State() {
+    return (EAttribute)variantSelectionEClass.getEStructuralFeatures().get(0);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getVariantModel_Attributes() {
-		return (EReference)variantModelEClass.getEStructuralFeatures().get(2);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVariantSelection_Feature() {
+    return (EReference)variantSelectionEClass.getEStructuralFeatures().get(1);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getVariantModel_Featuremodel() {
-		return (EReference)variantModelEClass.getEStructuralFeatures().get(3);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVariantModel() {
+    return variantModelEClass;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getVariantModel_Selections() {
-		return (EReference)variantModelEClass.getEStructuralFeatures().get(4);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVariantModel_Id() {
+    return (EAttribute)variantModelEClass.getEStructuralFeatures().get(0);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getVariantModel_Values() {
-		return (EReference)variantModelEClass.getEStructuralFeatures().get(5);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVariantModel_Version() {
+    return (EAttribute)variantModelEClass.getEStructuralFeatures().get(1);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFeatureSelection() {
-		return featureSelectionEClass;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVariantModel_Attributes() {
+    return (EReference)variantModelEClass.getEStructuralFeatures().get(2);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFeatureSelection_Id() {
-		return (EAttribute)featureSelectionEClass.getEStructuralFeatures().get(0);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVariantModel_FeatureModel() {
+    return (EReference)variantModelEClass.getEStructuralFeatures().get(3);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFeatureSelection_Bound() {
-		return (EAttribute)featureSelectionEClass.getEStructuralFeatures().get(1);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVariantModel_Selections() {
+    return (EReference)variantModelEClass.getEStructuralFeatures().get(4);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFeatureSelection_State() {
-		return (EAttribute)featureSelectionEClass.getEStructuralFeatures().get(2);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVariantModel_Values() {
+    return (EReference)variantModelEClass.getEStructuralFeatures().get(5);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFeatureSelection_Feature() {
-		return (EReference)featureSelectionEClass.getEStructuralFeatures().get(3);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFeatureSelection() {
+    return featureSelectionEClass;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAttributeValue() {
-		return attributeValueEClass;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFeatureSelection_Id() {
+    return (EAttribute)featureSelectionEClass.getEStructuralFeatures().get(0);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAttributeValue_Id() {
-		return (EAttribute)attributeValueEClass.getEStructuralFeatures().get(0);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFeatureSelection_Bound() {
+    return (EAttribute)featureSelectionEClass.getEStructuralFeatures().get(1);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAttributeValue_Attribute() {
-		return (EReference)attributeValueEClass.getEStructuralFeatures().get(1);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAttributeValue() {
+    return attributeValueEClass;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAttributeValue_Content() {
-		return (EReference)attributeValueEClass.getEStructuralFeatures().get(2);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAttributeValue_Id() {
+    return (EAttribute)attributeValueEClass.getEStructuralFeatures().get(0);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getSelectionState() {
-		return selectionStateEEnum;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAttributeValue_Attribute() {
+    return (EReference)attributeValueEClass.getEStructuralFeatures().get(1);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getID() {
-		return idEDataType;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAttributeValue_Content() {
+    return (EReference)attributeValueEClass.getEStructuralFeatures().get(2);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public VariantmodelFactory getVariantmodelFactory() {
-		return (VariantmodelFactory)getEFactoryInstance();
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getSelectionState() {
+    return selectionStateEEnum;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private boolean isCreated = false;
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EDataType getID() {
+    return idEDataType;
+  }
 
-	/**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void createPackageContents() {
-		if (isCreated) return;
-		isCreated = true;
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariantmodelFactory getVariantmodelFactory() {
+    return (VariantmodelFactory)getEFactoryInstance();
+  }
 
-		// Create classes and their features
-		variantModelEClass = createEClass(VARIANT_MODEL);
-		createEAttribute(variantModelEClass, VARIANT_MODEL__ID);
-		createEAttribute(variantModelEClass, VARIANT_MODEL__VERSION);
-		createEReference(variantModelEClass, VARIANT_MODEL__ATTRIBUTES);
-		createEReference(variantModelEClass, VARIANT_MODEL__FEATUREMODEL);
-		createEReference(variantModelEClass, VARIANT_MODEL__SELECTIONS);
-		createEReference(variantModelEClass, VARIANT_MODEL__VALUES);
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private boolean isCreated = false;
 
-		featureSelectionEClass = createEClass(FEATURE_SELECTION);
-		createEAttribute(featureSelectionEClass, FEATURE_SELECTION__ID);
-		createEAttribute(featureSelectionEClass, FEATURE_SELECTION__BOUND);
-		createEAttribute(featureSelectionEClass, FEATURE_SELECTION__STATE);
-		createEReference(featureSelectionEClass, FEATURE_SELECTION__FEATURE);
+  /**
+   * Creates the meta-model objects for the package.  This method is
+   * guarded to have no affect on any invocation but its first.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void createPackageContents() {
+    if (isCreated) return;
+    isCreated = true;
 
-		attributeValueEClass = createEClass(ATTRIBUTE_VALUE);
-		createEAttribute(attributeValueEClass, ATTRIBUTE_VALUE__ID);
-		createEReference(attributeValueEClass, ATTRIBUTE_VALUE__ATTRIBUTE);
-		createEReference(attributeValueEClass, ATTRIBUTE_VALUE__CONTENT);
+    // Create classes and their features
+    variantSelectionEClass = createEClass(VARIANT_SELECTION);
+    createEAttribute(variantSelectionEClass, VARIANT_SELECTION__STATE);
+    createEReference(variantSelectionEClass, VARIANT_SELECTION__FEATURE);
 
-		// Create enums
-		selectionStateEEnum = createEEnum(SELECTION_STATE);
+    variantModelEClass = createEClass(VARIANT_MODEL);
+    createEAttribute(variantModelEClass, VARIANT_MODEL__ID);
+    createEAttribute(variantModelEClass, VARIANT_MODEL__VERSION);
+    createEReference(variantModelEClass, VARIANT_MODEL__ATTRIBUTES);
+    createEReference(variantModelEClass, VARIANT_MODEL__FEATURE_MODEL);
+    createEReference(variantModelEClass, VARIANT_MODEL__SELECTIONS);
+    createEReference(variantModelEClass, VARIANT_MODEL__VALUES);
 
-		// Create data types
-		idEDataType = createEDataType(ID);
-	}
+    featureSelectionEClass = createEClass(FEATURE_SELECTION);
+    createEAttribute(featureSelectionEClass, FEATURE_SELECTION__ID);
+    createEAttribute(featureSelectionEClass, FEATURE_SELECTION__BOUND);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private boolean isInitialized = false;
+    attributeValueEClass = createEClass(ATTRIBUTE_VALUE);
+    createEAttribute(attributeValueEClass, ATTRIBUTE_VALUE__ID);
+    createEReference(attributeValueEClass, ATTRIBUTE_VALUE__ATTRIBUTE);
+    createEReference(attributeValueEClass, ATTRIBUTE_VALUE__CONTENT);
 
-	/**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void initializePackageContents() {
-		if (isInitialized) return;
-		isInitialized = true;
+    // Create enums
+    selectionStateEEnum = createEEnum(SELECTION_STATE);
 
-		// Initialize package
-		setName(eNAME);
-		setNsPrefix(eNS_PREFIX);
-		setNsURI(eNS_URI);
+    // Create data types
+    idEDataType = createEDataType(ID);
+  }
 
-		// Obtain other dependent packages
-		FeaturemodelPackage theFeaturemodelPackage = (FeaturemodelPackage)EPackage.Registry.INSTANCE.getEPackage(FeaturemodelPackage.eNS_URI);
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private boolean isInitialized = false;
 
-		// Create type parameters
+  /**
+   * Complete the initialization of the package and its meta-model.  This
+   * method is guarded to have no affect on any invocation but its first.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void initializePackageContents() {
+    if (isInitialized) return;
+    isInitialized = true;
 
-		// Set bounds for type parameters
+    // Initialize package
+    setName(eNAME);
+    setNsPrefix(eNS_PREFIX);
+    setNsURI(eNS_URI);
 
-		// Add supertypes to classes
+    // Obtain other dependent packages
+    ResultmodelPackage theResultmodelPackage = (ResultmodelPackage)EPackage.Registry.INSTANCE.getEPackage(ResultmodelPackage.eNS_URI);
+    FeaturemodelPackage theFeaturemodelPackage = (FeaturemodelPackage)EPackage.Registry.INSTANCE.getEPackage(FeaturemodelPackage.eNS_URI);
 
-		// Initialize classes and features; add operations and parameters
-		initEClass(variantModelEClass, VariantModel.class, "VariantModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariantModel_Id(), this.getID(), "id", null, 1, 1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariantModel_Version(), ecorePackage.getEString(), "version", null, 1, 1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVariantModel_Attributes(), theFeaturemodelPackage.getAttribute(), null, "attributes", null, 0, -1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVariantModel_Featuremodel(), theFeaturemodelPackage.getFeatureModel(), null, "featuremodel", null, 1, 1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVariantModel_Selections(), this.getFeatureSelection(), null, "selections", null, 0, -1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVariantModel_Values(), this.getAttributeValue(), null, "values", null, 0, -1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    // Add subpackages
+    getESubpackages().add(theResultmodelPackage);
 
-		initEClass(featureSelectionEClass, FeatureSelection.class, "FeatureSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFeatureSelection_Id(), this.getID(), "id", null, 1, 1, FeatureSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFeatureSelection_Bound(), ecorePackage.getEBoolean(), "bound", null, 0, 1, FeatureSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFeatureSelection_State(), this.getSelectionState(), "state", null, 1, 1, FeatureSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeatureSelection_Feature(), theFeaturemodelPackage.getFeature(), null, "feature", null, 1, 1, FeatureSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    // Create type parameters
 
-		addEOperation(featureSelectionEClass, this.getVariantModel(), "getModel", 1, 1, IS_UNIQUE, IS_ORDERED);
+    // Set bounds for type parameters
 
-		initEClass(attributeValueEClass, AttributeValue.class, "AttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAttributeValue_Id(), this.getID(), "id", null, 1, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttributeValue_Attribute(), theFeaturemodelPackage.getAttribute(), null, "attribute", null, 1, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttributeValue_Content(), ecorePackage.getEObject(), null, "content", null, 1, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    // Add supertypes to classes
+    featureSelectionEClass.getESuperTypes().add(this.getVariantSelection());
 
-		// Initialize enums and add enum literals
-		initEEnum(selectionStateEEnum, SelectionState.class, "SelectionState");
-		addEEnumLiteral(selectionStateEEnum, SelectionState.UNSELECTED);
-		addEEnumLiteral(selectionStateEEnum, SelectionState.SELECTED);
-		addEEnumLiteral(selectionStateEEnum, SelectionState.EXCLUDED);
+    // Initialize classes and features; add operations and parameters
+    initEClass(variantSelectionEClass, VariantSelection.class, "VariantSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariantSelection_State(), this.getSelectionState(), "state", null, 1, 1, VariantSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariantSelection_Feature(), theFeaturemodelPackage.getFeature(), null, "feature", null, 1, 1, VariantSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Initialize data types
-		initEDataType(idEDataType, String.class, "ID", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+    initEClass(variantModelEClass, VariantModel.class, "VariantModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariantModel_Id(), this.getID(), "id", null, 1, 1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariantModel_Version(), ecorePackage.getEString(), "version", null, 1, 1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariantModel_Attributes(), theFeaturemodelPackage.getAttribute(), null, "attributes", null, 0, -1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariantModel_FeatureModel(), theFeaturemodelPackage.getFeatureModel(), null, "featureModel", null, 1, 1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariantModel_Selections(), this.getFeatureSelection(), null, "selections", null, 0, -1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariantModel_Values(), this.getAttributeValue(), null, "values", null, 0, -1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Create resource
-		createResource(eNS_URI);
-	}
+    initEClass(featureSelectionEClass, FeatureSelection.class, "FeatureSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFeatureSelection_Id(), this.getID(), "id", null, 1, 1, FeatureSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFeatureSelection_Bound(), ecorePackage.getEBoolean(), "bound", null, 0, 1, FeatureSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    addEOperation(featureSelectionEClass, this.getVariantModel(), "getModel", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+    initEClass(attributeValueEClass, AttributeValue.class, "AttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAttributeValue_Id(), this.getID(), "id", null, 1, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttributeValue_Attribute(), theFeaturemodelPackage.getAttribute(), null, "attribute", null, 1, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttributeValue_Content(), ecorePackage.getEObject(), null, "content", null, 1, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(selectionStateEEnum, SelectionState.class, "SelectionState");
+    addEEnumLiteral(selectionStateEEnum, SelectionState.UNSELECTED);
+    addEEnumLiteral(selectionStateEEnum, SelectionState.SELECTED);
+    addEEnumLiteral(selectionStateEEnum, SelectionState.EXCLUDED);
+
+    // Initialize data types
+    initEDataType(idEDataType, String.class, "ID", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+
+    // Create resource
+    createResource(eNS_URI);
+  }
 
 } //VariantmodelPackageImpl

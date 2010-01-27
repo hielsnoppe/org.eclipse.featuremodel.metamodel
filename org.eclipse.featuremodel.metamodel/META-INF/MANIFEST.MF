@@ -10,6 +10,9 @@ Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.eclipse.featuremodel,
  org.eclipse.featuremodel.impl,
  org.eclipse.featuremodel.util,
+ org.eclipse.resultmodel,
+ org.eclipse.resultmodel.impl,
+ org.eclipse.resultmodel.util,
  org.eclipse.variantmodel,
  org.eclipse.variantmodel.impl,
  org.eclipse.variantmodel.util

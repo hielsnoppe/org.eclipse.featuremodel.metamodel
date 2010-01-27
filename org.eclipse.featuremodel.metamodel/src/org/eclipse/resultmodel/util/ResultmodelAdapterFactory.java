@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package org.eclipse.variantmodel.util;
+package org.eclipse.resultmodel.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -13,24 +13,26 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.variantmodel.*;
+import org.eclipse.resultmodel.*;
+
+import org.eclipse.variantmodel.VariantSelection;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see org.eclipse.variantmodel.VariantmodelPackage
+ * @see org.eclipse.resultmodel.ResultmodelPackage
  * @generated
  */
-public class VariantmodelAdapterFactory extends AdapterFactoryImpl {
+public class ResultmodelAdapterFactory extends AdapterFactoryImpl {
   /**
    * The cached model package.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected static VariantmodelPackage modelPackage;
+  protected static ResultmodelPackage modelPackage;
 
   /**
    * Creates an instance of the adapter factory.
@@ -38,9 +40,9 @@ public class VariantmodelAdapterFactory extends AdapterFactoryImpl {
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariantmodelAdapterFactory() {
+  public ResultmodelAdapterFactory() {
     if (modelPackage == null) {
-      modelPackage = VariantmodelPackage.eINSTANCE;
+      modelPackage = ResultmodelPackage.eINSTANCE;
     }
   }
 
@@ -69,23 +71,19 @@ public class VariantmodelAdapterFactory extends AdapterFactoryImpl {
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VariantmodelSwitch<Adapter> modelSwitch =
-    new VariantmodelSwitch<Adapter>() {
+  protected ResultmodelSwitch<Adapter> modelSwitch =
+    new ResultmodelSwitch<Adapter>() {
+      @Override
+      public Adapter caseResultModel(ResultModel object) {
+        return createResultModelAdapter();
+      }
+      @Override
+      public Adapter caseResultSelection(ResultSelection object) {
+        return createResultSelectionAdapter();
+      }
       @Override
       public Adapter caseVariantSelection(VariantSelection object) {
         return createVariantSelectionAdapter();
-      }
-      @Override
-      public Adapter caseVariantModel(VariantModel object) {
-        return createVariantModelAdapter();
-      }
-      @Override
-      public Adapter caseFeatureSelection(FeatureSelection object) {
-        return createFeatureSelectionAdapter();
-      }
-      @Override
-      public Adapter caseAttributeValue(AttributeValue object) {
-        return createAttributeValueAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object) {
@@ -108,6 +106,34 @@ public class VariantmodelAdapterFactory extends AdapterFactoryImpl {
 
 
   /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.resultmodel.ResultModel <em>Result Model</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.resultmodel.ResultModel
+   * @generated
+   */
+  public Adapter createResultModelAdapter() {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.resultmodel.ResultSelection <em>Result Selection</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.resultmodel.ResultSelection
+   * @generated
+   */
+  public Adapter createResultSelectionAdapter() {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.eclipse.variantmodel.VariantSelection <em>Variant Selection</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -118,48 +144,6 @@ public class VariantmodelAdapterFactory extends AdapterFactoryImpl {
    * @generated
    */
   public Adapter createVariantSelectionAdapter() {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.variantmodel.VariantModel <em>Variant Model</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.variantmodel.VariantModel
-   * @generated
-   */
-  public Adapter createVariantModelAdapter() {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.variantmodel.FeatureSelection <em>Feature Selection</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.variantmodel.FeatureSelection
-   * @generated
-   */
-  public Adapter createFeatureSelectionAdapter() {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.variantmodel.AttributeValue <em>Attribute Value</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.variantmodel.AttributeValue
-   * @generated
-   */
-  public Adapter createAttributeValueAdapter() {
     return null;
   }
 
@@ -175,4 +159,4 @@ public class VariantmodelAdapterFactory extends AdapterFactoryImpl {
     return null;
   }
 
-} //VariantmodelAdapterFactory
+} //ResultmodelAdapterFactory

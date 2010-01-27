@@ -24,171 +24,182 @@ import org.eclipse.variantmodel.*;
  * @generated
  */
 public class VariantmodelFactoryImpl extends EFactoryImpl implements VariantmodelFactory {
-	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static VariantmodelFactory init() {
-		try {
-			VariantmodelFactory theVariantmodelFactory = (VariantmodelFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/variantmodel"); 
-			if (theVariantmodelFactory != null) {
-				return theVariantmodelFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new VariantmodelFactoryImpl();
-	}
+  /**
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public static VariantmodelFactory init() {
+    try {
+      VariantmodelFactory theVariantmodelFactory = (VariantmodelFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/variantmodel"); 
+      if (theVariantmodelFactory != null) {
+        return theVariantmodelFactory;
+      }
+    }
+    catch (Exception exception) {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new VariantmodelFactoryImpl();
+  }
 
-	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public VariantmodelFactoryImpl() {
-		super();
-	}
+  /**
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariantmodelFactoryImpl() {
+    super();
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case VariantmodelPackage.VARIANT_MODEL: return createVariantModel();
-			case VariantmodelPackage.FEATURE_SELECTION: return createFeatureSelection();
-			case VariantmodelPackage.ATTRIBUTE_VALUE: return createAttributeValue();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EObject create(EClass eClass) {
+    switch (eClass.getClassifierID()) {
+      case VariantmodelPackage.VARIANT_SELECTION: return createVariantSelection();
+      case VariantmodelPackage.VARIANT_MODEL: return createVariantModel();
+      case VariantmodelPackage.FEATURE_SELECTION: return createFeatureSelection();
+      case VariantmodelPackage.ATTRIBUTE_VALUE: return createAttributeValue();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case VariantmodelPackage.SELECTION_STATE:
-				return createSelectionStateFromString(eDataType, initialValue);
-			case VariantmodelPackage.ID:
-				return createIDFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue) {
+    switch (eDataType.getClassifierID()) {
+      case VariantmodelPackage.SELECTION_STATE:
+        return createSelectionStateFromString(eDataType, initialValue);
+      case VariantmodelPackage.ID:
+        return createIDFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case VariantmodelPackage.SELECTION_STATE:
-				return convertSelectionStateToString(eDataType, instanceValue);
-			case VariantmodelPackage.ID:
-				return convertIDToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue) {
+    switch (eDataType.getClassifierID()) {
+      case VariantmodelPackage.SELECTION_STATE:
+        return convertSelectionStateToString(eDataType, instanceValue);
+      case VariantmodelPackage.ID:
+        return convertIDToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public VariantModel createVariantModel() {
-		VariantModelImpl variantModel = new VariantModelImpl();
-		return variantModel;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariantSelection createVariantSelection() {
+    VariantSelectionImpl variantSelection = new VariantSelectionImpl();
+    return variantSelection;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FeatureSelection createFeatureSelection() {
-		FeatureSelectionImpl featureSelection = new FeatureSelectionImpl();
-		return featureSelection;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariantModel createVariantModel() {
+    VariantModelImpl variantModel = new VariantModelImpl();
+    return variantModel;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AttributeValue createAttributeValue() {
-		AttributeValueImpl attributeValue = new AttributeValueImpl();
-		return attributeValue;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FeatureSelection createFeatureSelection() {
+    FeatureSelectionImpl featureSelection = new FeatureSelectionImpl();
+    return featureSelection;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SelectionState createSelectionStateFromString(EDataType eDataType, String initialValue) {
-		SelectionState result = SelectionState.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AttributeValue createAttributeValue() {
+    AttributeValueImpl attributeValue = new AttributeValueImpl();
+    return attributeValue;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertSelectionStateToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SelectionState createSelectionStateFromString(EDataType eDataType, String initialValue) {
+    SelectionState result = SelectionState.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String createIDFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertSelectionStateToString(EDataType eDataType, Object instanceValue) {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertIDToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String createIDFromString(EDataType eDataType, String initialValue) {
+    return (String)super.createFromString(eDataType, initialValue);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public VariantmodelPackage getVariantmodelPackage() {
-		return (VariantmodelPackage)getEPackage();
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertIDToString(EDataType eDataType, Object instanceValue) {
+    return super.convertToString(eDataType, instanceValue);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @deprecated
-	 * @generated
-	 */
-	@Deprecated
-	public static VariantmodelPackage getPackage() {
-		return VariantmodelPackage.eINSTANCE;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariantmodelPackage getVariantmodelPackage() {
+    return (VariantmodelPackage)getEPackage();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @deprecated
+   * @generated
+   */
+  @Deprecated
+  public static VariantmodelPackage getPackage() {
+    return VariantmodelPackage.eINSTANCE;
+  }
 
 } //VariantmodelFactoryImpl

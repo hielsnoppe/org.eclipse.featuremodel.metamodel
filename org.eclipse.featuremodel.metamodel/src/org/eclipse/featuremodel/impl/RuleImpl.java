@@ -13,70 +13,70 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.featuremodel.Description;
 import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.Rule;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Description</b></em>'.
+ * An implementation of the model object '<em><b>Rule</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.featuremodel.impl.DescriptionImpl#getId <em>Id</em>}</li>
- *   <li>{@link org.eclipse.featuremodel.impl.DescriptionImpl#getText <em>Text</em>}</li>
+ *   <li>{@link org.eclipse.featuremodel.impl.RuleImpl#getLanguage <em>Language</em>}</li>
+ *   <li>{@link org.eclipse.featuremodel.impl.RuleImpl#getCode <em>Code</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DescriptionImpl extends EObjectImpl implements Description {
+public class RuleImpl extends EObjectImpl implements Rule {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getLanguage()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
+  protected static final String LANGUAGE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getLanguage()
    * @generated
    * @ordered
    */
-  protected String id = ID_EDEFAULT;
+  protected String language = LANGUAGE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+   * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getText()
+   * @see #getCode()
    * @generated
    * @ordered
    */
-  protected static final String TEXT_EDEFAULT = null;
+  protected static final String CODE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+   * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getText()
+   * @see #getCode()
    * @generated
    * @ordered
    */
-  protected String text = TEXT_EDEFAULT;
+  protected String code = CODE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DescriptionImpl() {
+  protected RuleImpl() {
     super();
   }
 
@@ -87,7 +87,7 @@ public class DescriptionImpl extends EObjectImpl implements Description {
    */
   @Override
   protected EClass eStaticClass() {
-    return FeaturemodelPackage.Literals.DESCRIPTION;
+    return FeaturemodelPackage.Literals.RULE;
   }
 
   /**
@@ -95,8 +95,8 @@ public class DescriptionImpl extends EObjectImpl implements Description {
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getId() {
-    return id;
+  public String getLanguage() {
+    return language;
   }
 
   /**
@@ -104,11 +104,11 @@ public class DescriptionImpl extends EObjectImpl implements Description {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setId(String newId) {
-    String oldId = id;
-    id = newId;
+  public void setLanguage(String newLanguage) {
+    String oldLanguage = language;
+    language = newLanguage;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.DESCRIPTION__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.RULE__LANGUAGE, oldLanguage, language));
   }
 
   /**
@@ -116,8 +116,8 @@ public class DescriptionImpl extends EObjectImpl implements Description {
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getText() {
-    return text;
+  public String getCode() {
+    return code;
   }
 
   /**
@@ -125,11 +125,11 @@ public class DescriptionImpl extends EObjectImpl implements Description {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setText(String newText) {
-    String oldText = text;
-    text = newText;
+  public void setCode(String newCode) {
+    String oldCode = code;
+    code = newCode;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.DESCRIPTION__TEXT, oldText, text));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.RULE__CODE, oldCode, code));
   }
 
   /**
@@ -140,10 +140,10 @@ public class DescriptionImpl extends EObjectImpl implements Description {
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case FeaturemodelPackage.DESCRIPTION__ID:
-        return getId();
-      case FeaturemodelPackage.DESCRIPTION__TEXT:
-        return getText();
+      case FeaturemodelPackage.RULE__LANGUAGE:
+        return getLanguage();
+      case FeaturemodelPackage.RULE__CODE:
+        return getCode();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -156,11 +156,11 @@ public class DescriptionImpl extends EObjectImpl implements Description {
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case FeaturemodelPackage.DESCRIPTION__ID:
-        setId((String)newValue);
+      case FeaturemodelPackage.RULE__LANGUAGE:
+        setLanguage((String)newValue);
         return;
-      case FeaturemodelPackage.DESCRIPTION__TEXT:
-        setText((String)newValue);
+      case FeaturemodelPackage.RULE__CODE:
+        setCode((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -174,11 +174,11 @@ public class DescriptionImpl extends EObjectImpl implements Description {
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.DESCRIPTION__ID:
-        setId(ID_EDEFAULT);
+      case FeaturemodelPackage.RULE__LANGUAGE:
+        setLanguage(LANGUAGE_EDEFAULT);
         return;
-      case FeaturemodelPackage.DESCRIPTION__TEXT:
-        setText(TEXT_EDEFAULT);
+      case FeaturemodelPackage.RULE__CODE:
+        setCode(CODE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -192,10 +192,10 @@ public class DescriptionImpl extends EObjectImpl implements Description {
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.DESCRIPTION__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case FeaturemodelPackage.DESCRIPTION__TEXT:
-        return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+      case FeaturemodelPackage.RULE__LANGUAGE:
+        return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
+      case FeaturemodelPackage.RULE__CODE:
+        return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
     }
     return super.eIsSet(featureID);
   }
@@ -210,12 +210,12 @@ public class DescriptionImpl extends EObjectImpl implements Description {
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (id: ");
-    result.append(id);
-    result.append(", text: ");
-    result.append(text);
+    result.append(" (language: ");
+    result.append(language);
+    result.append(", code: ");
+    result.append(code);
     result.append(')');
     return result.toString();
   }
 
-} //DescriptionImpl
+} //RuleImpl

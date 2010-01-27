@@ -4,14 +4,16 @@
  *
  * $Id$
  */
-package org.eclipse.variantmodel.util;
+package org.eclipse.resultmodel.util;
 
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.variantmodel.*;
+import org.eclipse.resultmodel.*;
+
+import org.eclipse.variantmodel.VariantSelection;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,17 +25,17 @@ import org.eclipse.variantmodel.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see org.eclipse.variantmodel.VariantmodelPackage
+ * @see org.eclipse.resultmodel.ResultmodelPackage
  * @generated
  */
-public class VariantmodelSwitch<T> {
+public class ResultmodelSwitch<T> {
   /**
    * The cached model package
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected static VariantmodelPackage modelPackage;
+  protected static ResultmodelPackage modelPackage;
 
   /**
    * Creates an instance of the switch.
@@ -41,9 +43,9 @@ public class VariantmodelSwitch<T> {
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariantmodelSwitch() {
+  public ResultmodelSwitch() {
     if (modelPackage == null) {
-      modelPackage = VariantmodelPackage.eINSTANCE;
+      modelPackage = ResultmodelPackage.eINSTANCE;
     }
   }
 
@@ -87,33 +89,51 @@ public class VariantmodelSwitch<T> {
    */
   protected T doSwitch(int classifierID, EObject theEObject) {
     switch (classifierID) {
-      case VariantmodelPackage.VARIANT_SELECTION: {
-        VariantSelection variantSelection = (VariantSelection)theEObject;
-        T result = caseVariantSelection(variantSelection);
+      case ResultmodelPackage.RESULT_MODEL: {
+        ResultModel resultModel = (ResultModel)theEObject;
+        T result = caseResultModel(resultModel);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case VariantmodelPackage.VARIANT_MODEL: {
-        VariantModel variantModel = (VariantModel)theEObject;
-        T result = caseVariantModel(variantModel);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case VariantmodelPackage.FEATURE_SELECTION: {
-        FeatureSelection featureSelection = (FeatureSelection)theEObject;
-        T result = caseFeatureSelection(featureSelection);
-        if (result == null) result = caseVariantSelection(featureSelection);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case VariantmodelPackage.ATTRIBUTE_VALUE: {
-        AttributeValue attributeValue = (AttributeValue)theEObject;
-        T result = caseAttributeValue(attributeValue);
+      case ResultmodelPackage.RESULT_SELECTION: {
+        ResultSelection resultSelection = (ResultSelection)theEObject;
+        T result = caseResultSelection(resultSelection);
+        if (result == null) result = caseVariantSelection(resultSelection);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       default: return defaultCase(theEObject);
     }
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Result Model</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Result Model</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResultModel(ResultModel object) {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Result Selection</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Result Selection</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResultSelection(ResultSelection object) {
+    return null;
   }
 
   /**
@@ -132,51 +152,6 @@ public class VariantmodelSwitch<T> {
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variant Model</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variant Model</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariantModel(VariantModel object) {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Feature Selection</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Feature Selection</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFeatureSelection(FeatureSelection object) {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAttributeValue(AttributeValue object) {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -191,4 +166,4 @@ public class VariantmodelSwitch<T> {
     return null;
   }
 
-} //VariantmodelSwitch
+} //ResultmodelSwitch

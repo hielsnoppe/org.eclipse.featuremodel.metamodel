@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelPackage;
 import org.eclipse.featuremodel.Rule;
 
 /**
@@ -87,7 +87,7 @@ public class RuleImpl extends EObjectImpl implements Rule {
    */
   @Override
   protected EClass eStaticClass() {
-    return FeaturemodelPackage.Literals.RULE;
+    return FeatureModelPackage.Literals.RULE;
   }
 
   /**
@@ -108,7 +108,7 @@ public class RuleImpl extends EObjectImpl implements Rule {
     String oldLanguage = language;
     language = newLanguage;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.RULE__LANGUAGE, oldLanguage, language));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.RULE__LANGUAGE, oldLanguage, language));
   }
 
   /**
@@ -129,7 +129,7 @@ public class RuleImpl extends EObjectImpl implements Rule {
     String oldCode = code;
     code = newCode;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.RULE__CODE, oldCode, code));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.RULE__CODE, oldCode, code));
   }
 
   /**
@@ -140,9 +140,9 @@ public class RuleImpl extends EObjectImpl implements Rule {
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case FeaturemodelPackage.RULE__LANGUAGE:
+      case FeatureModelPackage.RULE__LANGUAGE:
         return getLanguage();
-      case FeaturemodelPackage.RULE__CODE:
+      case FeatureModelPackage.RULE__CODE:
         return getCode();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -156,10 +156,10 @@ public class RuleImpl extends EObjectImpl implements Rule {
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case FeaturemodelPackage.RULE__LANGUAGE:
+      case FeatureModelPackage.RULE__LANGUAGE:
         setLanguage((String)newValue);
         return;
-      case FeaturemodelPackage.RULE__CODE:
+      case FeatureModelPackage.RULE__CODE:
         setCode((String)newValue);
         return;
     }
@@ -174,10 +174,10 @@ public class RuleImpl extends EObjectImpl implements Rule {
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.RULE__LANGUAGE:
+      case FeatureModelPackage.RULE__LANGUAGE:
         setLanguage(LANGUAGE_EDEFAULT);
         return;
-      case FeaturemodelPackage.RULE__CODE:
+      case FeatureModelPackage.RULE__CODE:
         setCode(CODE_EDEFAULT);
         return;
     }
@@ -192,9 +192,9 @@ public class RuleImpl extends EObjectImpl implements Rule {
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.RULE__LANGUAGE:
+      case FeatureModelPackage.RULE__LANGUAGE:
         return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
-      case FeaturemodelPackage.RULE__CODE:
+      case FeatureModelPackage.RULE__CODE:
         return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
     }
     return super.eIsSet(featureID);

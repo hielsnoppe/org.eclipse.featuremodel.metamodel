@@ -29,8 +29,8 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.featuremodel.Feature;
-import org.eclipse.featuremodel.FeaturemodelFactory;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelFactory;
+import org.eclipse.featuremodel.FeatureModelPackage;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.featuremodel.Feature} object.
@@ -87,7 +87,7 @@ public class FeatureItemProvider
          getResourceLocator(),
          getString("_UI_Feature_id_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Feature_id_feature", "_UI_Feature_type"),
-         FeaturemodelPackage.Literals.FEATURE__ID,
+         FeatureModelPackage.Literals.FEATURE__ID,
          true,
          false,
          false,
@@ -109,7 +109,7 @@ public class FeatureItemProvider
          getResourceLocator(),
          getString("_UI_Feature_name_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Feature_name_feature", "_UI_Feature_type"),
-         FeaturemodelPackage.Literals.FEATURE__NAME,
+         FeatureModelPackage.Literals.FEATURE__NAME,
          true,
          false,
          false,
@@ -131,7 +131,7 @@ public class FeatureItemProvider
          getResourceLocator(),
          getString("_UI_Feature_type_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Feature_type_feature", "_UI_Feature_type"),
-         FeaturemodelPackage.Literals.FEATURE__TYPE,
+         FeatureModelPackage.Literals.FEATURE__TYPE,
          true,
          false,
          false,
@@ -152,9 +152,9 @@ public class FeatureItemProvider
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
     if (childrenFeatures == null) {
       super.getChildrenFeatures(object);
-      childrenFeatures.add(FeaturemodelPackage.Literals.FEATURE__DESCRIPTION);
-      childrenFeatures.add(FeaturemodelPackage.Literals.FEATURE__ATTRIBUTES);
-      childrenFeatures.add(FeaturemodelPackage.Literals.FEATURE__CHILDREN);
+      childrenFeatures.add(FeatureModelPackage.Literals.FEATURE__DESCRIPTION);
+      childrenFeatures.add(FeatureModelPackage.Literals.FEATURE__ATTRIBUTES);
+      childrenFeatures.add(FeatureModelPackage.Literals.FEATURE__CHILDREN);
     }
     return childrenFeatures;
   }
@@ -209,14 +209,14 @@ public class FeatureItemProvider
     updateChildren(notification);
 
     switch (notification.getFeatureID(Feature.class)) {
-      case FeaturemodelPackage.FEATURE__ID:
-      case FeaturemodelPackage.FEATURE__NAME:
-      case FeaturemodelPackage.FEATURE__TYPE:
+      case FeatureModelPackage.FEATURE__ID:
+      case FeatureModelPackage.FEATURE__NAME:
+      case FeatureModelPackage.FEATURE__TYPE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
-      case FeaturemodelPackage.FEATURE__DESCRIPTION:
-      case FeaturemodelPackage.FEATURE__ATTRIBUTES:
-      case FeaturemodelPackage.FEATURE__CHILDREN:
+      case FeatureModelPackage.FEATURE__DESCRIPTION:
+      case FeatureModelPackage.FEATURE__ATTRIBUTES:
+      case FeatureModelPackage.FEATURE__CHILDREN:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
     }
@@ -236,18 +236,18 @@ public class FeatureItemProvider
 
     newChildDescriptors.add
       (createChildParameter
-        (FeaturemodelPackage.Literals.FEATURE__DESCRIPTION,
-         FeaturemodelFactory.eINSTANCE.createDescription()));
+        (FeatureModelPackage.Literals.FEATURE__DESCRIPTION,
+         FeatureModelFactory.eINSTANCE.createDescription()));
 
     newChildDescriptors.add
       (createChildParameter
-        (FeaturemodelPackage.Literals.FEATURE__ATTRIBUTES,
-         FeaturemodelFactory.eINSTANCE.createAttribute()));
+        (FeatureModelPackage.Literals.FEATURE__ATTRIBUTES,
+         FeatureModelFactory.eINSTANCE.createAttribute()));
 
     newChildDescriptors.add
       (createChildParameter
-        (FeaturemodelPackage.Literals.FEATURE__CHILDREN,
-         FeaturemodelFactory.eINSTANCE.createGroup()));
+        (FeatureModelPackage.Literals.FEATURE__CHILDREN,
+         FeatureModelFactory.eINSTANCE.createGroup()));
   }
 
   /**

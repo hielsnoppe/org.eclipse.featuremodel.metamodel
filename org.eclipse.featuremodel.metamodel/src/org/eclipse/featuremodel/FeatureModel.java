@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  * </p>
  *
- * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeatureModel()
+ * @see org.eclipse.featuremodel.FeatureModelPackage#getFeatureModel()
  * @model
  * @generated
  */
@@ -42,7 +42,7 @@ public interface FeatureModel extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Id</em>' attribute.
    * @see #setId(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeatureModel_Id()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getFeatureModel_Id()
    * @model id="true" dataType="org.eclipse.featuremodel.ID" required="true"
    * @generated
    */
@@ -68,7 +68,7 @@ public interface FeatureModel extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Version</em>' attribute.
    * @see #setVersion(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeatureModel_Version()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getFeatureModel_Version()
    * @model unique="false" required="true"
    * @generated
    */
@@ -94,7 +94,7 @@ public interface FeatureModel extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Description</em>' containment reference.
    * @see #setDescription(Description)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeatureModel_Description()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getFeatureModel_Description()
    * @model containment="true"
    * @generated
    */
@@ -120,7 +120,7 @@ public interface FeatureModel extends EObject {
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Attributes</em>' containment reference list.
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeatureModel_Attributes()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getFeatureModel_Attributes()
    * @model containment="true"
    * @generated
    */
@@ -136,7 +136,7 @@ public interface FeatureModel extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Root</em>' containment reference.
    * @see #setRoot(Feature)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeatureModel_Root()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getFeatureModel_Root()
    * @model containment="true" required="true"
    * @generated
    */
@@ -162,7 +162,7 @@ public interface FeatureModel extends EObject {
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Constraints</em>' containment reference list.
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeatureModel_Constraints()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getFeatureModel_Constraints()
    * @model containment="true"
    * @generated
    */

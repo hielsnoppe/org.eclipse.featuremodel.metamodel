@@ -28,7 +28,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.featuremodel.provider.FeatureModelEditPlugin;
 
 import org.eclipse.variantmodel.FeatureSelection;
-import org.eclipse.variantmodel.VariantmodelPackage;
+import org.eclipse.variantmodel.VariantModelPackage;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.variantmodel.FeatureSelection} object.
@@ -84,7 +84,7 @@ public class FeatureSelectionItemProvider
          getResourceLocator(),
          getString("_UI_FeatureSelection_id_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_FeatureSelection_id_feature", "_UI_FeatureSelection_type"),
-         VariantmodelPackage.Literals.FEATURE_SELECTION__ID,
+         VariantModelPackage.Literals.FEATURE_SELECTION__ID,
          true,
          false,
          false,
@@ -106,7 +106,7 @@ public class FeatureSelectionItemProvider
          getResourceLocator(),
          getString("_UI_FeatureSelection_bound_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_FeatureSelection_bound_feature", "_UI_FeatureSelection_type"),
-         VariantmodelPackage.Literals.FEATURE_SELECTION__BOUND,
+         VariantModelPackage.Literals.FEATURE_SELECTION__BOUND,
          true,
          false,
          false,
@@ -152,8 +152,8 @@ public class FeatureSelectionItemProvider
     updateChildren(notification);
 
     switch (notification.getFeatureID(FeatureSelection.class)) {
-      case VariantmodelPackage.FEATURE_SELECTION__ID:
-      case VariantmodelPackage.FEATURE_SELECTION__BOUND:
+      case VariantModelPackage.FEATURE_SELECTION__ID:
+      case VariantModelPackage.FEATURE_SELECTION__BOUND:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }

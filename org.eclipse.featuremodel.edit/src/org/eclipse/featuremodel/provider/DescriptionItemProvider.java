@@ -27,7 +27,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.featuremodel.Description;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelPackage;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.featuremodel.Description} object.
@@ -83,7 +83,7 @@ public class DescriptionItemProvider
          getResourceLocator(),
          getString("_UI_Description_id_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Description_id_feature", "_UI_Description_type"),
-         FeaturemodelPackage.Literals.DESCRIPTION__ID,
+         FeatureModelPackage.Literals.DESCRIPTION__ID,
          true,
          false,
          false,
@@ -105,7 +105,7 @@ public class DescriptionItemProvider
          getResourceLocator(),
          getString("_UI_Description_text_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Description_text_feature", "_UI_Description_type"),
-         FeaturemodelPackage.Literals.DESCRIPTION__TEXT,
+         FeatureModelPackage.Literals.DESCRIPTION__TEXT,
          true,
          false,
          false,
@@ -151,8 +151,8 @@ public class DescriptionItemProvider
     updateChildren(notification);
 
     switch (notification.getFeatureID(Description.class)) {
-      case FeaturemodelPackage.DESCRIPTION__ID:
-      case FeaturemodelPackage.DESCRIPTION__TEXT:
+      case FeatureModelPackage.DESCRIPTION__ID:
+      case FeatureModelPackage.DESCRIPTION__TEXT:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }

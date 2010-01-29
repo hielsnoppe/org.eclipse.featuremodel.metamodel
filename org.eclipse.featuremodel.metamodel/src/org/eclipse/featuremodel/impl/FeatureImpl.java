@@ -26,7 +26,7 @@ import org.eclipse.featuremodel.Attribute;
 import org.eclipse.featuremodel.Description;
 import org.eclipse.featuremodel.Feature;
 import org.eclipse.featuremodel.FeatureModel;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelPackage;
 import org.eclipse.featuremodel.Group;
 import org.eclipse.featuremodel.VariabilityType;
 
@@ -155,7 +155,7 @@ public class FeatureImpl extends EObjectImpl implements Feature {
    */
   @Override
   protected EClass eStaticClass() {
-    return FeaturemodelPackage.Literals.FEATURE;
+    return FeatureModelPackage.Literals.FEATURE;
   }
 
   /**
@@ -176,7 +176,7 @@ public class FeatureImpl extends EObjectImpl implements Feature {
     String oldId = id;
     id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.FEATURE__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.FEATURE__ID, oldId, id));
   }
 
   /**
@@ -197,7 +197,7 @@ public class FeatureImpl extends EObjectImpl implements Feature {
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.FEATURE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.FEATURE__NAME, oldName, name));
   }
 
   /**
@@ -218,7 +218,7 @@ public class FeatureImpl extends EObjectImpl implements Feature {
     String oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.FEATURE__TYPE, oldType, type));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.FEATURE__TYPE, oldType, type));
   }
 
   /**
@@ -239,7 +239,7 @@ public class FeatureImpl extends EObjectImpl implements Feature {
     Description oldDescription = description;
     description = newDescription;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.FEATURE__DESCRIPTION, oldDescription, newDescription);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureModelPackage.FEATURE__DESCRIPTION, oldDescription, newDescription);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -254,14 +254,14 @@ public class FeatureImpl extends EObjectImpl implements Feature {
     if (newDescription != description) {
       NotificationChain msgs = null;
       if (description != null)
-        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeaturemodelPackage.FEATURE__DESCRIPTION, null, msgs);
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.FEATURE__DESCRIPTION, null, msgs);
       if (newDescription != null)
-        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeaturemodelPackage.FEATURE__DESCRIPTION, null, msgs);
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.FEATURE__DESCRIPTION, null, msgs);
       msgs = basicSetDescription(newDescription, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.FEATURE__DESCRIPTION, newDescription, newDescription));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.FEATURE__DESCRIPTION, newDescription, newDescription));
   }
 
   /**
@@ -271,7 +271,7 @@ public class FeatureImpl extends EObjectImpl implements Feature {
    */
   public EList<Attribute> getAttributes() {
     if (attributes == null) {
-      attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, FeaturemodelPackage.FEATURE__ATTRIBUTES);
+      attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, FeatureModelPackage.FEATURE__ATTRIBUTES);
     }
     return attributes;
   }
@@ -283,7 +283,7 @@ public class FeatureImpl extends EObjectImpl implements Feature {
    */
   public EList<Group> getChildren() {
     if (children == null) {
-      children = new EObjectContainmentEList<Group>(Group.class, this, FeaturemodelPackage.FEATURE__CHILDREN);
+      children = new EObjectContainmentEList<Group>(Group.class, this, FeatureModelPackage.FEATURE__CHILDREN);
     }
     return children;
   }
@@ -340,11 +340,11 @@ public class FeatureImpl extends EObjectImpl implements Feature {
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
     switch (featureID) {
-      case FeaturemodelPackage.FEATURE__DESCRIPTION:
+      case FeatureModelPackage.FEATURE__DESCRIPTION:
         return basicSetDescription(null, msgs);
-      case FeaturemodelPackage.FEATURE__ATTRIBUTES:
+      case FeatureModelPackage.FEATURE__ATTRIBUTES:
         return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
-      case FeaturemodelPackage.FEATURE__CHILDREN:
+      case FeatureModelPackage.FEATURE__CHILDREN:
         return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -358,17 +358,17 @@ public class FeatureImpl extends EObjectImpl implements Feature {
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case FeaturemodelPackage.FEATURE__ID:
+      case FeatureModelPackage.FEATURE__ID:
         return getId();
-      case FeaturemodelPackage.FEATURE__NAME:
+      case FeatureModelPackage.FEATURE__NAME:
         return getName();
-      case FeaturemodelPackage.FEATURE__TYPE:
+      case FeatureModelPackage.FEATURE__TYPE:
         return getType();
-      case FeaturemodelPackage.FEATURE__DESCRIPTION:
+      case FeatureModelPackage.FEATURE__DESCRIPTION:
         return getDescription();
-      case FeaturemodelPackage.FEATURE__ATTRIBUTES:
+      case FeatureModelPackage.FEATURE__ATTRIBUTES:
         return getAttributes();
-      case FeaturemodelPackage.FEATURE__CHILDREN:
+      case FeatureModelPackage.FEATURE__CHILDREN:
         return getChildren();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -383,23 +383,23 @@ public class FeatureImpl extends EObjectImpl implements Feature {
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case FeaturemodelPackage.FEATURE__ID:
+      case FeatureModelPackage.FEATURE__ID:
         setId((String)newValue);
         return;
-      case FeaturemodelPackage.FEATURE__NAME:
+      case FeatureModelPackage.FEATURE__NAME:
         setName((String)newValue);
         return;
-      case FeaturemodelPackage.FEATURE__TYPE:
+      case FeatureModelPackage.FEATURE__TYPE:
         setType((String)newValue);
         return;
-      case FeaturemodelPackage.FEATURE__DESCRIPTION:
+      case FeatureModelPackage.FEATURE__DESCRIPTION:
         setDescription((Description)newValue);
         return;
-      case FeaturemodelPackage.FEATURE__ATTRIBUTES:
+      case FeatureModelPackage.FEATURE__ATTRIBUTES:
         getAttributes().clear();
         getAttributes().addAll((Collection<? extends Attribute>)newValue);
         return;
-      case FeaturemodelPackage.FEATURE__CHILDREN:
+      case FeatureModelPackage.FEATURE__CHILDREN:
         getChildren().clear();
         getChildren().addAll((Collection<? extends Group>)newValue);
         return;
@@ -415,22 +415,22 @@ public class FeatureImpl extends EObjectImpl implements Feature {
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.FEATURE__ID:
+      case FeatureModelPackage.FEATURE__ID:
         setId(ID_EDEFAULT);
         return;
-      case FeaturemodelPackage.FEATURE__NAME:
+      case FeatureModelPackage.FEATURE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case FeaturemodelPackage.FEATURE__TYPE:
+      case FeatureModelPackage.FEATURE__TYPE:
         setType(TYPE_EDEFAULT);
         return;
-      case FeaturemodelPackage.FEATURE__DESCRIPTION:
+      case FeatureModelPackage.FEATURE__DESCRIPTION:
         setDescription((Description)null);
         return;
-      case FeaturemodelPackage.FEATURE__ATTRIBUTES:
+      case FeatureModelPackage.FEATURE__ATTRIBUTES:
         getAttributes().clear();
         return;
-      case FeaturemodelPackage.FEATURE__CHILDREN:
+      case FeatureModelPackage.FEATURE__CHILDREN:
         getChildren().clear();
         return;
     }
@@ -445,17 +445,17 @@ public class FeatureImpl extends EObjectImpl implements Feature {
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.FEATURE__ID:
+      case FeatureModelPackage.FEATURE__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case FeaturemodelPackage.FEATURE__NAME:
+      case FeatureModelPackage.FEATURE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case FeaturemodelPackage.FEATURE__TYPE:
+      case FeatureModelPackage.FEATURE__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-      case FeaturemodelPackage.FEATURE__DESCRIPTION:
+      case FeatureModelPackage.FEATURE__DESCRIPTION:
         return description != null;
-      case FeaturemodelPackage.FEATURE__ATTRIBUTES:
+      case FeatureModelPackage.FEATURE__ATTRIBUTES:
         return attributes != null && !attributes.isEmpty();
-      case FeaturemodelPackage.FEATURE__CHILDREN:
+      case FeatureModelPackage.FEATURE__CHILDREN:
         return children != null && !children.isEmpty();
     }
     return super.eIsSet(featureID);

@@ -16,6 +16,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -28,15 +30,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eclipse.featuremodel.FeaturemodelFactory;
+import org.eclipse.featuremodel.FeatureModelFactory;
 
 import org.eclipse.featuremodel.provider.FeatureModelEditPlugin;
 
-import org.eclipse.resultmodel.ResultmodelFactory;
-
 import org.eclipse.variantmodel.AttributeValue;
-import org.eclipse.variantmodel.VariantmodelFactory;
-import org.eclipse.variantmodel.VariantmodelPackage;
+import org.eclipse.variantmodel.VariantModelFactory;
+import org.eclipse.variantmodel.VariantModelPackage;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.variantmodel.AttributeValue} object.
@@ -91,7 +91,7 @@ public class AttributeValueItemProvider
          getResourceLocator(),
          getString("_UI_AttributeValue_id_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_AttributeValue_id_feature", "_UI_AttributeValue_type"),
-         VariantmodelPackage.Literals.ATTRIBUTE_VALUE__ID,
+         VariantModelPackage.Literals.ATTRIBUTE_VALUE__ID,
          true,
          false,
          false,
@@ -112,8 +112,8 @@ public class AttributeValueItemProvider
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
     if (childrenFeatures == null) {
       super.getChildrenFeatures(object);
-      childrenFeatures.add(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__ATTRIBUTE);
-      childrenFeatures.add(VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT);
+      childrenFeatures.add(VariantModelPackage.Literals.ATTRIBUTE_VALUE__ATTRIBUTE);
+      childrenFeatures.add(VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT);
     }
     return childrenFeatures;
   }
@@ -168,11 +168,11 @@ public class AttributeValueItemProvider
     updateChildren(notification);
 
     switch (notification.getFeatureID(AttributeValue.class)) {
-      case VariantmodelPackage.ATTRIBUTE_VALUE__ID:
+      case VariantModelPackage.ATTRIBUTE_VALUE__ID:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
-      case VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
-      case VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT:
+      case VariantModelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
+      case VariantModelPackage.ATTRIBUTE_VALUE__CONTENT:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
     }
@@ -192,73 +192,178 @@ public class AttributeValueItemProvider
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__ATTRIBUTE,
-         FeaturemodelFactory.eINSTANCE.createAttribute()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__ATTRIBUTE,
+         FeatureModelFactory.eINSTANCE.createAttribute()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         VariantmodelFactory.eINSTANCE.createVariantSelection()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         VariantModelFactory.eINSTANCE.createVariantSelection()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         VariantmodelFactory.eINSTANCE.createVariantModel()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         VariantModelFactory.eINSTANCE.createVariantModel()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         VariantmodelFactory.eINSTANCE.createFeatureSelection()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         VariantModelFactory.eINSTANCE.createFeatureSelection()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         VariantmodelFactory.eINSTANCE.createAttributeValue()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         VariantModelFactory.eINSTANCE.createAttributeValue()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         FeaturemodelFactory.eINSTANCE.createRule()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createRule()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         FeaturemodelFactory.eINSTANCE.createFeatureModel()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createFeatureModel()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         FeaturemodelFactory.eINSTANCE.createConstraint()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createConstraint()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         FeaturemodelFactory.eINSTANCE.createGroup()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createGroup()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         FeaturemodelFactory.eINSTANCE.createFeature()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createFeature()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         FeaturemodelFactory.eINSTANCE.createAttribute()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createAttribute()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         FeaturemodelFactory.eINSTANCE.createDescription()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createDescription()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         ResultmodelFactory.eINSTANCE.createResultModel()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createAttributeTypeInt()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
-         ResultmodelFactory.eINSTANCE.createResultSelection()));
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createAttributeTypeString()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createAttributeTypeBoolean()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createAttributeTypeEObject()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createAttributeValueInt()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createAttributeValueString()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createAttributeValueBoolean()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         FeatureModelFactory.eINSTANCE.createAttributeValueEObject()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEObject()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEAttribute()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEAnnotation()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEClass()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEDataType()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEEnum()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEEnumLiteral()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEFactory()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEOperation()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEPackage()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEParameter()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEReference()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.create(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY)));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createEGenericType()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT,
+         EcoreFactory.eINSTANCE.createETypeParameter()));
   }
 
   /**
@@ -273,8 +378,8 @@ public class AttributeValueItemProvider
     Object childObject = child;
 
     boolean qualify =
-      childFeature == VariantmodelPackage.Literals.ATTRIBUTE_VALUE__ATTRIBUTE ||
-      childFeature == VariantmodelPackage.Literals.ATTRIBUTE_VALUE__CONTENT;
+      childFeature == VariantModelPackage.Literals.ATTRIBUTE_VALUE__ATTRIBUTE ||
+      childFeature == VariantModelPackage.Literals.ATTRIBUTE_VALUE__CONTENT;
 
     if (qualify) {
       return getString

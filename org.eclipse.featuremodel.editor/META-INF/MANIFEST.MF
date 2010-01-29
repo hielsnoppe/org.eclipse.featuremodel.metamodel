@@ -8,12 +8,12 @@ Bundle-Activator: org.eclipse.featuremodel.presentation.FeatureModelEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.eclipse.featuremodel.presentation,
- org.eclipse.resultmodel.presentation,
  org.eclipse.variantmodel.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.eclipse.featuremodel.metamodel.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
- org.eclipse.ui.ide;visibility:=reexport
+ org.eclipse.ui.ide;visibility:=reexport,
+ org.eclipse.emf.ecore.editor
 Eclipse-LazyStart: true

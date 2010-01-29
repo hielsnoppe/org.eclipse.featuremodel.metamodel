@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.featuremodel.Feature;
 
 import org.eclipse.variantmodel.SelectionState;
+import org.eclipse.variantmodel.VariantModelPackage;
 import org.eclipse.variantmodel.VariantSelection;
-import org.eclipse.variantmodel.VariantmodelPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,7 +81,7 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
    */
   @Override
   protected EClass eStaticClass() {
-    return VariantmodelPackage.Literals.VARIANT_SELECTION;
+    return VariantModelPackage.Literals.VARIANT_SELECTION;
   }
 
   /**
@@ -102,7 +102,7 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
     SelectionState oldState = state;
     state = newState == null ? STATE_EDEFAULT : newState;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.VARIANT_SELECTION__STATE, oldState, state));
+      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.VARIANT_SELECTION__STATE, oldState, state));
   }
 
   /**
@@ -116,7 +116,7 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
       feature = (Feature)eResolveProxy(oldFeature);
       if (feature != oldFeature) {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariantmodelPackage.VARIANT_SELECTION__FEATURE, oldFeature, feature));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariantModelPackage.VARIANT_SELECTION__FEATURE, oldFeature, feature));
       }
     }
     return feature;
@@ -140,7 +140,7 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
     Feature oldFeature = feature;
     feature = newFeature;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.VARIANT_SELECTION__FEATURE, oldFeature, feature));
+      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.VARIANT_SELECTION__FEATURE, oldFeature, feature));
   }
 
   /**
@@ -151,9 +151,9 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case VariantmodelPackage.VARIANT_SELECTION__STATE:
+      case VariantModelPackage.VARIANT_SELECTION__STATE:
         return getState();
-      case VariantmodelPackage.VARIANT_SELECTION__FEATURE:
+      case VariantModelPackage.VARIANT_SELECTION__FEATURE:
         if (resolve) return getFeature();
         return basicGetFeature();
     }
@@ -168,10 +168,10 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case VariantmodelPackage.VARIANT_SELECTION__STATE:
+      case VariantModelPackage.VARIANT_SELECTION__STATE:
         setState((SelectionState)newValue);
         return;
-      case VariantmodelPackage.VARIANT_SELECTION__FEATURE:
+      case VariantModelPackage.VARIANT_SELECTION__FEATURE:
         setFeature((Feature)newValue);
         return;
     }
@@ -186,10 +186,10 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case VariantmodelPackage.VARIANT_SELECTION__STATE:
+      case VariantModelPackage.VARIANT_SELECTION__STATE:
         setState(STATE_EDEFAULT);
         return;
-      case VariantmodelPackage.VARIANT_SELECTION__FEATURE:
+      case VariantModelPackage.VARIANT_SELECTION__FEATURE:
         setFeature((Feature)null);
         return;
     }
@@ -204,9 +204,9 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case VariantmodelPackage.VARIANT_SELECTION__STATE:
+      case VariantModelPackage.VARIANT_SELECTION__STATE:
         return state != STATE_EDEFAULT;
-      case VariantmodelPackage.VARIANT_SELECTION__FEATURE:
+      case VariantModelPackage.VARIANT_SELECTION__FEATURE:
         return feature != null;
     }
     return super.eIsSet(featureID);

@@ -28,8 +28,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eclipse.featuremodel.FeaturemodelFactory;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelFactory;
+import org.eclipse.featuremodel.FeatureModelPackage;
 import org.eclipse.featuremodel.Group;
 
 /**
@@ -87,7 +87,7 @@ public class GroupItemProvider
          getResourceLocator(),
          getString("_UI_Group_id_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Group_id_feature", "_UI_Group_type"),
-         FeaturemodelPackage.Literals.GROUP__ID,
+         FeatureModelPackage.Literals.GROUP__ID,
          true,
          false,
          false,
@@ -109,7 +109,7 @@ public class GroupItemProvider
          getResourceLocator(),
          getString("_UI_Group_lower_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Group_lower_feature", "_UI_Group_type"),
-         FeaturemodelPackage.Literals.GROUP__LOWER,
+         FeatureModelPackage.Literals.GROUP__LOWER,
          true,
          false,
          false,
@@ -131,7 +131,7 @@ public class GroupItemProvider
          getResourceLocator(),
          getString("_UI_Group_upper_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Group_upper_feature", "_UI_Group_type"),
-         FeaturemodelPackage.Literals.GROUP__UPPER,
+         FeatureModelPackage.Literals.GROUP__UPPER,
          true,
          false,
          false,
@@ -152,7 +152,7 @@ public class GroupItemProvider
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
     if (childrenFeatures == null) {
       super.getChildrenFeatures(object);
-      childrenFeatures.add(FeaturemodelPackage.Literals.GROUP__FEATURES);
+      childrenFeatures.add(FeatureModelPackage.Literals.GROUP__FEATURES);
     }
     return childrenFeatures;
   }
@@ -207,12 +207,12 @@ public class GroupItemProvider
     updateChildren(notification);
 
     switch (notification.getFeatureID(Group.class)) {
-      case FeaturemodelPackage.GROUP__ID:
-      case FeaturemodelPackage.GROUP__LOWER:
-      case FeaturemodelPackage.GROUP__UPPER:
+      case FeatureModelPackage.GROUP__ID:
+      case FeatureModelPackage.GROUP__LOWER:
+      case FeatureModelPackage.GROUP__UPPER:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
-      case FeaturemodelPackage.GROUP__FEATURES:
+      case FeatureModelPackage.GROUP__FEATURES:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
     }
@@ -232,8 +232,8 @@ public class GroupItemProvider
 
     newChildDescriptors.add
       (createChildParameter
-        (FeaturemodelPackage.Literals.GROUP__FEATURES,
-         FeaturemodelFactory.eINSTANCE.createFeature()));
+        (FeatureModelPackage.Literals.GROUP__FEATURES,
+         FeatureModelFactory.eINSTANCE.createFeature()));
   }
 
   /**

@@ -12,6 +12,8 @@ import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+
 /**
  * This is the central singleton for the FeatureModel editor plugin.
  * <!-- begin-user-doc -->
@@ -44,6 +46,7 @@ public final class FeatureModelEditorPlugin extends EMFPlugin {
   public FeatureModelEditorPlugin() {
     super
       (new ResourceLocator [] {
+        EcoreEditPlugin.INSTANCE,
       });
   }
 

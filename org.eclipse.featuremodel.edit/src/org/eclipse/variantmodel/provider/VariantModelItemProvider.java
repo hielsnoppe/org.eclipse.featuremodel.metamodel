@@ -28,13 +28,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eclipse.featuremodel.FeaturemodelFactory;
+import org.eclipse.featuremodel.FeatureModelFactory;
 
 import org.eclipse.featuremodel.provider.FeatureModelEditPlugin;
 
 import org.eclipse.variantmodel.VariantModel;
-import org.eclipse.variantmodel.VariantmodelFactory;
-import org.eclipse.variantmodel.VariantmodelPackage;
+import org.eclipse.variantmodel.VariantModelFactory;
+import org.eclipse.variantmodel.VariantModelPackage;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.variantmodel.VariantModel} object.
@@ -91,7 +91,7 @@ public class VariantModelItemProvider
          getResourceLocator(),
          getString("_UI_VariantModel_id_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_VariantModel_id_feature", "_UI_VariantModel_type"),
-         VariantmodelPackage.Literals.VARIANT_MODEL__ID,
+         VariantModelPackage.Literals.VARIANT_MODEL__ID,
          true,
          false,
          false,
@@ -113,7 +113,7 @@ public class VariantModelItemProvider
          getResourceLocator(),
          getString("_UI_VariantModel_version_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_VariantModel_version_feature", "_UI_VariantModel_type"),
-         VariantmodelPackage.Literals.VARIANT_MODEL__VERSION,
+         VariantModelPackage.Literals.VARIANT_MODEL__VERSION,
          true,
          false,
          false,
@@ -135,7 +135,7 @@ public class VariantModelItemProvider
          getResourceLocator(),
          getString("_UI_VariantModel_featureModel_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_VariantModel_featureModel_feature", "_UI_VariantModel_type"),
-         VariantmodelPackage.Literals.VARIANT_MODEL__FEATURE_MODEL,
+         VariantModelPackage.Literals.VARIANT_MODEL__FEATURE_MODEL,
          true,
          false,
          true,
@@ -156,9 +156,9 @@ public class VariantModelItemProvider
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
     if (childrenFeatures == null) {
       super.getChildrenFeatures(object);
-      childrenFeatures.add(VariantmodelPackage.Literals.VARIANT_MODEL__ATTRIBUTES);
-      childrenFeatures.add(VariantmodelPackage.Literals.VARIANT_MODEL__SELECTIONS);
-      childrenFeatures.add(VariantmodelPackage.Literals.VARIANT_MODEL__VALUES);
+      childrenFeatures.add(VariantModelPackage.Literals.VARIANT_MODEL__ATTRIBUTES);
+      childrenFeatures.add(VariantModelPackage.Literals.VARIANT_MODEL__SELECTIONS);
+      childrenFeatures.add(VariantModelPackage.Literals.VARIANT_MODEL__VALUES);
     }
     return childrenFeatures;
   }
@@ -213,13 +213,13 @@ public class VariantModelItemProvider
     updateChildren(notification);
 
     switch (notification.getFeatureID(VariantModel.class)) {
-      case VariantmodelPackage.VARIANT_MODEL__ID:
-      case VariantmodelPackage.VARIANT_MODEL__VERSION:
+      case VariantModelPackage.VARIANT_MODEL__ID:
+      case VariantModelPackage.VARIANT_MODEL__VERSION:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
-      case VariantmodelPackage.VARIANT_MODEL__ATTRIBUTES:
-      case VariantmodelPackage.VARIANT_MODEL__SELECTIONS:
-      case VariantmodelPackage.VARIANT_MODEL__VALUES:
+      case VariantModelPackage.VARIANT_MODEL__ATTRIBUTES:
+      case VariantModelPackage.VARIANT_MODEL__SELECTIONS:
+      case VariantModelPackage.VARIANT_MODEL__VALUES:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
     }
@@ -239,18 +239,18 @@ public class VariantModelItemProvider
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.VARIANT_MODEL__ATTRIBUTES,
-         FeaturemodelFactory.eINSTANCE.createAttribute()));
+        (VariantModelPackage.Literals.VARIANT_MODEL__ATTRIBUTES,
+         FeatureModelFactory.eINSTANCE.createAttribute()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.VARIANT_MODEL__SELECTIONS,
-         VariantmodelFactory.eINSTANCE.createFeatureSelection()));
+        (VariantModelPackage.Literals.VARIANT_MODEL__SELECTIONS,
+         VariantModelFactory.eINSTANCE.createFeatureSelection()));
 
     newChildDescriptors.add
       (createChildParameter
-        (VariantmodelPackage.Literals.VARIANT_MODEL__VALUES,
-         VariantmodelFactory.eINSTANCE.createAttributeValue()));
+        (VariantModelPackage.Literals.VARIANT_MODEL__VALUES,
+         VariantModelFactory.eINSTANCE.createAttributeValue()));
   }
 
   /**

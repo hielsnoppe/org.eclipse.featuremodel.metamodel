@@ -27,7 +27,7 @@ import org.eclipse.featuremodel.Constraint;
 import org.eclipse.featuremodel.Description;
 import org.eclipse.featuremodel.Feature;
 import org.eclipse.featuremodel.FeatureModel;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,7 +144,7 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
    */
   @Override
   protected EClass eStaticClass() {
-    return FeaturemodelPackage.Literals.FEATURE_MODEL;
+    return FeatureModelPackage.Literals.FEATURE_MODEL;
   }
 
   /**
@@ -165,7 +165,7 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
     String oldId = id;
     id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.FEATURE_MODEL__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.FEATURE_MODEL__ID, oldId, id));
   }
 
   /**
@@ -186,7 +186,7 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
     String oldVersion = version;
     version = newVersion;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.FEATURE_MODEL__VERSION, oldVersion, version));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.FEATURE_MODEL__VERSION, oldVersion, version));
   }
 
   /**
@@ -207,7 +207,7 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
     Description oldDescription = description;
     description = newDescription;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.FEATURE_MODEL__DESCRIPTION, oldDescription, newDescription);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureModelPackage.FEATURE_MODEL__DESCRIPTION, oldDescription, newDescription);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -222,14 +222,14 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
     if (newDescription != description) {
       NotificationChain msgs = null;
       if (description != null)
-        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeaturemodelPackage.FEATURE_MODEL__DESCRIPTION, null, msgs);
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.FEATURE_MODEL__DESCRIPTION, null, msgs);
       if (newDescription != null)
-        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeaturemodelPackage.FEATURE_MODEL__DESCRIPTION, null, msgs);
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.FEATURE_MODEL__DESCRIPTION, null, msgs);
       msgs = basicSetDescription(newDescription, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.FEATURE_MODEL__DESCRIPTION, newDescription, newDescription));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.FEATURE_MODEL__DESCRIPTION, newDescription, newDescription));
   }
 
   /**
@@ -239,7 +239,7 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
    */
   public EList<Attribute> getAttributes() {
     if (attributes == null) {
-      attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, FeaturemodelPackage.FEATURE_MODEL__ATTRIBUTES);
+      attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, FeatureModelPackage.FEATURE_MODEL__ATTRIBUTES);
     }
     return attributes;
   }
@@ -262,7 +262,7 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
     Feature oldRoot = root;
     root = newRoot;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.FEATURE_MODEL__ROOT, oldRoot, newRoot);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureModelPackage.FEATURE_MODEL__ROOT, oldRoot, newRoot);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -277,14 +277,14 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
     if (newRoot != root) {
       NotificationChain msgs = null;
       if (root != null)
-        msgs = ((InternalEObject)root).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeaturemodelPackage.FEATURE_MODEL__ROOT, null, msgs);
+        msgs = ((InternalEObject)root).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.FEATURE_MODEL__ROOT, null, msgs);
       if (newRoot != null)
-        msgs = ((InternalEObject)newRoot).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeaturemodelPackage.FEATURE_MODEL__ROOT, null, msgs);
+        msgs = ((InternalEObject)newRoot).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.FEATURE_MODEL__ROOT, null, msgs);
       msgs = basicSetRoot(newRoot, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.FEATURE_MODEL__ROOT, newRoot, newRoot));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.FEATURE_MODEL__ROOT, newRoot, newRoot));
   }
 
   /**
@@ -294,7 +294,7 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
    */
   public EList<Constraint> getConstraints() {
     if (constraints == null) {
-      constraints = new EObjectContainmentEList<Constraint>(Constraint.class, this, FeaturemodelPackage.FEATURE_MODEL__CONSTRAINTS);
+      constraints = new EObjectContainmentEList<Constraint>(Constraint.class, this, FeatureModelPackage.FEATURE_MODEL__CONSTRAINTS);
     }
     return constraints;
   }
@@ -307,13 +307,13 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
     switch (featureID) {
-      case FeaturemodelPackage.FEATURE_MODEL__DESCRIPTION:
+      case FeatureModelPackage.FEATURE_MODEL__DESCRIPTION:
         return basicSetDescription(null, msgs);
-      case FeaturemodelPackage.FEATURE_MODEL__ATTRIBUTES:
+      case FeatureModelPackage.FEATURE_MODEL__ATTRIBUTES:
         return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
-      case FeaturemodelPackage.FEATURE_MODEL__ROOT:
+      case FeatureModelPackage.FEATURE_MODEL__ROOT:
         return basicSetRoot(null, msgs);
-      case FeaturemodelPackage.FEATURE_MODEL__CONSTRAINTS:
+      case FeatureModelPackage.FEATURE_MODEL__CONSTRAINTS:
         return ((InternalEList<?>)getConstraints()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -327,17 +327,17 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case FeaturemodelPackage.FEATURE_MODEL__ID:
+      case FeatureModelPackage.FEATURE_MODEL__ID:
         return getId();
-      case FeaturemodelPackage.FEATURE_MODEL__VERSION:
+      case FeatureModelPackage.FEATURE_MODEL__VERSION:
         return getVersion();
-      case FeaturemodelPackage.FEATURE_MODEL__DESCRIPTION:
+      case FeatureModelPackage.FEATURE_MODEL__DESCRIPTION:
         return getDescription();
-      case FeaturemodelPackage.FEATURE_MODEL__ATTRIBUTES:
+      case FeatureModelPackage.FEATURE_MODEL__ATTRIBUTES:
         return getAttributes();
-      case FeaturemodelPackage.FEATURE_MODEL__ROOT:
+      case FeatureModelPackage.FEATURE_MODEL__ROOT:
         return getRoot();
-      case FeaturemodelPackage.FEATURE_MODEL__CONSTRAINTS:
+      case FeatureModelPackage.FEATURE_MODEL__CONSTRAINTS:
         return getConstraints();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -352,23 +352,23 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case FeaturemodelPackage.FEATURE_MODEL__ID:
+      case FeatureModelPackage.FEATURE_MODEL__ID:
         setId((String)newValue);
         return;
-      case FeaturemodelPackage.FEATURE_MODEL__VERSION:
+      case FeatureModelPackage.FEATURE_MODEL__VERSION:
         setVersion((String)newValue);
         return;
-      case FeaturemodelPackage.FEATURE_MODEL__DESCRIPTION:
+      case FeatureModelPackage.FEATURE_MODEL__DESCRIPTION:
         setDescription((Description)newValue);
         return;
-      case FeaturemodelPackage.FEATURE_MODEL__ATTRIBUTES:
+      case FeatureModelPackage.FEATURE_MODEL__ATTRIBUTES:
         getAttributes().clear();
         getAttributes().addAll((Collection<? extends Attribute>)newValue);
         return;
-      case FeaturemodelPackage.FEATURE_MODEL__ROOT:
+      case FeatureModelPackage.FEATURE_MODEL__ROOT:
         setRoot((Feature)newValue);
         return;
-      case FeaturemodelPackage.FEATURE_MODEL__CONSTRAINTS:
+      case FeatureModelPackage.FEATURE_MODEL__CONSTRAINTS:
         getConstraints().clear();
         getConstraints().addAll((Collection<? extends Constraint>)newValue);
         return;
@@ -384,22 +384,22 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.FEATURE_MODEL__ID:
+      case FeatureModelPackage.FEATURE_MODEL__ID:
         setId(ID_EDEFAULT);
         return;
-      case FeaturemodelPackage.FEATURE_MODEL__VERSION:
+      case FeatureModelPackage.FEATURE_MODEL__VERSION:
         setVersion(VERSION_EDEFAULT);
         return;
-      case FeaturemodelPackage.FEATURE_MODEL__DESCRIPTION:
+      case FeatureModelPackage.FEATURE_MODEL__DESCRIPTION:
         setDescription((Description)null);
         return;
-      case FeaturemodelPackage.FEATURE_MODEL__ATTRIBUTES:
+      case FeatureModelPackage.FEATURE_MODEL__ATTRIBUTES:
         getAttributes().clear();
         return;
-      case FeaturemodelPackage.FEATURE_MODEL__ROOT:
+      case FeatureModelPackage.FEATURE_MODEL__ROOT:
         setRoot((Feature)null);
         return;
-      case FeaturemodelPackage.FEATURE_MODEL__CONSTRAINTS:
+      case FeatureModelPackage.FEATURE_MODEL__CONSTRAINTS:
         getConstraints().clear();
         return;
     }
@@ -414,17 +414,17 @@ public class FeatureModelImpl extends EObjectImpl implements FeatureModel {
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.FEATURE_MODEL__ID:
+      case FeatureModelPackage.FEATURE_MODEL__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case FeaturemodelPackage.FEATURE_MODEL__VERSION:
+      case FeatureModelPackage.FEATURE_MODEL__VERSION:
         return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
-      case FeaturemodelPackage.FEATURE_MODEL__DESCRIPTION:
+      case FeatureModelPackage.FEATURE_MODEL__DESCRIPTION:
         return description != null;
-      case FeaturemodelPackage.FEATURE_MODEL__ATTRIBUTES:
+      case FeatureModelPackage.FEATURE_MODEL__ATTRIBUTES:
         return attributes != null && !attributes.isEmpty();
-      case FeaturemodelPackage.FEATURE_MODEL__ROOT:
+      case FeatureModelPackage.FEATURE_MODEL__ROOT:
         return root != null;
-      case FeaturemodelPackage.FEATURE_MODEL__CONSTRAINTS:
+      case FeatureModelPackage.FEATURE_MODEL__CONSTRAINTS:
         return constraints != null && !constraints.isEmpty();
     }
     return super.eIsSet(featureID);

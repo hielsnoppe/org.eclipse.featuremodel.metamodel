@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  * </p>
  *
- * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeature()
+ * @see org.eclipse.featuremodel.FeatureModelPackage#getFeature()
  * @model
  * @generated
  */
@@ -42,7 +42,7 @@ public interface Feature extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Id</em>' attribute.
    * @see #setId(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeature_Id()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getFeature_Id()
    * @model id="true" dataType="org.eclipse.featuremodel.ID" required="true"
    * @generated
    */
@@ -68,7 +68,7 @@ public interface Feature extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeature_Name()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getFeature_Name()
    * @model required="true"
    * @generated
    */
@@ -94,7 +94,7 @@ public interface Feature extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' attribute.
    * @see #setType(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeature_Type()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getFeature_Type()
    * @model unique="false" required="true"
    * @generated
    */
@@ -120,7 +120,7 @@ public interface Feature extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Description</em>' containment reference.
    * @see #setDescription(Description)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeature_Description()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getFeature_Description()
    * @model containment="true"
    * @generated
    */
@@ -146,7 +146,7 @@ public interface Feature extends EObject {
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Attributes</em>' containment reference list.
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeature_Attributes()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getFeature_Attributes()
    * @model containment="true"
    * @generated
    */
@@ -162,7 +162,7 @@ public interface Feature extends EObject {
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Children</em>' containment reference list.
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getFeature_Children()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getFeature_Children()
    * @model containment="true"
    * @generated
    */

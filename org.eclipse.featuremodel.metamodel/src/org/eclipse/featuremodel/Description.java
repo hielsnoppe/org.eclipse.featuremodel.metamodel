@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  * </p>
  *
- * @see org.eclipse.featuremodel.FeaturemodelPackage#getDescription()
+ * @see org.eclipse.featuremodel.FeatureModelPackage#getDescription()
  * @model
  * @generated
  */
@@ -36,7 +36,7 @@ public interface Description extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Id</em>' attribute.
    * @see #setId(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getDescription_Id()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getDescription_Id()
    * @model id="true" dataType="org.eclipse.featuremodel.ID" required="true"
    * @generated
    */
@@ -62,7 +62,7 @@ public interface Description extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Text</em>' attribute.
    * @see #setText(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getDescription_Text()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getDescription_Text()
    * @model required="true"
    * @generated
    */

@@ -29,8 +29,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.featuremodel.provider.FeatureModelEditPlugin;
 
 import org.eclipse.variantmodel.SelectionState;
+import org.eclipse.variantmodel.VariantModelPackage;
 import org.eclipse.variantmodel.VariantSelection;
-import org.eclipse.variantmodel.VariantmodelPackage;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.variantmodel.VariantSelection} object.
@@ -86,7 +86,7 @@ public class VariantSelectionItemProvider
          getResourceLocator(),
          getString("_UI_VariantSelection_state_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_VariantSelection_state_feature", "_UI_VariantSelection_type"),
-         VariantmodelPackage.Literals.VARIANT_SELECTION__STATE,
+         VariantModelPackage.Literals.VARIANT_SELECTION__STATE,
          true,
          false,
          false,
@@ -108,7 +108,7 @@ public class VariantSelectionItemProvider
          getResourceLocator(),
          getString("_UI_VariantSelection_feature_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_VariantSelection_feature_feature", "_UI_VariantSelection_type"),
-         VariantmodelPackage.Literals.VARIANT_SELECTION__FEATURE,
+         VariantModelPackage.Literals.VARIANT_SELECTION__FEATURE,
          true,
          false,
          true,
@@ -155,7 +155,7 @@ public class VariantSelectionItemProvider
     updateChildren(notification);
 
     switch (notification.getFeatureID(VariantSelection.class)) {
-      case VariantmodelPackage.VARIANT_SELECTION__STATE:
+      case VariantModelPackage.VARIANT_SELECTION__STATE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }

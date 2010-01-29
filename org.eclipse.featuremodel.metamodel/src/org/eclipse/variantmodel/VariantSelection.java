@@ -23,7 +23,7 @@ import org.eclipse.featuremodel.Feature;
  * </ul>
  * </p>
  *
- * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantSelection()
+ * @see org.eclipse.variantmodel.VariantModelPackage#getVariantSelection()
  * @model
  * @generated
  */
@@ -40,7 +40,7 @@ public interface VariantSelection extends EObject {
    * @return the value of the '<em>State</em>' attribute.
    * @see org.eclipse.variantmodel.SelectionState
    * @see #setState(SelectionState)
-   * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantSelection_State()
+   * @see org.eclipse.variantmodel.VariantModelPackage#getVariantSelection_State()
    * @model required="true"
    * @generated
    */
@@ -67,7 +67,7 @@ public interface VariantSelection extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Feature</em>' reference.
    * @see #setFeature(Feature)
-   * @see org.eclipse.variantmodel.VariantmodelPackage#getVariantSelection_Feature()
+   * @see org.eclipse.variantmodel.VariantModelPackage#getVariantSelection_Feature()
    * @model required="true"
    * @generated
    */

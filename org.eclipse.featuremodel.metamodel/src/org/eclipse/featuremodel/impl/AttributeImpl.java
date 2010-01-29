@@ -10,15 +10,16 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.featuremodel.Attribute;
+import org.eclipse.featuremodel.AttributeType;
+import org.eclipse.featuremodel.AttributeValue;
 import org.eclipse.featuremodel.Description;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,8 @@ import org.eclipse.featuremodel.FeaturemodelPackage;
  *   <li>{@link org.eclipse.featuremodel.impl.AttributeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.impl.AttributeImpl#isSetable <em>Setable</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.impl.AttributeImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.featuremodel.impl.AttributeImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.featuremodel.impl.AttributeImpl#getDefaultvalue <em>Defaultvalue</em>}</li>
+ *   <li>{@link org.eclipse.featuremodel.impl.AttributeImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,14 +111,24 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
   protected Description description;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * The cached value of the '{@link #getDefaultvalue() <em>Defaultvalue</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getDefaultvalue()
    * @generated
    * @ordered
    */
-  protected EObject value;
+  protected AttributeValue defaultvalue;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected AttributeType type;
 
   /**
    * <!-- begin-user-doc -->
@@ -134,7 +146,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    */
   @Override
   protected EClass eStaticClass() {
-    return FeaturemodelPackage.Literals.ATTRIBUTE;
+    return FeatureModelPackage.Literals.ATTRIBUTE;
   }
 
   /**
@@ -155,7 +167,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
     String oldId = id;
     id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.ATTRIBUTE__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__ID, oldId, id));
   }
 
   /**
@@ -176,7 +188,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.ATTRIBUTE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__NAME, oldName, name));
   }
 
   /**
@@ -197,7 +209,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
     boolean oldSetable = setable;
     setable = newSetable;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.ATTRIBUTE__SETABLE, oldSetable, setable));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__SETABLE, oldSetable, setable));
   }
 
   /**
@@ -218,7 +230,7 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
     Description oldDescription = description;
     description = newDescription;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.ATTRIBUTE__DESCRIPTION, oldDescription, newDescription);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__DESCRIPTION, oldDescription, newDescription);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -233,14 +245,14 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
     if (newDescription != description) {
       NotificationChain msgs = null;
       if (description != null)
-        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeaturemodelPackage.ATTRIBUTE__DESCRIPTION, null, msgs);
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.ATTRIBUTE__DESCRIPTION, null, msgs);
       if (newDescription != null)
-        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeaturemodelPackage.ATTRIBUTE__DESCRIPTION, null, msgs);
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.ATTRIBUTE__DESCRIPTION, null, msgs);
       msgs = basicSetDescription(newDescription, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.ATTRIBUTE__DESCRIPTION, newDescription, newDescription));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__DESCRIPTION, newDescription, newDescription));
   }
 
   /**
@@ -248,8 +260,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject getValue() {
-    return value;
+  public AttributeValue getDefaultvalue() {
+    return defaultvalue;
   }
 
   /**
@@ -257,11 +269,11 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(EObject newValue, NotificationChain msgs) {
-    EObject oldValue = value;
-    value = newValue;
+  public NotificationChain basicSetDefaultvalue(AttributeValue newDefaultvalue, NotificationChain msgs) {
+    AttributeValue oldDefaultvalue = defaultvalue;
+    defaultvalue = newDefaultvalue;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.ATTRIBUTE__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE, oldDefaultvalue, newDefaultvalue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -272,18 +284,61 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(EObject newValue) {
-    if (newValue != value) {
+  public void setDefaultvalue(AttributeValue newDefaultvalue) {
+    if (newDefaultvalue != defaultvalue) {
       NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeaturemodelPackage.ATTRIBUTE__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeaturemodelPackage.ATTRIBUTE__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
+      if (defaultvalue != null)
+        msgs = ((InternalEObject)defaultvalue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE, null, msgs);
+      if (newDefaultvalue != null)
+        msgs = ((InternalEObject)newDefaultvalue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE, null, msgs);
+      msgs = basicSetDefaultvalue(newDefaultvalue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.ATTRIBUTE__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE, newDefaultvalue, newDefaultvalue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AttributeType getType() {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetType(AttributeType newType, NotificationChain msgs) {
+    AttributeType oldType = type;
+    type = newType;
+    if (eNotificationRequired()) {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(AttributeType newType) {
+    if (newType != type) {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.ATTRIBUTE__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.ATTRIBUTE__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__TYPE, newType, newType));
   }
 
   /**
@@ -294,10 +349,12 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
     switch (featureID) {
-      case FeaturemodelPackage.ATTRIBUTE__DESCRIPTION:
+      case FeatureModelPackage.ATTRIBUTE__DESCRIPTION:
         return basicSetDescription(null, msgs);
-      case FeaturemodelPackage.ATTRIBUTE__VALUE:
-        return basicSetValue(null, msgs);
+      case FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE:
+        return basicSetDefaultvalue(null, msgs);
+      case FeatureModelPackage.ATTRIBUTE__TYPE:
+        return basicSetType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -310,16 +367,18 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case FeaturemodelPackage.ATTRIBUTE__ID:
+      case FeatureModelPackage.ATTRIBUTE__ID:
         return getId();
-      case FeaturemodelPackage.ATTRIBUTE__NAME:
+      case FeatureModelPackage.ATTRIBUTE__NAME:
         return getName();
-      case FeaturemodelPackage.ATTRIBUTE__SETABLE:
+      case FeatureModelPackage.ATTRIBUTE__SETABLE:
         return isSetable() ? Boolean.TRUE : Boolean.FALSE;
-      case FeaturemodelPackage.ATTRIBUTE__DESCRIPTION:
+      case FeatureModelPackage.ATTRIBUTE__DESCRIPTION:
         return getDescription();
-      case FeaturemodelPackage.ATTRIBUTE__VALUE:
-        return getValue();
+      case FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE:
+        return getDefaultvalue();
+      case FeatureModelPackage.ATTRIBUTE__TYPE:
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -332,20 +391,23 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case FeaturemodelPackage.ATTRIBUTE__ID:
+      case FeatureModelPackage.ATTRIBUTE__ID:
         setId((String)newValue);
         return;
-      case FeaturemodelPackage.ATTRIBUTE__NAME:
+      case FeatureModelPackage.ATTRIBUTE__NAME:
         setName((String)newValue);
         return;
-      case FeaturemodelPackage.ATTRIBUTE__SETABLE:
+      case FeatureModelPackage.ATTRIBUTE__SETABLE:
         setSetable(((Boolean)newValue).booleanValue());
         return;
-      case FeaturemodelPackage.ATTRIBUTE__DESCRIPTION:
+      case FeatureModelPackage.ATTRIBUTE__DESCRIPTION:
         setDescription((Description)newValue);
         return;
-      case FeaturemodelPackage.ATTRIBUTE__VALUE:
-        setValue((EObject)newValue);
+      case FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE:
+        setDefaultvalue((AttributeValue)newValue);
+        return;
+      case FeatureModelPackage.ATTRIBUTE__TYPE:
+        setType((AttributeType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -359,20 +421,23 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.ATTRIBUTE__ID:
+      case FeatureModelPackage.ATTRIBUTE__ID:
         setId(ID_EDEFAULT);
         return;
-      case FeaturemodelPackage.ATTRIBUTE__NAME:
+      case FeatureModelPackage.ATTRIBUTE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case FeaturemodelPackage.ATTRIBUTE__SETABLE:
+      case FeatureModelPackage.ATTRIBUTE__SETABLE:
         setSetable(SETABLE_EDEFAULT);
         return;
-      case FeaturemodelPackage.ATTRIBUTE__DESCRIPTION:
+      case FeatureModelPackage.ATTRIBUTE__DESCRIPTION:
         setDescription((Description)null);
         return;
-      case FeaturemodelPackage.ATTRIBUTE__VALUE:
-        setValue((EObject)null);
+      case FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE:
+        setDefaultvalue((AttributeValue)null);
+        return;
+      case FeatureModelPackage.ATTRIBUTE__TYPE:
+        setType((AttributeType)null);
         return;
     }
     super.eUnset(featureID);
@@ -386,16 +451,18 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.ATTRIBUTE__ID:
+      case FeatureModelPackage.ATTRIBUTE__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case FeaturemodelPackage.ATTRIBUTE__NAME:
+      case FeatureModelPackage.ATTRIBUTE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case FeaturemodelPackage.ATTRIBUTE__SETABLE:
+      case FeatureModelPackage.ATTRIBUTE__SETABLE:
         return setable != SETABLE_EDEFAULT;
-      case FeaturemodelPackage.ATTRIBUTE__DESCRIPTION:
+      case FeatureModelPackage.ATTRIBUTE__DESCRIPTION:
         return description != null;
-      case FeaturemodelPackage.ATTRIBUTE__VALUE:
-        return value != null;
+      case FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE:
+        return defaultvalue != null;
+      case FeatureModelPackage.ATTRIBUTE__TYPE:
+        return type != null;
     }
     return super.eIsSet(featureID);
   }

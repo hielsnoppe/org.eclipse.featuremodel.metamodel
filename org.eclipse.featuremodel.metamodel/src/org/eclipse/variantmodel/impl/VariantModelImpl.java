@@ -28,7 +28,7 @@ import org.eclipse.featuremodel.FeatureModel;
 import org.eclipse.variantmodel.AttributeValue;
 import org.eclipse.variantmodel.FeatureSelection;
 import org.eclipse.variantmodel.VariantModel;
-import org.eclipse.variantmodel.VariantmodelPackage;
+import org.eclipse.variantmodel.VariantModelPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,7 +145,7 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
    */
   @Override
   protected EClass eStaticClass() {
-    return VariantmodelPackage.Literals.VARIANT_MODEL;
+    return VariantModelPackage.Literals.VARIANT_MODEL;
   }
 
   /**
@@ -166,7 +166,7 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
     String oldId = id;
     id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.VARIANT_MODEL__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.VARIANT_MODEL__ID, oldId, id));
   }
 
   /**
@@ -187,7 +187,7 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
     String oldVersion = version;
     version = newVersion;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.VARIANT_MODEL__VERSION, oldVersion, version));
+      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.VARIANT_MODEL__VERSION, oldVersion, version));
   }
 
   /**
@@ -197,7 +197,7 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
    */
   public EList<Attribute> getAttributes() {
     if (attributes == null) {
-      attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, VariantmodelPackage.VARIANT_MODEL__ATTRIBUTES);
+      attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, VariantModelPackage.VARIANT_MODEL__ATTRIBUTES);
     }
     return attributes;
   }
@@ -213,7 +213,7 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
       featureModel = (FeatureModel)eResolveProxy(oldFeatureModel);
       if (featureModel != oldFeatureModel) {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariantmodelPackage.VARIANT_MODEL__FEATURE_MODEL, oldFeatureModel, featureModel));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariantModelPackage.VARIANT_MODEL__FEATURE_MODEL, oldFeatureModel, featureModel));
       }
     }
     return featureModel;
@@ -237,7 +237,7 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
     FeatureModel oldFeatureModel = featureModel;
     featureModel = newFeatureModel;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.VARIANT_MODEL__FEATURE_MODEL, oldFeatureModel, featureModel));
+      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.VARIANT_MODEL__FEATURE_MODEL, oldFeatureModel, featureModel));
   }
 
   /**
@@ -247,7 +247,7 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
    */
   public EList<FeatureSelection> getSelections() {
     if (selections == null) {
-      selections = new EObjectContainmentEList<FeatureSelection>(FeatureSelection.class, this, VariantmodelPackage.VARIANT_MODEL__SELECTIONS);
+      selections = new EObjectContainmentEList<FeatureSelection>(FeatureSelection.class, this, VariantModelPackage.VARIANT_MODEL__SELECTIONS);
     }
     return selections;
   }
@@ -259,7 +259,7 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
    */
   public EList<AttributeValue> getValues() {
     if (values == null) {
-      values = new EObjectContainmentEList<AttributeValue>(AttributeValue.class, this, VariantmodelPackage.VARIANT_MODEL__VALUES);
+      values = new EObjectContainmentEList<AttributeValue>(AttributeValue.class, this, VariantModelPackage.VARIANT_MODEL__VALUES);
     }
     return values;
   }
@@ -272,11 +272,11 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
     switch (featureID) {
-      case VariantmodelPackage.VARIANT_MODEL__ATTRIBUTES:
+      case VariantModelPackage.VARIANT_MODEL__ATTRIBUTES:
         return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
-      case VariantmodelPackage.VARIANT_MODEL__SELECTIONS:
+      case VariantModelPackage.VARIANT_MODEL__SELECTIONS:
         return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
-      case VariantmodelPackage.VARIANT_MODEL__VALUES:
+      case VariantModelPackage.VARIANT_MODEL__VALUES:
         return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -290,18 +290,18 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case VariantmodelPackage.VARIANT_MODEL__ID:
+      case VariantModelPackage.VARIANT_MODEL__ID:
         return getId();
-      case VariantmodelPackage.VARIANT_MODEL__VERSION:
+      case VariantModelPackage.VARIANT_MODEL__VERSION:
         return getVersion();
-      case VariantmodelPackage.VARIANT_MODEL__ATTRIBUTES:
+      case VariantModelPackage.VARIANT_MODEL__ATTRIBUTES:
         return getAttributes();
-      case VariantmodelPackage.VARIANT_MODEL__FEATURE_MODEL:
+      case VariantModelPackage.VARIANT_MODEL__FEATURE_MODEL:
         if (resolve) return getFeatureModel();
         return basicGetFeatureModel();
-      case VariantmodelPackage.VARIANT_MODEL__SELECTIONS:
+      case VariantModelPackage.VARIANT_MODEL__SELECTIONS:
         return getSelections();
-      case VariantmodelPackage.VARIANT_MODEL__VALUES:
+      case VariantModelPackage.VARIANT_MODEL__VALUES:
         return getValues();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -316,24 +316,24 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case VariantmodelPackage.VARIANT_MODEL__ID:
+      case VariantModelPackage.VARIANT_MODEL__ID:
         setId((String)newValue);
         return;
-      case VariantmodelPackage.VARIANT_MODEL__VERSION:
+      case VariantModelPackage.VARIANT_MODEL__VERSION:
         setVersion((String)newValue);
         return;
-      case VariantmodelPackage.VARIANT_MODEL__ATTRIBUTES:
+      case VariantModelPackage.VARIANT_MODEL__ATTRIBUTES:
         getAttributes().clear();
         getAttributes().addAll((Collection<? extends Attribute>)newValue);
         return;
-      case VariantmodelPackage.VARIANT_MODEL__FEATURE_MODEL:
+      case VariantModelPackage.VARIANT_MODEL__FEATURE_MODEL:
         setFeatureModel((FeatureModel)newValue);
         return;
-      case VariantmodelPackage.VARIANT_MODEL__SELECTIONS:
+      case VariantModelPackage.VARIANT_MODEL__SELECTIONS:
         getSelections().clear();
         getSelections().addAll((Collection<? extends FeatureSelection>)newValue);
         return;
-      case VariantmodelPackage.VARIANT_MODEL__VALUES:
+      case VariantModelPackage.VARIANT_MODEL__VALUES:
         getValues().clear();
         getValues().addAll((Collection<? extends AttributeValue>)newValue);
         return;
@@ -349,22 +349,22 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case VariantmodelPackage.VARIANT_MODEL__ID:
+      case VariantModelPackage.VARIANT_MODEL__ID:
         setId(ID_EDEFAULT);
         return;
-      case VariantmodelPackage.VARIANT_MODEL__VERSION:
+      case VariantModelPackage.VARIANT_MODEL__VERSION:
         setVersion(VERSION_EDEFAULT);
         return;
-      case VariantmodelPackage.VARIANT_MODEL__ATTRIBUTES:
+      case VariantModelPackage.VARIANT_MODEL__ATTRIBUTES:
         getAttributes().clear();
         return;
-      case VariantmodelPackage.VARIANT_MODEL__FEATURE_MODEL:
+      case VariantModelPackage.VARIANT_MODEL__FEATURE_MODEL:
         setFeatureModel((FeatureModel)null);
         return;
-      case VariantmodelPackage.VARIANT_MODEL__SELECTIONS:
+      case VariantModelPackage.VARIANT_MODEL__SELECTIONS:
         getSelections().clear();
         return;
-      case VariantmodelPackage.VARIANT_MODEL__VALUES:
+      case VariantModelPackage.VARIANT_MODEL__VALUES:
         getValues().clear();
         return;
     }
@@ -379,17 +379,17 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case VariantmodelPackage.VARIANT_MODEL__ID:
+      case VariantModelPackage.VARIANT_MODEL__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case VariantmodelPackage.VARIANT_MODEL__VERSION:
+      case VariantModelPackage.VARIANT_MODEL__VERSION:
         return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
-      case VariantmodelPackage.VARIANT_MODEL__ATTRIBUTES:
+      case VariantModelPackage.VARIANT_MODEL__ATTRIBUTES:
         return attributes != null && !attributes.isEmpty();
-      case VariantmodelPackage.VARIANT_MODEL__FEATURE_MODEL:
+      case VariantModelPackage.VARIANT_MODEL__FEATURE_MODEL:
         return featureModel != null;
-      case VariantmodelPackage.VARIANT_MODEL__SELECTIONS:
+      case VariantModelPackage.VARIANT_MODEL__SELECTIONS:
         return selections != null && !selections.isEmpty();
-      case VariantmodelPackage.VARIANT_MODEL__VALUES:
+      case VariantModelPackage.VARIANT_MODEL__VALUES:
         return values != null && !values.isEmpty();
     }
     return super.eIsSet(featureID);

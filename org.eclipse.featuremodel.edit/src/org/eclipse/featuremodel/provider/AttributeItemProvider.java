@@ -29,8 +29,8 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.featuremodel.Attribute;
-import org.eclipse.featuremodel.FeaturemodelFactory;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelFactory;
+import org.eclipse.featuremodel.FeatureModelPackage;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.featuremodel.Attribute} object.
@@ -70,7 +70,6 @@ public class AttributeItemProvider
       addIdPropertyDescriptor(object);
       addNamePropertyDescriptor(object);
       addSetablePropertyDescriptor(object);
-      addValuePropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -88,7 +87,7 @@ public class AttributeItemProvider
          getResourceLocator(),
          getString("_UI_Attribute_id_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Attribute_id_feature", "_UI_Attribute_type"),
-         FeaturemodelPackage.Literals.ATTRIBUTE__ID,
+         FeatureModelPackage.Literals.ATTRIBUTE__ID,
          true,
          false,
          false,
@@ -110,7 +109,7 @@ public class AttributeItemProvider
          getResourceLocator(),
          getString("_UI_Attribute_name_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Attribute_name_feature", "_UI_Attribute_type"),
-         FeaturemodelPackage.Literals.ATTRIBUTE__NAME,
+         FeatureModelPackage.Literals.ATTRIBUTE__NAME,
          true,
          false,
          false,
@@ -132,33 +131,11 @@ public class AttributeItemProvider
          getResourceLocator(),
          getString("_UI_Attribute_setable_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Attribute_setable_feature", "_UI_Attribute_type"),
-         FeaturemodelPackage.Literals.ATTRIBUTE__SETABLE,
+         FeatureModelPackage.Literals.ATTRIBUTE__SETABLE,
          true,
          false,
          false,
          ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
-   * This adds a property descriptor for the Value feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addValuePropertyDescriptor(Object object) {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Attribute_value_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Attribute_value_feature", "_UI_Attribute_type"),
-         FeaturemodelPackage.Literals.ATTRIBUTE__VALUE,
-         true,
-         false,
-         true,
-         null,
          null,
          null));
   }
@@ -175,7 +152,9 @@ public class AttributeItemProvider
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
     if (childrenFeatures == null) {
       super.getChildrenFeatures(object);
-      childrenFeatures.add(FeaturemodelPackage.Literals.ATTRIBUTE__DESCRIPTION);
+      childrenFeatures.add(FeatureModelPackage.Literals.ATTRIBUTE__DESCRIPTION);
+      childrenFeatures.add(FeatureModelPackage.Literals.ATTRIBUTE__DEFAULTVALUE);
+      childrenFeatures.add(FeatureModelPackage.Literals.ATTRIBUTE__TYPE);
     }
     return childrenFeatures;
   }
@@ -230,12 +209,14 @@ public class AttributeItemProvider
     updateChildren(notification);
 
     switch (notification.getFeatureID(Attribute.class)) {
-      case FeaturemodelPackage.ATTRIBUTE__ID:
-      case FeaturemodelPackage.ATTRIBUTE__NAME:
-      case FeaturemodelPackage.ATTRIBUTE__SETABLE:
+      case FeatureModelPackage.ATTRIBUTE__ID:
+      case FeatureModelPackage.ATTRIBUTE__NAME:
+      case FeatureModelPackage.ATTRIBUTE__SETABLE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
-      case FeaturemodelPackage.ATTRIBUTE__DESCRIPTION:
+      case FeatureModelPackage.ATTRIBUTE__DESCRIPTION:
+      case FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE:
+      case FeatureModelPackage.ATTRIBUTE__TYPE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
     }
@@ -255,8 +236,48 @@ public class AttributeItemProvider
 
     newChildDescriptors.add
       (createChildParameter
-        (FeaturemodelPackage.Literals.ATTRIBUTE__DESCRIPTION,
-         FeaturemodelFactory.eINSTANCE.createDescription()));
+        (FeatureModelPackage.Literals.ATTRIBUTE__DESCRIPTION,
+         FeatureModelFactory.eINSTANCE.createDescription()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (FeatureModelPackage.Literals.ATTRIBUTE__DEFAULTVALUE,
+         FeatureModelFactory.eINSTANCE.createAttributeValueInt()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (FeatureModelPackage.Literals.ATTRIBUTE__DEFAULTVALUE,
+         FeatureModelFactory.eINSTANCE.createAttributeValueString()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (FeatureModelPackage.Literals.ATTRIBUTE__DEFAULTVALUE,
+         FeatureModelFactory.eINSTANCE.createAttributeValueBoolean()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (FeatureModelPackage.Literals.ATTRIBUTE__DEFAULTVALUE,
+         FeatureModelFactory.eINSTANCE.createAttributeValueEObject()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (FeatureModelPackage.Literals.ATTRIBUTE__TYPE,
+         FeatureModelFactory.eINSTANCE.createAttributeTypeInt()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (FeatureModelPackage.Literals.ATTRIBUTE__TYPE,
+         FeatureModelFactory.eINSTANCE.createAttributeTypeString()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (FeatureModelPackage.Literals.ATTRIBUTE__TYPE,
+         FeatureModelFactory.eINSTANCE.createAttributeTypeBoolean()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (FeatureModelPackage.Literals.ATTRIBUTE__TYPE,
+         FeatureModelFactory.eINSTANCE.createAttributeTypeEObject()));
   }
 
   /**

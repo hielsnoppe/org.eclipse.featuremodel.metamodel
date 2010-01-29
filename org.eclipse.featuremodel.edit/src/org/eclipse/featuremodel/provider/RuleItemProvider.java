@@ -26,7 +26,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelPackage;
 import org.eclipse.featuremodel.Rule;
 
 /**
@@ -83,7 +83,7 @@ public class RuleItemProvider
          getResourceLocator(),
          getString("_UI_Rule_language_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Rule_language_feature", "_UI_Rule_type"),
-         FeaturemodelPackage.Literals.RULE__LANGUAGE,
+         FeatureModelPackage.Literals.RULE__LANGUAGE,
          true,
          false,
          false,
@@ -105,7 +105,7 @@ public class RuleItemProvider
          getResourceLocator(),
          getString("_UI_Rule_code_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Rule_code_feature", "_UI_Rule_type"),
-         FeaturemodelPackage.Literals.RULE__CODE,
+         FeatureModelPackage.Literals.RULE__CODE,
          true,
          false,
          false,
@@ -151,8 +151,8 @@ public class RuleItemProvider
     updateChildren(notification);
 
     switch (notification.getFeatureID(Rule.class)) {
-      case FeaturemodelPackage.RULE__LANGUAGE:
-      case FeaturemodelPackage.RULE__CODE:
+      case FeatureModelPackage.RULE__LANGUAGE:
+      case FeatureModelPackage.RULE__CODE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }

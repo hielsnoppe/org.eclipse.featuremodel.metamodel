@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.featuremodel.Description;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,7 +87,7 @@ public class DescriptionImpl extends EObjectImpl implements Description {
    */
   @Override
   protected EClass eStaticClass() {
-    return FeaturemodelPackage.Literals.DESCRIPTION;
+    return FeatureModelPackage.Literals.DESCRIPTION;
   }
 
   /**
@@ -108,7 +108,7 @@ public class DescriptionImpl extends EObjectImpl implements Description {
     String oldId = id;
     id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.DESCRIPTION__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.DESCRIPTION__ID, oldId, id));
   }
 
   /**
@@ -129,7 +129,7 @@ public class DescriptionImpl extends EObjectImpl implements Description {
     String oldText = text;
     text = newText;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.DESCRIPTION__TEXT, oldText, text));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.DESCRIPTION__TEXT, oldText, text));
   }
 
   /**
@@ -140,9 +140,9 @@ public class DescriptionImpl extends EObjectImpl implements Description {
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case FeaturemodelPackage.DESCRIPTION__ID:
+      case FeatureModelPackage.DESCRIPTION__ID:
         return getId();
-      case FeaturemodelPackage.DESCRIPTION__TEXT:
+      case FeatureModelPackage.DESCRIPTION__TEXT:
         return getText();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -156,10 +156,10 @@ public class DescriptionImpl extends EObjectImpl implements Description {
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case FeaturemodelPackage.DESCRIPTION__ID:
+      case FeatureModelPackage.DESCRIPTION__ID:
         setId((String)newValue);
         return;
-      case FeaturemodelPackage.DESCRIPTION__TEXT:
+      case FeatureModelPackage.DESCRIPTION__TEXT:
         setText((String)newValue);
         return;
     }
@@ -174,10 +174,10 @@ public class DescriptionImpl extends EObjectImpl implements Description {
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.DESCRIPTION__ID:
+      case FeatureModelPackage.DESCRIPTION__ID:
         setId(ID_EDEFAULT);
         return;
-      case FeaturemodelPackage.DESCRIPTION__TEXT:
+      case FeatureModelPackage.DESCRIPTION__TEXT:
         setText(TEXT_EDEFAULT);
         return;
     }
@@ -192,9 +192,9 @@ public class DescriptionImpl extends EObjectImpl implements Description {
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.DESCRIPTION__ID:
+      case FeatureModelPackage.DESCRIPTION__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case FeaturemodelPackage.DESCRIPTION__TEXT:
+      case FeatureModelPackage.DESCRIPTION__TEXT:
         return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
     }
     return super.eIsSet(featureID);

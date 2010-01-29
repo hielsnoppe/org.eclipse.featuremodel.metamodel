@@ -20,11 +20,12 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.featuremodel.Attribute#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.Attribute#isSetable <em>Setable</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.Attribute#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.featuremodel.Attribute#getValue <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.featuremodel.Attribute#getDefaultvalue <em>Defaultvalue</em>}</li>
+ *   <li>{@link org.eclipse.featuremodel.Attribute#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.featuremodel.FeaturemodelPackage#getAttribute()
+ * @see org.eclipse.featuremodel.FeatureModelPackage#getAttribute()
  * @model
  * @generated
  */
@@ -39,7 +40,7 @@ public interface Attribute extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Id</em>' attribute.
    * @see #setId(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getAttribute_Id()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getAttribute_Id()
    * @model id="true" dataType="org.eclipse.featuremodel.ID" required="true"
    * @generated
    */
@@ -65,7 +66,7 @@ public interface Attribute extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getAttribute_Name()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getAttribute_Name()
    * @model required="true"
    * @generated
    */
@@ -92,7 +93,7 @@ public interface Attribute extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Setable</em>' attribute.
    * @see #setSetable(boolean)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getAttribute_Setable()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getAttribute_Setable()
    * @model default="false"
    * @generated
    */
@@ -118,7 +119,7 @@ public interface Attribute extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Description</em>' containment reference.
    * @see #setDescription(Description)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getAttribute_Description()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getAttribute_Description()
    * @model containment="true"
    * @generated
    */
@@ -135,29 +136,55 @@ public interface Attribute extends EObject {
   void setDescription(Description value);
 
   /**
-   * Returns the value of the '<em><b>Value</b></em>' containment reference.
+   * Returns the value of the '<em><b>Defaultvalue</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Value</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Defaultvalue</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' containment reference.
-   * @see #setValue(EObject)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getAttribute_Value()
+   * @return the value of the '<em>Defaultvalue</em>' containment reference.
+   * @see #setDefaultvalue(AttributeValue)
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getAttribute_Defaultvalue()
+   * @model containment="true" required="true" transient="true"
+   * @generated
+   */
+  AttributeValue getDefaultvalue();
+
+  /**
+   * Sets the value of the '{@link org.eclipse.featuremodel.Attribute#getDefaultvalue <em>Defaultvalue</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Defaultvalue</em>' containment reference.
+   * @see #getDefaultvalue()
+   * @generated
+   */
+  void setDefaultvalue(AttributeValue value);
+
+  /**
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(AttributeType)
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getAttribute_Type()
    * @model containment="true" required="true"
    * @generated
    */
-  EObject getValue();
+  AttributeType getType();
 
   /**
-   * Sets the value of the '{@link org.eclipse.featuremodel.Attribute#getValue <em>Value</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.featuremodel.Attribute#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' containment reference.
-   * @see #getValue()
+   * @param value the new value of the '<em>Type</em>' containment reference.
+   * @see #getType()
    * @generated
    */
-  void setValue(EObject value);
+  void setType(AttributeType value);
 
 } // Attribute

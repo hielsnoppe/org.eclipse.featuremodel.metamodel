@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  * </p>
  *
- * @see org.eclipse.featuremodel.FeaturemodelPackage#getRule()
+ * @see org.eclipse.featuremodel.FeatureModelPackage#getRule()
  * @model
  * @generated
  */
@@ -36,7 +36,7 @@ public interface Rule extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Language</em>' attribute.
    * @see #setLanguage(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getRule_Language()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getRule_Language()
    * @model required="true"
    * @generated
    */
@@ -62,7 +62,7 @@ public interface Rule extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Code</em>' attribute.
    * @see #setCode(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getRule_Code()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getRule_Code()
    * @model required="true"
    * @generated
    */

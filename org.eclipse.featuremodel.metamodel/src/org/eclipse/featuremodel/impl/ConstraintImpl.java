@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.featuremodel.Constraint;
 import org.eclipse.featuremodel.Description;
 import org.eclipse.featuremodel.FeatureModel;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,7 +80,7 @@ public class ConstraintImpl extends RuleImpl implements Constraint {
    */
   @Override
   protected EClass eStaticClass() {
-    return FeaturemodelPackage.Literals.CONSTRAINT;
+    return FeatureModelPackage.Literals.CONSTRAINT;
   }
 
   /**
@@ -101,7 +101,7 @@ public class ConstraintImpl extends RuleImpl implements Constraint {
     String oldId = id;
     id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.CONSTRAINT__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.CONSTRAINT__ID, oldId, id));
   }
 
   /**
@@ -122,7 +122,7 @@ public class ConstraintImpl extends RuleImpl implements Constraint {
     Description oldDescription = description;
     description = newDescription;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.CONSTRAINT__DESCRIPTION, oldDescription, newDescription);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureModelPackage.CONSTRAINT__DESCRIPTION, oldDescription, newDescription);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -137,14 +137,14 @@ public class ConstraintImpl extends RuleImpl implements Constraint {
     if (newDescription != description) {
       NotificationChain msgs = null;
       if (description != null)
-        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeaturemodelPackage.CONSTRAINT__DESCRIPTION, null, msgs);
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.CONSTRAINT__DESCRIPTION, null, msgs);
       if (newDescription != null)
-        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeaturemodelPackage.CONSTRAINT__DESCRIPTION, null, msgs);
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.CONSTRAINT__DESCRIPTION, null, msgs);
       msgs = basicSetDescription(newDescription, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.CONSTRAINT__DESCRIPTION, newDescription, newDescription));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.CONSTRAINT__DESCRIPTION, newDescription, newDescription));
   }
 
   /**
@@ -166,7 +166,7 @@ public class ConstraintImpl extends RuleImpl implements Constraint {
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
     switch (featureID) {
-      case FeaturemodelPackage.CONSTRAINT__DESCRIPTION:
+      case FeatureModelPackage.CONSTRAINT__DESCRIPTION:
         return basicSetDescription(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -180,9 +180,9 @@ public class ConstraintImpl extends RuleImpl implements Constraint {
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case FeaturemodelPackage.CONSTRAINT__ID:
+      case FeatureModelPackage.CONSTRAINT__ID:
         return getId();
-      case FeaturemodelPackage.CONSTRAINT__DESCRIPTION:
+      case FeatureModelPackage.CONSTRAINT__DESCRIPTION:
         return getDescription();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -196,10 +196,10 @@ public class ConstraintImpl extends RuleImpl implements Constraint {
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case FeaturemodelPackage.CONSTRAINT__ID:
+      case FeatureModelPackage.CONSTRAINT__ID:
         setId((String)newValue);
         return;
-      case FeaturemodelPackage.CONSTRAINT__DESCRIPTION:
+      case FeatureModelPackage.CONSTRAINT__DESCRIPTION:
         setDescription((Description)newValue);
         return;
     }
@@ -214,10 +214,10 @@ public class ConstraintImpl extends RuleImpl implements Constraint {
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.CONSTRAINT__ID:
+      case FeatureModelPackage.CONSTRAINT__ID:
         setId(ID_EDEFAULT);
         return;
-      case FeaturemodelPackage.CONSTRAINT__DESCRIPTION:
+      case FeatureModelPackage.CONSTRAINT__DESCRIPTION:
         setDescription((Description)null);
         return;
     }
@@ -232,9 +232,9 @@ public class ConstraintImpl extends RuleImpl implements Constraint {
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.CONSTRAINT__ID:
+      case FeatureModelPackage.CONSTRAINT__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case FeaturemodelPackage.CONSTRAINT__DESCRIPTION:
+      case FeatureModelPackage.CONSTRAINT__DESCRIPTION:
         return description != null;
     }
     return super.eIsSet(featureID);

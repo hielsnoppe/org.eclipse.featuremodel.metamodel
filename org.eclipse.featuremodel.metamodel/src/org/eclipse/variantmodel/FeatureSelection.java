@@ -20,7 +20,7 @@ package org.eclipse.variantmodel;
  * </ul>
  * </p>
  *
- * @see org.eclipse.variantmodel.VariantmodelPackage#getFeatureSelection()
+ * @see org.eclipse.variantmodel.VariantModelPackage#getFeatureSelection()
  * @model
  * @generated
  */
@@ -35,7 +35,7 @@ public interface FeatureSelection extends VariantSelection {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Id</em>' attribute.
    * @see #setId(String)
-   * @see org.eclipse.variantmodel.VariantmodelPackage#getFeatureSelection_Id()
+   * @see org.eclipse.variantmodel.VariantModelPackage#getFeatureSelection_Id()
    * @model id="true" dataType="org.eclipse.variantmodel.ID" required="true"
    * @generated
    */
@@ -61,7 +61,7 @@ public interface FeatureSelection extends VariantSelection {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Bound</em>' attribute.
    * @see #setBound(boolean)
-   * @see org.eclipse.variantmodel.VariantmodelPackage#getFeatureSelection_Bound()
+   * @see org.eclipse.variantmodel.VariantModelPackage#getFeatureSelection_Bound()
    * @model
    * @generated
    */

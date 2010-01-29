@@ -20,7 +20,7 @@ package org.eclipse.featuremodel;
  * </ul>
  * </p>
  *
- * @see org.eclipse.featuremodel.FeaturemodelPackage#getConstraint()
+ * @see org.eclipse.featuremodel.FeatureModelPackage#getConstraint()
  * @model
  * @generated
  */
@@ -35,7 +35,7 @@ public interface Constraint extends Rule {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Id</em>' attribute.
    * @see #setId(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getConstraint_Id()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getConstraint_Id()
    * @model id="true" dataType="org.eclipse.featuremodel.ID" required="true"
    * @generated
    */
@@ -61,7 +61,7 @@ public interface Constraint extends Rule {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Description</em>' containment reference.
    * @see #setDescription(Description)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getConstraint_Description()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getConstraint_Description()
    * @model containment="true"
    * @generated
    */

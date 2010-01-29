@@ -29,8 +29,8 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.featuremodel.FeatureModel;
-import org.eclipse.featuremodel.FeaturemodelFactory;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelFactory;
+import org.eclipse.featuremodel.FeatureModelPackage;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.featuremodel.FeatureModel} object.
@@ -86,7 +86,7 @@ public class FeatureModelItemProvider
          getResourceLocator(),
          getString("_UI_FeatureModel_id_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_FeatureModel_id_feature", "_UI_FeatureModel_type"),
-         FeaturemodelPackage.Literals.FEATURE_MODEL__ID,
+         FeatureModelPackage.Literals.FEATURE_MODEL__ID,
          true,
          false,
          false,
@@ -108,7 +108,7 @@ public class FeatureModelItemProvider
          getResourceLocator(),
          getString("_UI_FeatureModel_version_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_FeatureModel_version_feature", "_UI_FeatureModel_type"),
-         FeaturemodelPackage.Literals.FEATURE_MODEL__VERSION,
+         FeatureModelPackage.Literals.FEATURE_MODEL__VERSION,
          true,
          false,
          false,
@@ -129,10 +129,10 @@ public class FeatureModelItemProvider
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
     if (childrenFeatures == null) {
       super.getChildrenFeatures(object);
-      childrenFeatures.add(FeaturemodelPackage.Literals.FEATURE_MODEL__DESCRIPTION);
-      childrenFeatures.add(FeaturemodelPackage.Literals.FEATURE_MODEL__ATTRIBUTES);
-      childrenFeatures.add(FeaturemodelPackage.Literals.FEATURE_MODEL__ROOT);
-      childrenFeatures.add(FeaturemodelPackage.Literals.FEATURE_MODEL__CONSTRAINTS);
+      childrenFeatures.add(FeatureModelPackage.Literals.FEATURE_MODEL__DESCRIPTION);
+      childrenFeatures.add(FeatureModelPackage.Literals.FEATURE_MODEL__ATTRIBUTES);
+      childrenFeatures.add(FeatureModelPackage.Literals.FEATURE_MODEL__ROOT);
+      childrenFeatures.add(FeatureModelPackage.Literals.FEATURE_MODEL__CONSTRAINTS);
     }
     return childrenFeatures;
   }
@@ -187,14 +187,14 @@ public class FeatureModelItemProvider
     updateChildren(notification);
 
     switch (notification.getFeatureID(FeatureModel.class)) {
-      case FeaturemodelPackage.FEATURE_MODEL__ID:
-      case FeaturemodelPackage.FEATURE_MODEL__VERSION:
+      case FeatureModelPackage.FEATURE_MODEL__ID:
+      case FeatureModelPackage.FEATURE_MODEL__VERSION:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
-      case FeaturemodelPackage.FEATURE_MODEL__DESCRIPTION:
-      case FeaturemodelPackage.FEATURE_MODEL__ATTRIBUTES:
-      case FeaturemodelPackage.FEATURE_MODEL__ROOT:
-      case FeaturemodelPackage.FEATURE_MODEL__CONSTRAINTS:
+      case FeatureModelPackage.FEATURE_MODEL__DESCRIPTION:
+      case FeatureModelPackage.FEATURE_MODEL__ATTRIBUTES:
+      case FeatureModelPackage.FEATURE_MODEL__ROOT:
+      case FeatureModelPackage.FEATURE_MODEL__CONSTRAINTS:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
     }
@@ -214,23 +214,23 @@ public class FeatureModelItemProvider
 
     newChildDescriptors.add
       (createChildParameter
-        (FeaturemodelPackage.Literals.FEATURE_MODEL__DESCRIPTION,
-         FeaturemodelFactory.eINSTANCE.createDescription()));
+        (FeatureModelPackage.Literals.FEATURE_MODEL__DESCRIPTION,
+         FeatureModelFactory.eINSTANCE.createDescription()));
 
     newChildDescriptors.add
       (createChildParameter
-        (FeaturemodelPackage.Literals.FEATURE_MODEL__ATTRIBUTES,
-         FeaturemodelFactory.eINSTANCE.createAttribute()));
+        (FeatureModelPackage.Literals.FEATURE_MODEL__ATTRIBUTES,
+         FeatureModelFactory.eINSTANCE.createAttribute()));
 
     newChildDescriptors.add
       (createChildParameter
-        (FeaturemodelPackage.Literals.FEATURE_MODEL__ROOT,
-         FeaturemodelFactory.eINSTANCE.createFeature()));
+        (FeatureModelPackage.Literals.FEATURE_MODEL__ROOT,
+         FeatureModelFactory.eINSTANCE.createFeature()));
 
     newChildDescriptors.add
       (createChildParameter
-        (FeaturemodelPackage.Literals.FEATURE_MODEL__CONSTRAINTS,
-         FeaturemodelFactory.eINSTANCE.createConstraint()));
+        (FeatureModelPackage.Literals.FEATURE_MODEL__CONSTRAINTS,
+         FeatureModelFactory.eINSTANCE.createConstraint()));
   }
 
   /**

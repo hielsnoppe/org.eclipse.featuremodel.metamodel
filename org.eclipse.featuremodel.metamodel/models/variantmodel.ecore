@@ -42,20 +42,4 @@
     <eLiterals name="selected" value="1"/>
     <eLiterals name="excluded" value="2"/>
   </eClassifiers>
-  <eSubpackages name="resultmodel" nsURI="http://www.eclipse.org/resultmodel" nsPrefix="resultmodel">
-    <eClassifiers xsi:type="ecore:EClass" name="ResultModel">
-      <eOperations name="getConcreteModels" lowerBound="1" upperBound="-1" eType="ecore:EClass featuremodel.ecore#//FeatureModel"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
-          iD="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="variantModel" lowerBound="1"
-          eType="#//VariantModel"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="selections" upperBound="-1"
-          eType="#//resultmodel/ResultSelection" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ResultSelection" eSuperTypes="#//VariantSelection">
-      <eOperations name="getModel" lowerBound="1" eType="#//resultmodel/ResultModel"/>
-    </eClassifiers>
-  </eSubpackages>
 </ecore:EPackage>

@@ -28,8 +28,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.featuremodel.Constraint;
-import org.eclipse.featuremodel.FeaturemodelFactory;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelFactory;
+import org.eclipse.featuremodel.FeatureModelPackage;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.featuremodel.Constraint} object.
@@ -84,7 +84,7 @@ public class ConstraintItemProvider
          getResourceLocator(),
          getString("_UI_Constraint_id_feature"),
          getString("_UI_PropertyDescriptor_description", "_UI_Constraint_id_feature", "_UI_Constraint_type"),
-         FeaturemodelPackage.Literals.CONSTRAINT__ID,
+         FeatureModelPackage.Literals.CONSTRAINT__ID,
          true,
          false,
          false,
@@ -105,7 +105,7 @@ public class ConstraintItemProvider
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
     if (childrenFeatures == null) {
       super.getChildrenFeatures(object);
-      childrenFeatures.add(FeaturemodelPackage.Literals.CONSTRAINT__DESCRIPTION);
+      childrenFeatures.add(FeatureModelPackage.Literals.CONSTRAINT__DESCRIPTION);
     }
     return childrenFeatures;
   }
@@ -160,10 +160,10 @@ public class ConstraintItemProvider
     updateChildren(notification);
 
     switch (notification.getFeatureID(Constraint.class)) {
-      case FeaturemodelPackage.CONSTRAINT__ID:
+      case FeatureModelPackage.CONSTRAINT__ID:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
-      case FeaturemodelPackage.CONSTRAINT__DESCRIPTION:
+      case FeatureModelPackage.CONSTRAINT__DESCRIPTION:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
     }
@@ -183,8 +183,8 @@ public class ConstraintItemProvider
 
     newChildDescriptors.add
       (createChildParameter
-        (FeaturemodelPackage.Literals.CONSTRAINT__DESCRIPTION,
-         FeaturemodelFactory.eINSTANCE.createDescription()));
+        (FeatureModelPackage.Literals.CONSTRAINT__DESCRIPTION,
+         FeatureModelFactory.eINSTANCE.createDescription()));
   }
 
   /**

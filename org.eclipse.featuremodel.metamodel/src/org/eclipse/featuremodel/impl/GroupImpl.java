@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.featuremodel.Feature;
-import org.eclipse.featuremodel.FeaturemodelPackage;
+import org.eclipse.featuremodel.FeatureModelPackage;
 import org.eclipse.featuremodel.Group;
 
 /**
@@ -129,7 +129,7 @@ public class GroupImpl extends EObjectImpl implements Group {
    */
   @Override
   protected EClass eStaticClass() {
-    return FeaturemodelPackage.Literals.GROUP;
+    return FeatureModelPackage.Literals.GROUP;
   }
 
   /**
@@ -150,7 +150,7 @@ public class GroupImpl extends EObjectImpl implements Group {
     String oldId = id;
     id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.GROUP__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.GROUP__ID, oldId, id));
   }
 
   /**
@@ -171,7 +171,7 @@ public class GroupImpl extends EObjectImpl implements Group {
     int oldLower = lower;
     lower = newLower;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.GROUP__LOWER, oldLower, lower));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.GROUP__LOWER, oldLower, lower));
   }
 
   /**
@@ -192,7 +192,7 @@ public class GroupImpl extends EObjectImpl implements Group {
     int oldUpper = upper;
     upper = newUpper;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeaturemodelPackage.GROUP__UPPER, oldUpper, upper));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.GROUP__UPPER, oldUpper, upper));
   }
 
   /**
@@ -202,7 +202,7 @@ public class GroupImpl extends EObjectImpl implements Group {
    */
   public EList<Feature> getFeatures() {
     if (features == null) {
-      features = new EObjectContainmentEList<Feature>(Feature.class, this, FeaturemodelPackage.GROUP__FEATURES);
+      features = new EObjectContainmentEList<Feature>(Feature.class, this, FeatureModelPackage.GROUP__FEATURES);
     }
     return features;
   }
@@ -215,7 +215,7 @@ public class GroupImpl extends EObjectImpl implements Group {
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
     switch (featureID) {
-      case FeaturemodelPackage.GROUP__FEATURES:
+      case FeatureModelPackage.GROUP__FEATURES:
         return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -229,13 +229,13 @@ public class GroupImpl extends EObjectImpl implements Group {
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case FeaturemodelPackage.GROUP__ID:
+      case FeatureModelPackage.GROUP__ID:
         return getId();
-      case FeaturemodelPackage.GROUP__LOWER:
+      case FeatureModelPackage.GROUP__LOWER:
         return new Integer(getLower());
-      case FeaturemodelPackage.GROUP__UPPER:
+      case FeatureModelPackage.GROUP__UPPER:
         return new Integer(getUpper());
-      case FeaturemodelPackage.GROUP__FEATURES:
+      case FeatureModelPackage.GROUP__FEATURES:
         return getFeatures();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -250,16 +250,16 @@ public class GroupImpl extends EObjectImpl implements Group {
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case FeaturemodelPackage.GROUP__ID:
+      case FeatureModelPackage.GROUP__ID:
         setId((String)newValue);
         return;
-      case FeaturemodelPackage.GROUP__LOWER:
+      case FeatureModelPackage.GROUP__LOWER:
         setLower(((Integer)newValue).intValue());
         return;
-      case FeaturemodelPackage.GROUP__UPPER:
+      case FeatureModelPackage.GROUP__UPPER:
         setUpper(((Integer)newValue).intValue());
         return;
-      case FeaturemodelPackage.GROUP__FEATURES:
+      case FeatureModelPackage.GROUP__FEATURES:
         getFeatures().clear();
         getFeatures().addAll((Collection<? extends Feature>)newValue);
         return;
@@ -275,16 +275,16 @@ public class GroupImpl extends EObjectImpl implements Group {
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.GROUP__ID:
+      case FeatureModelPackage.GROUP__ID:
         setId(ID_EDEFAULT);
         return;
-      case FeaturemodelPackage.GROUP__LOWER:
+      case FeatureModelPackage.GROUP__LOWER:
         setLower(LOWER_EDEFAULT);
         return;
-      case FeaturemodelPackage.GROUP__UPPER:
+      case FeatureModelPackage.GROUP__UPPER:
         setUpper(UPPER_EDEFAULT);
         return;
-      case FeaturemodelPackage.GROUP__FEATURES:
+      case FeatureModelPackage.GROUP__FEATURES:
         getFeatures().clear();
         return;
     }
@@ -299,13 +299,13 @@ public class GroupImpl extends EObjectImpl implements Group {
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case FeaturemodelPackage.GROUP__ID:
+      case FeatureModelPackage.GROUP__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case FeaturemodelPackage.GROUP__LOWER:
+      case FeatureModelPackage.GROUP__LOWER:
         return lower != LOWER_EDEFAULT;
-      case FeaturemodelPackage.GROUP__UPPER:
+      case FeatureModelPackage.GROUP__UPPER:
         return upper != UPPER_EDEFAULT;
-      case FeaturemodelPackage.GROUP__FEATURES:
+      case FeatureModelPackage.GROUP__FEATURES:
         return features != null && !features.isEmpty();
     }
     return super.eIsSet(featureID);

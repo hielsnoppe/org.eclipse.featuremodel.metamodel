@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  * </p>
  *
- * @see org.eclipse.featuremodel.FeaturemodelPackage#getGroup()
+ * @see org.eclipse.featuremodel.FeatureModelPackage#getGroup()
  * @model
  * @generated
  */
@@ -40,7 +40,7 @@ public interface Group extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Id</em>' attribute.
    * @see #setId(String)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getGroup_Id()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getGroup_Id()
    * @model id="true" dataType="org.eclipse.featuremodel.ID" required="true"
    * @generated
    */
@@ -67,7 +67,7 @@ public interface Group extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Lower</em>' attribute.
    * @see #setLower(int)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getGroup_Lower()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getGroup_Lower()
    * @model default="-1" required="true"
    * @generated
    */
@@ -94,7 +94,7 @@ public interface Group extends EObject {
    * <!-- end-user-doc -->
    * @return the value of the '<em>Upper</em>' attribute.
    * @see #setUpper(int)
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getGroup_Upper()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getGroup_Upper()
    * @model default="-1" required="true"
    * @generated
    */
@@ -120,7 +120,7 @@ public interface Group extends EObject {
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Features</em>' containment reference list.
-   * @see org.eclipse.featuremodel.FeaturemodelPackage#getGroup_Features()
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getGroup_Features()
    * @model containment="true" required="true"
    * @generated
    */

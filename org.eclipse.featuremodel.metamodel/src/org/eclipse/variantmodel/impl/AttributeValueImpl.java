@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.featuremodel.Attribute;
 
 import org.eclipse.variantmodel.AttributeValue;
-import org.eclipse.variantmodel.VariantmodelPackage;
+import org.eclipse.variantmodel.VariantModelPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,7 +93,7 @@ public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
    */
   @Override
   protected EClass eStaticClass() {
-    return VariantmodelPackage.Literals.ATTRIBUTE_VALUE;
+    return VariantModelPackage.Literals.ATTRIBUTE_VALUE;
   }
 
   /**
@@ -114,7 +114,7 @@ public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
     String oldId = id;
     id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.ATTRIBUTE_VALUE__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.ATTRIBUTE_VALUE__ID, oldId, id));
   }
 
   /**
@@ -135,7 +135,7 @@ public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
     Attribute oldAttribute = attribute;
     attribute = newAttribute;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE, oldAttribute, newAttribute);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VariantModelPackage.ATTRIBUTE_VALUE__ATTRIBUTE, oldAttribute, newAttribute);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -150,14 +150,14 @@ public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
     if (newAttribute != attribute) {
       NotificationChain msgs = null;
       if (attribute != null)
-        msgs = ((InternalEObject)attribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE, null, msgs);
+        msgs = ((InternalEObject)attribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VariantModelPackage.ATTRIBUTE_VALUE__ATTRIBUTE, null, msgs);
       if (newAttribute != null)
-        msgs = ((InternalEObject)newAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE, null, msgs);
+        msgs = ((InternalEObject)newAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VariantModelPackage.ATTRIBUTE_VALUE__ATTRIBUTE, null, msgs);
       msgs = basicSetAttribute(newAttribute, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE, newAttribute, newAttribute));
+      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.ATTRIBUTE_VALUE__ATTRIBUTE, newAttribute, newAttribute));
   }
 
   /**
@@ -178,7 +178,7 @@ public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
     EObject oldContent = content;
     content = newContent;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT, oldContent, newContent);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VariantModelPackage.ATTRIBUTE_VALUE__CONTENT, oldContent, newContent);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -193,14 +193,14 @@ public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
     if (newContent != content) {
       NotificationChain msgs = null;
       if (content != null)
-        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT, null, msgs);
+        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VariantModelPackage.ATTRIBUTE_VALUE__CONTENT, null, msgs);
       if (newContent != null)
-        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT, null, msgs);
+        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VariantModelPackage.ATTRIBUTE_VALUE__CONTENT, null, msgs);
       msgs = basicSetContent(newContent, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT, newContent, newContent));
+      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.ATTRIBUTE_VALUE__CONTENT, newContent, newContent));
   }
 
   /**
@@ -211,9 +211,9 @@ public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
     switch (featureID) {
-      case VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
+      case VariantModelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
         return basicSetAttribute(null, msgs);
-      case VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT:
+      case VariantModelPackage.ATTRIBUTE_VALUE__CONTENT:
         return basicSetContent(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -227,11 +227,11 @@ public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case VariantmodelPackage.ATTRIBUTE_VALUE__ID:
+      case VariantModelPackage.ATTRIBUTE_VALUE__ID:
         return getId();
-      case VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
+      case VariantModelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
         return getAttribute();
-      case VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT:
+      case VariantModelPackage.ATTRIBUTE_VALUE__CONTENT:
         return getContent();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -245,13 +245,13 @@ public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case VariantmodelPackage.ATTRIBUTE_VALUE__ID:
+      case VariantModelPackage.ATTRIBUTE_VALUE__ID:
         setId((String)newValue);
         return;
-      case VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
+      case VariantModelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
         setAttribute((Attribute)newValue);
         return;
-      case VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT:
+      case VariantModelPackage.ATTRIBUTE_VALUE__CONTENT:
         setContent((EObject)newValue);
         return;
     }
@@ -266,13 +266,13 @@ public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case VariantmodelPackage.ATTRIBUTE_VALUE__ID:
+      case VariantModelPackage.ATTRIBUTE_VALUE__ID:
         setId(ID_EDEFAULT);
         return;
-      case VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
+      case VariantModelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
         setAttribute((Attribute)null);
         return;
-      case VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT:
+      case VariantModelPackage.ATTRIBUTE_VALUE__CONTENT:
         setContent((EObject)null);
         return;
     }
@@ -287,11 +287,11 @@ public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case VariantmodelPackage.ATTRIBUTE_VALUE__ID:
+      case VariantModelPackage.ATTRIBUTE_VALUE__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case VariantmodelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
+      case VariantModelPackage.ATTRIBUTE_VALUE__ATTRIBUTE:
         return attribute != null;
-      case VariantmodelPackage.ATTRIBUTE_VALUE__CONTENT:
+      case VariantModelPackage.ATTRIBUTE_VALUE__CONTENT:
         return content != null;
     }
     return super.eIsSet(featureID);

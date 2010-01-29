@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.variantmodel.FeatureSelection;
 import org.eclipse.variantmodel.VariantModel;
-import org.eclipse.variantmodel.VariantmodelPackage;
+import org.eclipse.variantmodel.VariantModelPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,7 +87,7 @@ public class FeatureSelectionImpl extends VariantSelectionImpl implements Featur
    */
   @Override
   protected EClass eStaticClass() {
-    return VariantmodelPackage.Literals.FEATURE_SELECTION;
+    return VariantModelPackage.Literals.FEATURE_SELECTION;
   }
 
   /**
@@ -108,7 +108,7 @@ public class FeatureSelectionImpl extends VariantSelectionImpl implements Featur
     String oldId = id;
     id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.FEATURE_SELECTION__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.FEATURE_SELECTION__ID, oldId, id));
   }
 
   /**
@@ -129,7 +129,7 @@ public class FeatureSelectionImpl extends VariantSelectionImpl implements Featur
     boolean oldBound = bound;
     bound = newBound;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantmodelPackage.FEATURE_SELECTION__BOUND, oldBound, bound));
+      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.FEATURE_SELECTION__BOUND, oldBound, bound));
   }
 
   /**
@@ -151,9 +151,9 @@ public class FeatureSelectionImpl extends VariantSelectionImpl implements Featur
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case VariantmodelPackage.FEATURE_SELECTION__ID:
+      case VariantModelPackage.FEATURE_SELECTION__ID:
         return getId();
-      case VariantmodelPackage.FEATURE_SELECTION__BOUND:
+      case VariantModelPackage.FEATURE_SELECTION__BOUND:
         return isBound() ? Boolean.TRUE : Boolean.FALSE;
     }
     return super.eGet(featureID, resolve, coreType);
@@ -167,10 +167,10 @@ public class FeatureSelectionImpl extends VariantSelectionImpl implements Featur
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case VariantmodelPackage.FEATURE_SELECTION__ID:
+      case VariantModelPackage.FEATURE_SELECTION__ID:
         setId((String)newValue);
         return;
-      case VariantmodelPackage.FEATURE_SELECTION__BOUND:
+      case VariantModelPackage.FEATURE_SELECTION__BOUND:
         setBound(((Boolean)newValue).booleanValue());
         return;
     }
@@ -185,10 +185,10 @@ public class FeatureSelectionImpl extends VariantSelectionImpl implements Featur
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case VariantmodelPackage.FEATURE_SELECTION__ID:
+      case VariantModelPackage.FEATURE_SELECTION__ID:
         setId(ID_EDEFAULT);
         return;
-      case VariantmodelPackage.FEATURE_SELECTION__BOUND:
+      case VariantModelPackage.FEATURE_SELECTION__BOUND:
         setBound(BOUND_EDEFAULT);
         return;
     }
@@ -203,9 +203,9 @@ public class FeatureSelectionImpl extends VariantSelectionImpl implements Featur
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case VariantmodelPackage.FEATURE_SELECTION__ID:
+      case VariantModelPackage.FEATURE_SELECTION__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case VariantmodelPackage.FEATURE_SELECTION__BOUND:
+      case VariantModelPackage.FEATURE_SELECTION__BOUND:
         return bound != BOUND_EDEFAULT;
     }
     return super.eIsSet(featureID);

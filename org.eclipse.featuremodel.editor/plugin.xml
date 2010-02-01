@@ -22,7 +22,7 @@
       name = "%_UI_FeatureModelModelWizard_label"
       class = "org.eclipse.featuremodel.presentation.FeatureModelModelWizard"
       category = "org.eclipse.emf.ecore.Wizard.category.ID"
-      icon = "icons/full/obj16/FeaturemodelModelFile.gif">
+      icon = "icons/full/obj16/FeatureModelModelFile.gif">
       <description>%_UI_FeaturemodelModelWizard_description</description>
       <selection class = "org.eclipse.core.resources.IResource" />
     </wizard>
@@ -32,7 +32,7 @@
     <editor
         id = "org.eclipse.featuremodel.presentation.FeatureModelEditorID"
         name = "%_UI_FeatureModelEditor_label"
-        icon = "icons/full/obj16/FeaturemodelModelFile.gif"
+        icon = "icons/full/obj16/FeatureModelModelFile.gif"
         extensions = "featuremodel"
         class = "org.eclipse.featuremodel.presentation.FeatureModelEditor" 
         contributorClass="org.eclipse.featuremodel.presentation.FeatureModelActionBarContributor" >
@@ -50,7 +50,7 @@
       name = "%_UI_VariantmodelModelWizard_label"
       class = "org.eclipse.variantmodel.presentation.VariantModelModelWizard"
       category = "org.eclipse.emf.ecore.Wizard.category.ID"
-      icon = "icons/full/obj16/VariantmodelModelFile.gif">
+      icon = "icons/full/obj16/VariantModelModelFile.gif">
       <description>%_UI_VariantmodelModelWizard_description</description>
       <selection class = "org.eclipse.core.resources.IResource" />
     </wizard>
@@ -60,7 +60,7 @@
     <editor
         id = "org.eclipse.variantmodel.presentation.VariantModelEditorID"
         name = "%_UI_VariantmodelEditor_label"
-        icon = "icons/full/obj16/VariantmodelModelFile.gif"
+        icon = "icons/full/obj16/VariantModelModelFile.gif"
         extensions = "variantmodel"
         class = "org.eclipse.variantmodel.presentation.VariantModelEditor" 
         contributorClass="org.eclipse.variantmodel.presentation.VariantModelActionBarContributor" >

@@ -64,7 +64,7 @@
         defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//Description"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultvalue" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultValue" lowerBound="1"
         eType="#//AttributeValue" transient="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//AttributeType"
         containment="true"/>

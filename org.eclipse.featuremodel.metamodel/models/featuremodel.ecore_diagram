@@ -512,18 +512,6 @@
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eAn2AwzvEd-eQMaPc3p5Nw" points="[0, 73, 895, -105]$[-895, 133, 0, -45]"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_eAsHcAzvEd-eQMaPc3p5Nw" type="4003" source="_LguxdAXXEd-CV7Ug6fd5Lw" target="_d_6rYAzvEd-eQMaPc3p5Nw">
-    <children xmi:type="notation:Node" xmi:id="_eAtVkAzvEd-eQMaPc3p5Nw" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_eAtVkQzvEd-eQMaPc3p5Nw" y="40"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_eAt8oAzvEd-eQMaPc3p5Nw" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_eAt8oQzvEd-eQMaPc3p5Nw" y="60"/>
-    </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_eAsHcQzvEd-eQMaPc3p5Nw"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_eAsHcgzvEd-eQMaPc3p5Nw" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="featuremodel.ecore#//Attribute/defaultvalue"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eAsHcwzvEd-eQMaPc3p5Nw" points="[0, 46, -504, -97]$[504, 106, 0, -37]"/>
-  </edges>
   <edges xmi:type="notation:Edge" xmi:id="_eAw_8AzvEd-eQMaPc3p5Nw" type="4003" source="_LguxdAXXEd-CV7Ug6fd5Lw" target="_d_0kwAzvEd-eQMaPc3p5Nw">
     <children xmi:type="notation:Node" xmi:id="_eAxnAwzvEd-eQMaPc3p5Nw" type="6002">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_eAxnBAzvEd-eQMaPc3p5Nw" y="40"/>
@@ -583,5 +571,17 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_eBCFsgzvEd-eQMaPc3p5Nw" fontName="Segoe UI"/>
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eBCFswzvEd-eQMaPc3p5Nw" points="[0, 46, 389, -97]$[-389, 106, 0, -37]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_1UzkQA8KEd-xlsI8Ecj5vA" type="4003" source="_LguxdAXXEd-CV7Ug6fd5Lw" target="_d_6rYAzvEd-eQMaPc3p5Nw">
+    <children xmi:type="notation:Node" xmi:id="_1U0LUw8KEd-xlsI8Ecj5vA" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1U0LVA8KEd-xlsI8Ecj5vA" y="40"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_1U0LVQ8KEd-xlsI8Ecj5vA" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1U0LVg8KEd-xlsI8Ecj5vA" y="60"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_1U0LUA8KEd-xlsI8Ecj5vA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_1U0LUQ8KEd-xlsI8Ecj5vA" fontName="Segoe UI"/>
+    <element xmi:type="ecore:EReference" href="featuremodel.ecore#//Attribute/defaultValue"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1U0LUg8KEd-xlsI8Ecj5vA" points="[0, 46, -504, -97]$[504, 106, 0, -37]"/>
   </edges>
 </notation:Diagram>

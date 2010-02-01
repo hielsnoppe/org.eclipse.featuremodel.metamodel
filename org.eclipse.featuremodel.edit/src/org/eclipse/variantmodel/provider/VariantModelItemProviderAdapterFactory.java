@@ -99,6 +99,29 @@ public class VariantModelItemProviderAdapterFactory extends VariantModelAdapterF
   }
 
   /**
+   * This keeps track of the one adapter used for all {@link org.eclipse.variantmodel.VariantValue} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected VariantValueItemProvider variantValueItemProvider;
+
+  /**
+   * This creates an adapter for a {@link org.eclipse.variantmodel.VariantValue}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createVariantValueAdapter() {
+    if (variantValueItemProvider == null) {
+      variantValueItemProvider = new VariantValueItemProvider(this);
+    }
+
+    return variantValueItemProvider;
+  }
+
+  /**
    * This keeps track of the one adapter used for all {@link org.eclipse.variantmodel.VariantModel} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -142,29 +165,6 @@ public class VariantModelItemProviderAdapterFactory extends VariantModelAdapterF
     }
 
     return featureSelectionItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link org.eclipse.variantmodel.AttributeValue} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected AttributeValueItemProvider attributeValueItemProvider;
-
-  /**
-   * This creates an adapter for a {@link org.eclipse.variantmodel.AttributeValue}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createAttributeValueAdapter() {
-    if (attributeValueItemProvider == null) {
-      attributeValueItemProvider = new AttributeValueItemProvider(this);
-    }
-
-    return attributeValueItemProvider;
   }
 
   /**
@@ -266,10 +266,10 @@ public class VariantModelItemProviderAdapterFactory extends VariantModelAdapterF
    * @generated
    */
   public void dispose() {
-    if (variantSelectionItemProvider != null) variantSelectionItemProvider.dispose();
-    if (variantModelItemProvider != null) variantModelItemProvider.dispose();
     if (featureSelectionItemProvider != null) featureSelectionItemProvider.dispose();
-    if (attributeValueItemProvider != null) attributeValueItemProvider.dispose();
+    if (variantModelItemProvider != null) variantModelItemProvider.dispose();
+    if (variantSelectionItemProvider != null) variantSelectionItemProvider.dispose();
+    if (variantValueItemProvider != null) variantValueItemProvider.dispose();
   }
 
 }

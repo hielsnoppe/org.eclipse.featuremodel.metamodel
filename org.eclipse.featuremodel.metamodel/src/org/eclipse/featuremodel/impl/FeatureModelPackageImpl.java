@@ -532,7 +532,7 @@ public class FeatureModelPackageImpl extends EPackageImpl implements FeatureMode
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAttribute_Defaultvalue() {
+  public EReference getAttribute_DefaultValue() {
     return (EReference)attributeEClass.getEStructuralFeatures().get(4);
   }
 
@@ -779,7 +779,7 @@ public class FeatureModelPackageImpl extends EPackageImpl implements FeatureMode
     createEAttribute(attributeEClass, ATTRIBUTE__NAME);
     createEAttribute(attributeEClass, ATTRIBUTE__SETABLE);
     createEReference(attributeEClass, ATTRIBUTE__DESCRIPTION);
-    createEReference(attributeEClass, ATTRIBUTE__DEFAULTVALUE);
+    createEReference(attributeEClass, ATTRIBUTE__DEFAULT_VALUE);
     createEReference(attributeEClass, ATTRIBUTE__TYPE);
 
     descriptionEClass = createEClass(DESCRIPTION);
@@ -904,7 +904,7 @@ public class FeatureModelPackageImpl extends EPackageImpl implements FeatureMode
     initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttribute_Setable(), ecorePackage.getEBoolean(), "setable", "false", 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAttribute_Description(), this.getDescription(), null, "description", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttribute_Defaultvalue(), this.getAttributeValue(), null, "defaultvalue", null, 1, 1, Attribute.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttribute_DefaultValue(), this.getAttributeValue(), null, "defaultValue", null, 1, 1, Attribute.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAttribute_Type(), this.getAttributeType(), null, "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(descriptionEClass, Description.class, "Description", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

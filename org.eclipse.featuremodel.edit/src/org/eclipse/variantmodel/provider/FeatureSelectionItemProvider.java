@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.featuremodel.provider.FeatureModelEditPlugin;
@@ -37,7 +38,7 @@ import org.eclipse.variantmodel.VariantModelPackage;
  * @generated
  */
 public class FeatureSelectionItemProvider
-  extends VariantSelectionItemProvider
+  extends ItemProviderAdapter
   implements	
     IEditingDomainItemProvider,	
     IStructuredItemContentProvider,	
@@ -66,7 +67,8 @@ public class FeatureSelectionItemProvider
       super.getPropertyDescriptors(object);
 
       addIdPropertyDescriptor(object);
-      addBoundPropertyDescriptor(object);
+      addStatePropertyDescriptor(object);
+      addFeaturePropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -94,23 +96,45 @@ public class FeatureSelectionItemProvider
   }
 
   /**
-   * This adds a property descriptor for the Bound feature.
+   * This adds a property descriptor for the State feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addBoundPropertyDescriptor(Object object) {
+  protected void addStatePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_FeatureSelection_bound_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_FeatureSelection_bound_feature", "_UI_FeatureSelection_type"),
-         VariantModelPackage.Literals.FEATURE_SELECTION__BOUND,
+         getString("_UI_FeatureSelection_state_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_FeatureSelection_state_feature", "_UI_FeatureSelection_type"),
+         VariantModelPackage.Literals.FEATURE_SELECTION__STATE,
          true,
          false,
          false,
-         ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
+  }
+
+  /**
+   * This adds a property descriptor for the Feature feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addFeaturePropertyDescriptor(Object object) {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_FeatureSelection_feature_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_FeatureSelection_feature_feature", "_UI_FeatureSelection_type"),
+         VariantModelPackage.Literals.FEATURE_SELECTION__FEATURE,
+         true,
+         false,
+         true,
+         null,
          null,
          null));
   }
@@ -153,7 +177,7 @@ public class FeatureSelectionItemProvider
 
     switch (notification.getFeatureID(FeatureSelection.class)) {
       case VariantModelPackage.FEATURE_SELECTION__ID:
-      case VariantModelPackage.FEATURE_SELECTION__BOUND:
+      case VariantModelPackage.FEATURE_SELECTION__STATE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }

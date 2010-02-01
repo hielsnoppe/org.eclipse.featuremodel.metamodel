@@ -35,6 +35,15 @@ public interface VariantModelFactory extends EFactory {
   VariantSelection createVariantSelection();
 
   /**
+   * Returns a new object of class '<em>Variant Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variant Value</em>'.
+   * @generated
+   */
+  VariantValue createVariantValue();
+
+  /**
    * Returns a new object of class '<em>Variant Model</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -51,15 +60,6 @@ public interface VariantModelFactory extends EFactory {
    * @generated
    */
   FeatureSelection createFeatureSelection();
-
-  /**
-   * Returns a new object of class '<em>Attribute Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Attribute Value</em>'.
-   * @generated
-   */
-  AttributeValue createAttributeValue();
 
   /**
    * Returns the package supported by this factory.

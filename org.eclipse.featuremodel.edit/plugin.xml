@@ -13,7 +13,7 @@
   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
     <factory 
        uri = "http://www.eclipse.org/featuremodel" 
-       class = "org.eclipse.featuremodel.provider.FeaturemodelItemProviderAdapterFactory" 
+       class = "org.eclipse.featuremodel.provider.FeatureModelItemProviderAdapterFactory" 
        supportedTypes = 
          "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
           org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -25,7 +25,7 @@
   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
     <factory 
        uri = "http://www.eclipse.org/variantmodel" 
-       class = "org.eclipse.variantmodel.provider.VariantmodelItemProviderAdapterFactory" 
+       class = "org.eclipse.variantmodel.provider.VariantModelItemProviderAdapterFactory" 
        supportedTypes = 
          "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
           org.eclipse.emf.edit.provider.IStructuredItemContentProvider

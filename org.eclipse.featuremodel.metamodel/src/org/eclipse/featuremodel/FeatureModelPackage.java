@@ -401,13 +401,13 @@ public interface FeatureModelPackage extends EPackage {
   int ATTRIBUTE__DESCRIPTION = 3;
 
   /**
-   * The feature id for the '<em><b>Defaultvalue</b></em>' containment reference.
+   * The feature id for the '<em><b>Default Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__DEFAULTVALUE = 4;
+  int ATTRIBUTE__DEFAULT_VALUE = 4;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1036,15 +1036,15 @@ public interface FeatureModelPackage extends EPackage {
   EReference getAttribute_Description();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.featuremodel.Attribute#getDefaultvalue <em>Defaultvalue</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.featuremodel.Attribute#getDefaultValue <em>Default Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Defaultvalue</em>'.
-   * @see org.eclipse.featuremodel.Attribute#getDefaultvalue()
+   * @return the meta object for the containment reference '<em>Default Value</em>'.
+   * @see org.eclipse.featuremodel.Attribute#getDefaultValue()
    * @see #getAttribute()
    * @generated
    */
-  EReference getAttribute_Defaultvalue();
+  EReference getAttribute_DefaultValue();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.featuremodel.Attribute#getType <em>Type</em>}'.
@@ -1529,12 +1529,12 @@ public interface FeatureModelPackage extends EPackage {
     EReference ATTRIBUTE__DESCRIPTION = eINSTANCE.getAttribute_Description();
 
     /**
-     * The meta object literal for the '<em><b>Defaultvalue</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Default Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ATTRIBUTE__DEFAULTVALUE = eINSTANCE.getAttribute_Defaultvalue();
+    EReference ATTRIBUTE__DEFAULT_VALUE = eINSTANCE.getAttribute_DefaultValue();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.

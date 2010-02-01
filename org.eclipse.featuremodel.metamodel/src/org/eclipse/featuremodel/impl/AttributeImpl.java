@@ -32,7 +32,7 @@ import org.eclipse.featuremodel.FeatureModelPackage;
  *   <li>{@link org.eclipse.featuremodel.impl.AttributeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.impl.AttributeImpl#isSetable <em>Setable</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.impl.AttributeImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.featuremodel.impl.AttributeImpl#getDefaultvalue <em>Defaultvalue</em>}</li>
+ *   <li>{@link org.eclipse.featuremodel.impl.AttributeImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.impl.AttributeImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
@@ -111,14 +111,14 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
   protected Description description;
 
   /**
-   * The cached value of the '{@link #getDefaultvalue() <em>Defaultvalue</em>}' containment reference.
+   * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDefaultvalue()
+   * @see #getDefaultValue()
    * @generated
    * @ordered
    */
-  protected AttributeValue defaultvalue;
+  protected AttributeValue defaultValue;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -260,8 +260,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * <!-- end-user-doc -->
    * @generated
    */
-  public AttributeValue getDefaultvalue() {
-    return defaultvalue;
+  public AttributeValue getDefaultValue() {
+    return defaultValue;
   }
 
   /**
@@ -269,11 +269,11 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetDefaultvalue(AttributeValue newDefaultvalue, NotificationChain msgs) {
-    AttributeValue oldDefaultvalue = defaultvalue;
-    defaultvalue = newDefaultvalue;
+  public NotificationChain basicSetDefaultValue(AttributeValue newDefaultValue, NotificationChain msgs) {
+    AttributeValue oldDefaultValue = defaultValue;
+    defaultValue = newDefaultValue;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE, oldDefaultvalue, newDefaultvalue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__DEFAULT_VALUE, oldDefaultValue, newDefaultValue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -284,18 +284,18 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDefaultvalue(AttributeValue newDefaultvalue) {
-    if (newDefaultvalue != defaultvalue) {
+  public void setDefaultValue(AttributeValue newDefaultValue) {
+    if (newDefaultValue != defaultValue) {
       NotificationChain msgs = null;
-      if (defaultvalue != null)
-        msgs = ((InternalEObject)defaultvalue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE, null, msgs);
-      if (newDefaultvalue != null)
-        msgs = ((InternalEObject)newDefaultvalue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE, null, msgs);
-      msgs = basicSetDefaultvalue(newDefaultvalue, msgs);
+      if (defaultValue != null)
+        msgs = ((InternalEObject)defaultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.ATTRIBUTE__DEFAULT_VALUE, null, msgs);
+      if (newDefaultValue != null)
+        msgs = ((InternalEObject)newDefaultValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureModelPackage.ATTRIBUTE__DEFAULT_VALUE, null, msgs);
+      msgs = basicSetDefaultValue(newDefaultValue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE, newDefaultvalue, newDefaultvalue));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.ATTRIBUTE__DEFAULT_VALUE, newDefaultValue, newDefaultValue));
   }
 
   /**
@@ -351,8 +351,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
     switch (featureID) {
       case FeatureModelPackage.ATTRIBUTE__DESCRIPTION:
         return basicSetDescription(null, msgs);
-      case FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE:
-        return basicSetDefaultvalue(null, msgs);
+      case FeatureModelPackage.ATTRIBUTE__DEFAULT_VALUE:
+        return basicSetDefaultValue(null, msgs);
       case FeatureModelPackage.ATTRIBUTE__TYPE:
         return basicSetType(null, msgs);
     }
@@ -375,8 +375,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
         return isSetable() ? Boolean.TRUE : Boolean.FALSE;
       case FeatureModelPackage.ATTRIBUTE__DESCRIPTION:
         return getDescription();
-      case FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE:
-        return getDefaultvalue();
+      case FeatureModelPackage.ATTRIBUTE__DEFAULT_VALUE:
+        return getDefaultValue();
       case FeatureModelPackage.ATTRIBUTE__TYPE:
         return getType();
     }
@@ -403,8 +403,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
       case FeatureModelPackage.ATTRIBUTE__DESCRIPTION:
         setDescription((Description)newValue);
         return;
-      case FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE:
-        setDefaultvalue((AttributeValue)newValue);
+      case FeatureModelPackage.ATTRIBUTE__DEFAULT_VALUE:
+        setDefaultValue((AttributeValue)newValue);
         return;
       case FeatureModelPackage.ATTRIBUTE__TYPE:
         setType((AttributeType)newValue);
@@ -433,8 +433,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
       case FeatureModelPackage.ATTRIBUTE__DESCRIPTION:
         setDescription((Description)null);
         return;
-      case FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE:
-        setDefaultvalue((AttributeValue)null);
+      case FeatureModelPackage.ATTRIBUTE__DEFAULT_VALUE:
+        setDefaultValue((AttributeValue)null);
         return;
       case FeatureModelPackage.ATTRIBUTE__TYPE:
         setType((AttributeType)null);
@@ -459,8 +459,8 @@ public class AttributeImpl extends EObjectImpl implements Attribute {
         return setable != SETABLE_EDEFAULT;
       case FeatureModelPackage.ATTRIBUTE__DESCRIPTION:
         return description != null;
-      case FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE:
-        return defaultvalue != null;
+      case FeatureModelPackage.ATTRIBUTE__DEFAULT_VALUE:
+        return defaultValue != null;
       case FeatureModelPackage.ATTRIBUTE__TYPE:
         return type != null;
     }

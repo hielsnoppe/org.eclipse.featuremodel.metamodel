@@ -72,20 +72,20 @@ public class VariantModelAdapterFactory extends AdapterFactoryImpl {
   protected VariantModelSwitch<Adapter> modelSwitch =
     new VariantModelSwitch<Adapter>() {
       @Override
-      public Adapter caseVariantSelection(VariantSelection object) {
-        return createVariantSelectionAdapter();
+      public Adapter caseFeatureSelection(FeatureSelection object) {
+        return createFeatureSelectionAdapter();
       }
       @Override
       public Adapter caseVariantModel(VariantModel object) {
         return createVariantModelAdapter();
       }
       @Override
-      public Adapter caseFeatureSelection(FeatureSelection object) {
-        return createFeatureSelectionAdapter();
+      public Adapter caseVariantSelection(VariantSelection object) {
+        return createVariantSelectionAdapter();
       }
       @Override
-      public Adapter caseAttributeValue(AttributeValue object) {
-        return createAttributeValueAdapter();
+      public Adapter caseVariantValue(VariantValue object) {
+        return createVariantValueAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object) {
@@ -122,6 +122,20 @@ public class VariantModelAdapterFactory extends AdapterFactoryImpl {
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.variantmodel.VariantValue <em>Variant Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.variantmodel.VariantValue
+   * @generated
+   */
+  public Adapter createVariantValueAdapter() {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.eclipse.variantmodel.VariantModel <em>Variant Model</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -146,20 +160,6 @@ public class VariantModelAdapterFactory extends AdapterFactoryImpl {
    * @generated
    */
   public Adapter createFeatureSelectionAdapter() {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.variantmodel.AttributeValue <em>Attribute Value</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.eclipse.variantmodel.AttributeValue
-   * @generated
-   */
-  public Adapter createAttributeValueAdapter() {
     return null;
   }
 

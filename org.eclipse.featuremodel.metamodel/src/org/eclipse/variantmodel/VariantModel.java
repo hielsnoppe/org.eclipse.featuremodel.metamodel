@@ -131,7 +131,7 @@ public interface VariantModel extends EObject {
 
   /**
    * Returns the value of the '<em><b>Selections</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.variantmodel.FeatureSelection}.
+   * The list contents are of type {@link org.eclipse.variantmodel.VariantSelection}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Selections</em>' containment reference list isn't clear,
@@ -143,11 +143,11 @@ public interface VariantModel extends EObject {
    * @model containment="true"
    * @generated
    */
-  EList<FeatureSelection> getSelections();
+  EList<VariantSelection> getSelections();
 
   /**
    * Returns the value of the '<em><b>Values</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.variantmodel.AttributeValue}.
+   * The list contents are of type {@link org.eclipse.variantmodel.VariantValue}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Values</em>' containment reference list isn't clear,
@@ -159,6 +159,6 @@ public interface VariantModel extends EObject {
    * @model containment="true"
    * @generated
    */
-  EList<AttributeValue> getValues();
+  EList<VariantValue> getValues();
 
 } // VariantModel

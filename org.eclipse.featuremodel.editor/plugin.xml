@@ -18,9 +18,9 @@
       name="%_UI_Wizard_category">
     </category>
     <wizard
-      id = "org.eclipse.featuremodel.presentation.FeaturemodelModelWizardID"
-      name = "%_UI_FeaturemodelModelWizard_label"
-      class = "org.eclipse.featuremodel.presentation.FeaturemodelModelWizard"
+      id = "org.eclipse.featuremodel.presentation.FeatureModelModelWizardID"
+      name = "%_UI_FeatureModelModelWizard_label"
+      class = "org.eclipse.featuremodel.presentation.FeatureModelModelWizard"
       category = "org.eclipse.emf.ecore.Wizard.category.ID"
       icon = "icons/full/obj16/FeaturemodelModelFile.gif">
       <description>%_UI_FeaturemodelModelWizard_description</description>
@@ -30,12 +30,12 @@
 
   <extension point = "org.eclipse.ui.editors">
     <editor
-        id = "org.eclipse.featuremodel.presentation.FeaturemodelEditorID"
-        name = "%_UI_FeaturemodelEditor_label"
+        id = "org.eclipse.featuremodel.presentation.FeatureModelEditorID"
+        name = "%_UI_FeatureModelEditor_label"
         icon = "icons/full/obj16/FeaturemodelModelFile.gif"
         extensions = "featuremodel"
-        class = "org.eclipse.featuremodel.presentation.FeaturemodelEditor" 
-        contributorClass="org.eclipse.featuremodel.presentation.FeaturemodelActionBarContributor" >
+        class = "org.eclipse.featuremodel.presentation.FeatureModelEditor" 
+        contributorClass="org.eclipse.featuremodel.presentation.FeatureModelActionBarContributor" >
     </editor>
   </extension>    
 
@@ -46,9 +46,9 @@
       name="%_UI_Wizard_category">
     </category>
     <wizard
-      id = "org.eclipse.variantmodel.presentation.VariantmodelModelWizardID"
+      id = "org.eclipse.variantmodel.presentation.VariantModelModelWizardID"
       name = "%_UI_VariantmodelModelWizard_label"
-      class = "org.eclipse.variantmodel.presentation.VariantmodelModelWizard"
+      class = "org.eclipse.variantmodel.presentation.VariantModelModelWizard"
       category = "org.eclipse.emf.ecore.Wizard.category.ID"
       icon = "icons/full/obj16/VariantmodelModelFile.gif">
       <description>%_UI_VariantmodelModelWizard_description</description>
@@ -58,12 +58,12 @@
 
   <extension point = "org.eclipse.ui.editors">
     <editor
-        id = "org.eclipse.variantmodel.presentation.VariantmodelEditorID"
+        id = "org.eclipse.variantmodel.presentation.VariantModelEditorID"
         name = "%_UI_VariantmodelEditor_label"
         icon = "icons/full/obj16/VariantmodelModelFile.gif"
         extensions = "variantmodel"
-        class = "org.eclipse.variantmodel.presentation.VariantmodelEditor" 
-        contributorClass="org.eclipse.variantmodel.presentation.VariantmodelActionBarContributor" >
+        class = "org.eclipse.variantmodel.presentation.VariantModelEditor" 
+        contributorClass="org.eclipse.variantmodel.presentation.VariantModelActionBarContributor" >
     </editor>
   </extension>    
 </plugin>

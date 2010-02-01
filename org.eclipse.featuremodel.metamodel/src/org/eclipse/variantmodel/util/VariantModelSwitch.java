@@ -87,9 +87,9 @@ public class VariantModelSwitch<T> {
    */
   protected T doSwitch(int classifierID, EObject theEObject) {
     switch (classifierID) {
-      case VariantModelPackage.VARIANT_SELECTION: {
-        VariantSelection variantSelection = (VariantSelection)theEObject;
-        T result = caseVariantSelection(variantSelection);
+      case VariantModelPackage.FEATURE_SELECTION: {
+        FeatureSelection featureSelection = (FeatureSelection)theEObject;
+        T result = caseFeatureSelection(featureSelection);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -99,16 +99,16 @@ public class VariantModelSwitch<T> {
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case VariantModelPackage.FEATURE_SELECTION: {
-        FeatureSelection featureSelection = (FeatureSelection)theEObject;
-        T result = caseFeatureSelection(featureSelection);
-        if (result == null) result = caseVariantSelection(featureSelection);
+      case VariantModelPackage.VARIANT_SELECTION: {
+        VariantSelection variantSelection = (VariantSelection)theEObject;
+        T result = caseVariantSelection(variantSelection);
+        if (result == null) result = caseFeatureSelection(variantSelection);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case VariantModelPackage.ATTRIBUTE_VALUE: {
-        AttributeValue attributeValue = (AttributeValue)theEObject;
-        T result = caseAttributeValue(attributeValue);
+      case VariantModelPackage.VARIANT_VALUE: {
+        VariantValue variantValue = (VariantValue)theEObject;
+        T result = caseVariantValue(variantValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -128,6 +128,21 @@ public class VariantModelSwitch<T> {
    * @generated
    */
   public T caseVariantSelection(VariantSelection object) {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variant Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variant Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariantValue(VariantValue object) {
     return null;
   }
 
@@ -158,21 +173,6 @@ public class VariantModelSwitch<T> {
    * @generated
    */
   public T caseFeatureSelection(FeatureSelection object) {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAttributeValue(AttributeValue object) {
     return null;
   }
 

@@ -23,12 +23,10 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.featuremodel.provider.FeatureModelEditPlugin;
 
-import org.eclipse.variantmodel.SelectionState;
 import org.eclipse.variantmodel.VariantModelPackage;
 import org.eclipse.variantmodel.VariantSelection;
 
@@ -39,7 +37,7 @@ import org.eclipse.variantmodel.VariantSelection;
  * @generated
  */
 public class VariantSelectionItemProvider
-  extends ItemProviderAdapter
+  extends FeatureSelectionItemProvider
   implements	
     IEditingDomainItemProvider,	
     IStructuredItemContentProvider,	
@@ -67,52 +65,29 @@ public class VariantSelectionItemProvider
     if (itemPropertyDescriptors == null) {
       super.getPropertyDescriptors(object);
 
-      addStatePropertyDescriptor(object);
-      addFeaturePropertyDescriptor(object);
+      addBoundPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
 
   /**
-   * This adds a property descriptor for the State feature.
+   * This adds a property descriptor for the Bound feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addStatePropertyDescriptor(Object object) {
+  protected void addBoundPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add
       (createItemPropertyDescriptor
         (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
          getResourceLocator(),
-         getString("_UI_VariantSelection_state_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_VariantSelection_state_feature", "_UI_VariantSelection_type"),
-         VariantModelPackage.Literals.VARIANT_SELECTION__STATE,
+         getString("_UI_VariantSelection_bound_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_VariantSelection_bound_feature", "_UI_VariantSelection_type"),
+         VariantModelPackage.Literals.VARIANT_SELECTION__BOUND,
          true,
          false,
          false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
-   * This adds a property descriptor for the Feature feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addFeaturePropertyDescriptor(Object object) {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_VariantSelection_feature_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_VariantSelection_feature_feature", "_UI_VariantSelection_type"),
-         VariantModelPackage.Literals.VARIANT_SELECTION__FEATURE,
-         true,
-         false,
-         true,
-         null,
+         ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
          null,
          null));
   }
@@ -136,8 +111,7 @@ public class VariantSelectionItemProvider
    */
   @Override
   public String getText(Object object) {
-    SelectionState labelValue = ((VariantSelection)object).getState();
-    String label = labelValue == null ? null : labelValue.toString();
+    String label = ((VariantSelection)object).getId();
     return label == null || label.length() == 0 ?
       getString("_UI_VariantSelection_type") :
       getString("_UI_VariantSelection_type") + " " + label;
@@ -155,7 +129,7 @@ public class VariantSelectionItemProvider
     updateChildren(notification);
 
     switch (notification.getFeatureID(VariantSelection.class)) {
-      case VariantModelPackage.VARIANT_SELECTION__STATE:
+      case VariantModelPackage.VARIANT_SELECTION__BOUND:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
     }

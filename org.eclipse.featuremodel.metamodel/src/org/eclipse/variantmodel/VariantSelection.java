@@ -6,10 +6,6 @@
  */
 package org.eclipse.variantmodel;
 
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.featuremodel.Feature;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Variant Selection</b></em>'.
@@ -18,8 +14,7 @@ import org.eclipse.featuremodel.Feature;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.variantmodel.VariantSelection#getState <em>State</em>}</li>
- *   <li>{@link org.eclipse.variantmodel.VariantSelection#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.VariantSelection#isBound <em>Bound</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,60 +22,39 @@ import org.eclipse.featuremodel.Feature;
  * @model
  * @generated
  */
-public interface VariantSelection extends EObject {
+public interface VariantSelection extends FeatureSelection {
   /**
-   * Returns the value of the '<em><b>State</b></em>' attribute.
-   * The literals are from the enumeration {@link org.eclipse.variantmodel.SelectionState}.
+   * Returns the value of the '<em><b>Bound</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>State</em>' attribute isn't clear,
+   * If the meaning of the '<em>Bound</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>State</em>' attribute.
-   * @see org.eclipse.variantmodel.SelectionState
-   * @see #setState(SelectionState)
-   * @see org.eclipse.variantmodel.VariantModelPackage#getVariantSelection_State()
-   * @model required="true"
+   * @return the value of the '<em>Bound</em>' attribute.
+   * @see #setBound(boolean)
+   * @see org.eclipse.variantmodel.VariantModelPackage#getVariantSelection_Bound()
+   * @model
    * @generated
    */
-  SelectionState getState();
+  boolean isBound();
 
   /**
-   * Sets the value of the '{@link org.eclipse.variantmodel.VariantSelection#getState <em>State</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.variantmodel.VariantSelection#isBound <em>Bound</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>State</em>' attribute.
-   * @see org.eclipse.variantmodel.SelectionState
-   * @see #getState()
+   * @param value the new value of the '<em>Bound</em>' attribute.
+   * @see #isBound()
    * @generated
    */
-  void setState(SelectionState value);
+  void setBound(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Feature</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Feature</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Feature</em>' reference.
-   * @see #setFeature(Feature)
-   * @see org.eclipse.variantmodel.VariantModelPackage#getVariantSelection_Feature()
-   * @model required="true"
-   * @generated
-   */
-  Feature getFeature();
-
-  /**
-   * Sets the value of the '{@link org.eclipse.variantmodel.VariantSelection#getFeature <em>Feature</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Feature</em>' reference.
-   * @see #getFeature()
+   * @model kind="operation" required="true"
    * @generated
    */
-  void setFeature(Feature value);
+  VariantModel getModel();
 
 } // VariantSelection

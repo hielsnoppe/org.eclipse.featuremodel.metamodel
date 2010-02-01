@@ -9,14 +9,10 @@ package org.eclipse.variantmodel.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.variantmodel.VariantModel;
 
-import org.eclipse.featuremodel.Feature;
-
-import org.eclipse.variantmodel.SelectionState;
 import org.eclipse.variantmodel.VariantModelPackage;
 import org.eclipse.variantmodel.VariantSelection;
 
@@ -27,43 +23,32 @@ import org.eclipse.variantmodel.VariantSelection;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.variantmodel.impl.VariantSelectionImpl#getState <em>State</em>}</li>
- *   <li>{@link org.eclipse.variantmodel.impl.VariantSelectionImpl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.eclipse.variantmodel.impl.VariantSelectionImpl#isBound <em>Bound</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class VariantSelectionImpl extends EObjectImpl implements VariantSelection {
+public class VariantSelectionImpl extends FeatureSelectionImpl implements VariantSelection {
   /**
-   * The default value of the '{@link #getState() <em>State</em>}' attribute.
+   * The default value of the '{@link #isBound() <em>Bound</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getState()
+   * @see #isBound()
    * @generated
    * @ordered
    */
-  protected static final SelectionState STATE_EDEFAULT = SelectionState.UNSELECTED;
+  protected static final boolean BOUND_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getState() <em>State</em>}' attribute.
+   * The cached value of the '{@link #isBound() <em>Bound</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getState()
+   * @see #isBound()
    * @generated
    * @ordered
    */
-  protected SelectionState state = STATE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFeature()
-   * @generated
-   * @ordered
-   */
-  protected Feature feature;
+  protected boolean bound = BOUND_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -89,8 +74,8 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
    * <!-- end-user-doc -->
    * @generated
    */
-  public SelectionState getState() {
-    return state;
+  public boolean isBound() {
+    return bound;
   }
 
   /**
@@ -98,11 +83,11 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setState(SelectionState newState) {
-    SelectionState oldState = state;
-    state = newState == null ? STATE_EDEFAULT : newState;
+  public void setBound(boolean newBound) {
+    boolean oldBound = bound;
+    bound = newBound;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.VARIANT_SELECTION__STATE, oldState, state));
+      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.VARIANT_SELECTION__BOUND, oldBound, bound));
   }
 
   /**
@@ -110,37 +95,10 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
    * <!-- end-user-doc -->
    * @generated
    */
-  public Feature getFeature() {
-    if (feature != null && feature.eIsProxy()) {
-      InternalEObject oldFeature = (InternalEObject)feature;
-      feature = (Feature)eResolveProxy(oldFeature);
-      if (feature != oldFeature) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariantModelPackage.VARIANT_SELECTION__FEATURE, oldFeature, feature));
-      }
-    }
-    return feature;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Feature basicGetFeature() {
-    return feature;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFeature(Feature newFeature) {
-    Feature oldFeature = feature;
-    feature = newFeature;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.VARIANT_SELECTION__FEATURE, oldFeature, feature));
+  public VariantModel getModel() {
+    // TODO: implement this method
+    // Ensure that you remove @generated or mark it @generated NOT
+    throw new UnsupportedOperationException();
   }
 
   /**
@@ -151,11 +109,8 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
-      case VariantModelPackage.VARIANT_SELECTION__STATE:
-        return getState();
-      case VariantModelPackage.VARIANT_SELECTION__FEATURE:
-        if (resolve) return getFeature();
-        return basicGetFeature();
+      case VariantModelPackage.VARIANT_SELECTION__BOUND:
+        return isBound() ? Boolean.TRUE : Boolean.FALSE;
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,11 +123,8 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
-      case VariantModelPackage.VARIANT_SELECTION__STATE:
-        setState((SelectionState)newValue);
-        return;
-      case VariantModelPackage.VARIANT_SELECTION__FEATURE:
-        setFeature((Feature)newValue);
+      case VariantModelPackage.VARIANT_SELECTION__BOUND:
+        setBound(((Boolean)newValue).booleanValue());
         return;
     }
     super.eSet(featureID, newValue);
@@ -186,11 +138,8 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
-      case VariantModelPackage.VARIANT_SELECTION__STATE:
-        setState(STATE_EDEFAULT);
-        return;
-      case VariantModelPackage.VARIANT_SELECTION__FEATURE:
-        setFeature((Feature)null);
+      case VariantModelPackage.VARIANT_SELECTION__BOUND:
+        setBound(BOUND_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -204,10 +153,8 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
-      case VariantModelPackage.VARIANT_SELECTION__STATE:
-        return state != STATE_EDEFAULT;
-      case VariantModelPackage.VARIANT_SELECTION__FEATURE:
-        return feature != null;
+      case VariantModelPackage.VARIANT_SELECTION__BOUND:
+        return bound != BOUND_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -222,8 +169,8 @@ public class VariantSelectionImpl extends EObjectImpl implements VariantSelectio
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (state: ");
-    result.append(state);
+    result.append(" (bound: ");
+    result.append(bound);
     result.append(')');
     return result.toString();
   }

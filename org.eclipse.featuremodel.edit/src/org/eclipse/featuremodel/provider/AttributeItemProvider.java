@@ -153,7 +153,7 @@ public class AttributeItemProvider
     if (childrenFeatures == null) {
       super.getChildrenFeatures(object);
       childrenFeatures.add(FeatureModelPackage.Literals.ATTRIBUTE__DESCRIPTION);
-      childrenFeatures.add(FeatureModelPackage.Literals.ATTRIBUTE__DEFAULTVALUE);
+      childrenFeatures.add(FeatureModelPackage.Literals.ATTRIBUTE__DEFAULT_VALUE);
       childrenFeatures.add(FeatureModelPackage.Literals.ATTRIBUTE__TYPE);
     }
     return childrenFeatures;
@@ -215,7 +215,7 @@ public class AttributeItemProvider
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
       case FeatureModelPackage.ATTRIBUTE__DESCRIPTION:
-      case FeatureModelPackage.ATTRIBUTE__DEFAULTVALUE:
+      case FeatureModelPackage.ATTRIBUTE__DEFAULT_VALUE:
       case FeatureModelPackage.ATTRIBUTE__TYPE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
@@ -241,22 +241,22 @@ public class AttributeItemProvider
 
     newChildDescriptors.add
       (createChildParameter
-        (FeatureModelPackage.Literals.ATTRIBUTE__DEFAULTVALUE,
+        (FeatureModelPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
          FeatureModelFactory.eINSTANCE.createAttributeValueInt()));
 
     newChildDescriptors.add
       (createChildParameter
-        (FeatureModelPackage.Literals.ATTRIBUTE__DEFAULTVALUE,
+        (FeatureModelPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
          FeatureModelFactory.eINSTANCE.createAttributeValueString()));
 
     newChildDescriptors.add
       (createChildParameter
-        (FeatureModelPackage.Literals.ATTRIBUTE__DEFAULTVALUE,
+        (FeatureModelPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
          FeatureModelFactory.eINSTANCE.createAttributeValueBoolean()));
 
     newChildDescriptors.add
       (createChildParameter
-        (FeatureModelPackage.Literals.ATTRIBUTE__DEFAULTVALUE,
+        (FeatureModelPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
          FeatureModelFactory.eINSTANCE.createAttributeValueEObject()));
 
     newChildDescriptors.add

@@ -20,13 +20,13 @@ import org.eclipse.featuremodel.FeatureModelPackage;
 
 import org.eclipse.featuremodel.impl.FeatureModelPackageImpl;
 
-import org.eclipse.variantmodel.AttributeValue;
 import org.eclipse.variantmodel.FeatureSelection;
 import org.eclipse.variantmodel.SelectionState;
 import org.eclipse.variantmodel.VariantModel;
 import org.eclipse.variantmodel.VariantModelFactory;
 import org.eclipse.variantmodel.VariantModelPackage;
 import org.eclipse.variantmodel.VariantSelection;
+import org.eclipse.variantmodel.VariantValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,6 +47,13 @@ public class VariantModelPackageImpl extends EPackageImpl implements VariantMode
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass variantValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass variantModelEClass = null;
 
   /**
@@ -55,13 +62,6 @@ public class VariantModelPackageImpl extends EPackageImpl implements VariantMode
    * @generated
    */
   private EClass featureSelectionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass attributeValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -167,7 +167,7 @@ public class VariantModelPackageImpl extends EPackageImpl implements VariantMode
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariantSelection_State() {
+  public EAttribute getVariantSelection_Bound() {
     return (EAttribute)variantSelectionEClass.getEStructuralFeatures().get(0);
   }
 
@@ -176,8 +176,35 @@ public class VariantModelPackageImpl extends EPackageImpl implements VariantMode
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVariantSelection_Feature() {
-    return (EReference)variantSelectionEClass.getEStructuralFeatures().get(1);
+  public EClass getVariantValue() {
+    return variantValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVariantValue_Id() {
+    return (EAttribute)variantValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVariantValue_Attribute() {
+    return (EReference)variantValueEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVariantValue_Value() {
+    return (EReference)variantValueEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -266,7 +293,7 @@ public class VariantModelPackageImpl extends EPackageImpl implements VariantMode
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFeatureSelection_Bound() {
+  public EAttribute getFeatureSelection_State() {
     return (EAttribute)featureSelectionEClass.getEStructuralFeatures().get(1);
   }
 
@@ -275,35 +302,8 @@ public class VariantModelPackageImpl extends EPackageImpl implements VariantMode
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAttributeValue() {
-    return attributeValueEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAttributeValue_Id() {
-    return (EAttribute)attributeValueEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAttributeValue_Attribute() {
-    return (EReference)attributeValueEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAttributeValue_Content() {
-    return (EReference)attributeValueEClass.getEStructuralFeatures().get(2);
+  public EReference getFeatureSelection_Feature() {
+    return (EReference)featureSelectionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -352,9 +352,10 @@ public class VariantModelPackageImpl extends EPackageImpl implements VariantMode
     isCreated = true;
 
     // Create classes and their features
-    variantSelectionEClass = createEClass(VARIANT_SELECTION);
-    createEAttribute(variantSelectionEClass, VARIANT_SELECTION__STATE);
-    createEReference(variantSelectionEClass, VARIANT_SELECTION__FEATURE);
+    featureSelectionEClass = createEClass(FEATURE_SELECTION);
+    createEAttribute(featureSelectionEClass, FEATURE_SELECTION__ID);
+    createEAttribute(featureSelectionEClass, FEATURE_SELECTION__STATE);
+    createEReference(featureSelectionEClass, FEATURE_SELECTION__FEATURE);
 
     variantModelEClass = createEClass(VARIANT_MODEL);
     createEAttribute(variantModelEClass, VARIANT_MODEL__ID);
@@ -364,14 +365,13 @@ public class VariantModelPackageImpl extends EPackageImpl implements VariantMode
     createEReference(variantModelEClass, VARIANT_MODEL__SELECTIONS);
     createEReference(variantModelEClass, VARIANT_MODEL__VALUES);
 
-    featureSelectionEClass = createEClass(FEATURE_SELECTION);
-    createEAttribute(featureSelectionEClass, FEATURE_SELECTION__ID);
-    createEAttribute(featureSelectionEClass, FEATURE_SELECTION__BOUND);
+    variantSelectionEClass = createEClass(VARIANT_SELECTION);
+    createEAttribute(variantSelectionEClass, VARIANT_SELECTION__BOUND);
 
-    attributeValueEClass = createEClass(ATTRIBUTE_VALUE);
-    createEAttribute(attributeValueEClass, ATTRIBUTE_VALUE__ID);
-    createEReference(attributeValueEClass, ATTRIBUTE_VALUE__ATTRIBUTE);
-    createEReference(attributeValueEClass, ATTRIBUTE_VALUE__CONTENT);
+    variantValueEClass = createEClass(VARIANT_VALUE);
+    createEAttribute(variantValueEClass, VARIANT_VALUE__ID);
+    createEReference(variantValueEClass, VARIANT_VALUE__ATTRIBUTE);
+    createEReference(variantValueEClass, VARIANT_VALUE__VALUE);
 
     // Create enums
     selectionStateEEnum = createEEnum(SELECTION_STATE);
@@ -411,31 +411,31 @@ public class VariantModelPackageImpl extends EPackageImpl implements VariantMode
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    featureSelectionEClass.getESuperTypes().add(this.getVariantSelection());
+    variantSelectionEClass.getESuperTypes().add(this.getFeatureSelection());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(variantSelectionEClass, VariantSelection.class, "VariantSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariantSelection_State(), this.getSelectionState(), "state", null, 1, 1, VariantSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVariantSelection_Feature(), theFeatureModelPackage.getFeature(), null, "feature", null, 1, 1, VariantSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(featureSelectionEClass, FeatureSelection.class, "FeatureSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFeatureSelection_Id(), this.getID(), "id", null, 1, 1, FeatureSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFeatureSelection_State(), this.getSelectionState(), "state", null, 1, 1, FeatureSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFeatureSelection_Feature(), theFeatureModelPackage.getFeature(), null, "feature", null, 1, 1, FeatureSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variantModelEClass, VariantModel.class, "VariantModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariantModel_Id(), this.getID(), "id", null, 1, 1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariantModel_Version(), ecorePackage.getEString(), "version", null, 1, 1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariantModel_Attributes(), theFeatureModelPackage.getAttribute(), null, "attributes", null, 0, -1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariantModel_FeatureModel(), theFeatureModelPackage.getFeatureModel(), null, "featureModel", null, 1, 1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVariantModel_Selections(), this.getFeatureSelection(), null, "selections", null, 0, -1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVariantModel_Values(), this.getAttributeValue(), null, "values", null, 0, -1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariantModel_Selections(), this.getVariantSelection(), null, "selections", null, 0, -1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariantModel_Values(), this.getVariantValue(), null, "values", null, 0, -1, VariantModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(featureSelectionEClass, FeatureSelection.class, "FeatureSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFeatureSelection_Id(), this.getID(), "id", null, 1, 1, FeatureSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeatureSelection_Bound(), ecorePackage.getEBoolean(), "bound", null, 0, 1, FeatureSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(variantSelectionEClass, VariantSelection.class, "VariantSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariantSelection_Bound(), ecorePackage.getEBoolean(), "bound", null, 0, 1, VariantSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    addEOperation(featureSelectionEClass, this.getVariantModel(), "getModel", 1, 1, IS_UNIQUE, IS_ORDERED);
+    addEOperation(variantSelectionEClass, this.getVariantModel(), "getModel", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-    initEClass(attributeValueEClass, AttributeValue.class, "AttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttributeValue_Id(), this.getID(), "id", null, 1, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttributeValue_Attribute(), theFeatureModelPackage.getAttribute(), null, "attribute", null, 1, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttributeValue_Content(), ecorePackage.getEObject(), null, "content", null, 1, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(variantValueEClass, VariantValue.class, "VariantValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariantValue_Id(), this.getID(), "id", null, 1, 1, VariantValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariantValue_Attribute(), theFeatureModelPackage.getAttribute(), null, "attribute", null, 1, 1, VariantValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariantValue_Value(), theFeatureModelPackage.getAttributeValue(), null, "value", null, 1, 1, VariantValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(selectionStateEEnum, SelectionState.class, "SelectionState");

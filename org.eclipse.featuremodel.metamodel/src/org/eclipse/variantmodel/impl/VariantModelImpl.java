@@ -25,10 +25,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.featuremodel.Attribute;
 import org.eclipse.featuremodel.FeatureModel;
 
-import org.eclipse.variantmodel.AttributeValue;
-import org.eclipse.variantmodel.FeatureSelection;
 import org.eclipse.variantmodel.VariantModel;
 import org.eclipse.variantmodel.VariantModelPackage;
+import org.eclipse.variantmodel.VariantSelection;
+import org.eclipse.variantmodel.VariantValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,7 +117,7 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
    * @generated
    * @ordered
    */
-  protected EList<FeatureSelection> selections;
+  protected EList<VariantSelection> selections;
 
   /**
    * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
@@ -127,7 +127,7 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
    * @generated
    * @ordered
    */
-  protected EList<AttributeValue> values;
+  protected EList<VariantValue> values;
 
   /**
    * <!-- begin-user-doc -->
@@ -245,9 +245,9 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<FeatureSelection> getSelections() {
+  public EList<VariantSelection> getSelections() {
     if (selections == null) {
-      selections = new EObjectContainmentEList<FeatureSelection>(FeatureSelection.class, this, VariantModelPackage.VARIANT_MODEL__SELECTIONS);
+      selections = new EObjectContainmentEList<VariantSelection>(VariantSelection.class, this, VariantModelPackage.VARIANT_MODEL__SELECTIONS);
     }
     return selections;
   }
@@ -257,9 +257,9 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<AttributeValue> getValues() {
+  public EList<VariantValue> getValues() {
     if (values == null) {
-      values = new EObjectContainmentEList<AttributeValue>(AttributeValue.class, this, VariantModelPackage.VARIANT_MODEL__VALUES);
+      values = new EObjectContainmentEList<VariantValue>(VariantValue.class, this, VariantModelPackage.VARIANT_MODEL__VALUES);
     }
     return values;
   }
@@ -331,11 +331,11 @@ public class VariantModelImpl extends EObjectImpl implements VariantModel {
         return;
       case VariantModelPackage.VARIANT_MODEL__SELECTIONS:
         getSelections().clear();
-        getSelections().addAll((Collection<? extends FeatureSelection>)newValue);
+        getSelections().addAll((Collection<? extends VariantSelection>)newValue);
         return;
       case VariantModelPackage.VARIANT_MODEL__VALUES:
         getValues().clear();
-        getValues().addAll((Collection<? extends AttributeValue>)newValue);
+        getValues().addAll((Collection<? extends VariantValue>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

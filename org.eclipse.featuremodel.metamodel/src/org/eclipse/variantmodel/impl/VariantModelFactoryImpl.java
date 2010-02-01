@@ -61,10 +61,10 @@ public class VariantModelFactoryImpl extends EFactoryImpl implements VariantMode
   @Override
   public EObject create(EClass eClass) {
     switch (eClass.getClassifierID()) {
-      case VariantModelPackage.VARIANT_SELECTION: return createVariantSelection();
-      case VariantModelPackage.VARIANT_MODEL: return createVariantModel();
       case VariantModelPackage.FEATURE_SELECTION: return createFeatureSelection();
-      case VariantModelPackage.ATTRIBUTE_VALUE: return createAttributeValue();
+      case VariantModelPackage.VARIANT_MODEL: return createVariantModel();
+      case VariantModelPackage.VARIANT_SELECTION: return createVariantSelection();
+      case VariantModelPackage.VARIANT_VALUE: return createVariantValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -119,6 +119,16 @@ public class VariantModelFactoryImpl extends EFactoryImpl implements VariantMode
    * <!-- end-user-doc -->
    * @generated
    */
+  public VariantValue createVariantValue() {
+    VariantValueImpl variantValue = new VariantValueImpl();
+    return variantValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public VariantModel createVariantModel() {
     VariantModelImpl variantModel = new VariantModelImpl();
     return variantModel;
@@ -132,16 +142,6 @@ public class VariantModelFactoryImpl extends EFactoryImpl implements VariantMode
   public FeatureSelection createFeatureSelection() {
     FeatureSelectionImpl featureSelection = new FeatureSelectionImpl();
     return featureSelection;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AttributeValue createAttributeValue() {
-    AttributeValueImpl attributeValue = new AttributeValueImpl();
-    return attributeValue;
   }
 
   /**

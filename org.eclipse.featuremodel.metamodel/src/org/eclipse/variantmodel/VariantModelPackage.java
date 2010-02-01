@@ -69,34 +69,17 @@ public interface VariantModelPackage extends EPackage {
    * @see org.eclipse.variantmodel.impl.VariantModelPackageImpl#getVariantSelection()
    * @generated
    */
-  int VARIANT_SELECTION = 0;
+  int VARIANT_SELECTION = 2;
 
   /**
-   * The feature id for the '<em><b>State</b></em>' attribute.
+   * The meta object id for the '{@link org.eclipse.variantmodel.impl.VariantValueImpl <em>Variant Value</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see org.eclipse.variantmodel.impl.VariantValueImpl
+   * @see org.eclipse.variantmodel.impl.VariantModelPackageImpl#getVariantValue()
    * @generated
-   * @ordered
    */
-  int VARIANT_SELECTION__STATE = 0;
-
-  /**
-   * The feature id for the '<em><b>Feature</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIANT_SELECTION__FEATURE = 1;
-
-  /**
-   * The number of structural features of the '<em>Variant Selection</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIANT_SELECTION_FEATURE_COUNT = 2;
+  int VARIANT_VALUE = 3;
 
   /**
    * The meta object id for the '{@link org.eclipse.variantmodel.impl.VariantModelImpl <em>Variant Model</em>}' class.
@@ -107,6 +90,52 @@ public interface VariantModelPackage extends EPackage {
    * @generated
    */
   int VARIANT_MODEL = 1;
+
+  /**
+   * The meta object id for the '{@link org.eclipse.variantmodel.impl.FeatureSelectionImpl <em>Feature Selection</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipse.variantmodel.impl.FeatureSelectionImpl
+   * @see org.eclipse.variantmodel.impl.VariantModelPackageImpl#getFeatureSelection()
+   * @generated
+   */
+  int FEATURE_SELECTION = 0;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_SELECTION__ID = 0;
+
+  /**
+   * The feature id for the '<em><b>State</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_SELECTION__STATE = 1;
+
+  /**
+   * The feature id for the '<em><b>Feature</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_SELECTION__FEATURE = 2;
+
+  /**
+   * The number of structural features of the '<em>Feature Selection</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_SELECTION_FEATURE_COUNT = 3;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -172,14 +201,13 @@ public interface VariantModelPackage extends EPackage {
   int VARIANT_MODEL_FEATURE_COUNT = 6;
 
   /**
-   * The meta object id for the '{@link org.eclipse.variantmodel.impl.FeatureSelectionImpl <em>Feature Selection</em>}' class.
+   * The feature id for the '<em><b>Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.eclipse.variantmodel.impl.FeatureSelectionImpl
-   * @see org.eclipse.variantmodel.impl.VariantModelPackageImpl#getFeatureSelection()
    * @generated
+   * @ordered
    */
-  int FEATURE_SELECTION = 2;
+  int VARIANT_SELECTION__ID = FEATURE_SELECTION__ID;
 
   /**
    * The feature id for the '<em><b>State</b></em>' attribute.
@@ -188,7 +216,7 @@ public interface VariantModelPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FEATURE_SELECTION__STATE = VARIANT_SELECTION__STATE;
+  int VARIANT_SELECTION__STATE = FEATURE_SELECTION__STATE;
 
   /**
    * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -197,16 +225,7 @@ public interface VariantModelPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FEATURE_SELECTION__FEATURE = VARIANT_SELECTION__FEATURE;
-
-  /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE_SELECTION__ID = VARIANT_SELECTION_FEATURE_COUNT + 0;
+  int VARIANT_SELECTION__FEATURE = FEATURE_SELECTION__FEATURE;
 
   /**
    * The feature id for the '<em><b>Bound</b></em>' attribute.
@@ -215,26 +234,16 @@ public interface VariantModelPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FEATURE_SELECTION__BOUND = VARIANT_SELECTION_FEATURE_COUNT + 1;
+  int VARIANT_SELECTION__BOUND = FEATURE_SELECTION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Feature Selection</em>' class.
+   * The number of structural features of the '<em>Variant Selection</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_SELECTION_FEATURE_COUNT = VARIANT_SELECTION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link org.eclipse.variantmodel.impl.AttributeValueImpl <em>Attribute Value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.eclipse.variantmodel.impl.AttributeValueImpl
-   * @see org.eclipse.variantmodel.impl.VariantModelPackageImpl#getAttributeValue()
-   * @generated
-   */
-  int ATTRIBUTE_VALUE = 3;
+  int VARIANT_SELECTION_FEATURE_COUNT = FEATURE_SELECTION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -243,7 +252,7 @@ public interface VariantModelPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_VALUE__ID = 0;
+  int VARIANT_VALUE__ID = 0;
 
   /**
    * The feature id for the '<em><b>Attribute</b></em>' containment reference.
@@ -252,25 +261,25 @@ public interface VariantModelPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_VALUE__ATTRIBUTE = 1;
+  int VARIANT_VALUE__ATTRIBUTE = 1;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_VALUE__CONTENT = 2;
+  int VARIANT_VALUE__VALUE = 2;
 
   /**
-   * The number of structural features of the '<em>Attribute Value</em>' class.
+   * The number of structural features of the '<em>Variant Value</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_VALUE_FEATURE_COUNT = 3;
+  int VARIANT_VALUE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.eclipse.variantmodel.SelectionState <em>Selection State</em>}' enum.
@@ -304,26 +313,58 @@ public interface VariantModelPackage extends EPackage {
   EClass getVariantSelection();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.variantmodel.VariantSelection#getState <em>State</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.variantmodel.VariantSelection#isBound <em>Bound</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>State</em>'.
-   * @see org.eclipse.variantmodel.VariantSelection#getState()
+   * @return the meta object for the attribute '<em>Bound</em>'.
+   * @see org.eclipse.variantmodel.VariantSelection#isBound()
    * @see #getVariantSelection()
    * @generated
    */
-  EAttribute getVariantSelection_State();
+  EAttribute getVariantSelection_Bound();
 
   /**
-   * Returns the meta object for the reference '{@link org.eclipse.variantmodel.VariantSelection#getFeature <em>Feature</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.variantmodel.VariantValue <em>Variant Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Feature</em>'.
-   * @see org.eclipse.variantmodel.VariantSelection#getFeature()
-   * @see #getVariantSelection()
+   * @return the meta object for class '<em>Variant Value</em>'.
+   * @see org.eclipse.variantmodel.VariantValue
    * @generated
    */
-  EReference getVariantSelection_Feature();
+  EClass getVariantValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.eclipse.variantmodel.VariantValue#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see org.eclipse.variantmodel.VariantValue#getId()
+   * @see #getVariantValue()
+   * @generated
+   */
+  EAttribute getVariantValue_Id();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.eclipse.variantmodel.VariantValue#getAttribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Attribute</em>'.
+   * @see org.eclipse.variantmodel.VariantValue#getAttribute()
+   * @see #getVariantValue()
+   * @generated
+   */
+  EReference getVariantValue_Attribute();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.eclipse.variantmodel.VariantValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.eclipse.variantmodel.VariantValue#getValue()
+   * @see #getVariantValue()
+   * @generated
+   */
+  EReference getVariantValue_Value();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.variantmodel.VariantModel <em>Variant Model</em>}'.
@@ -423,58 +464,26 @@ public interface VariantModelPackage extends EPackage {
   EAttribute getFeatureSelection_Id();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.variantmodel.FeatureSelection#isBound <em>Bound</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.variantmodel.FeatureSelection#getState <em>State</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Bound</em>'.
-   * @see org.eclipse.variantmodel.FeatureSelection#isBound()
+   * @return the meta object for the attribute '<em>State</em>'.
+   * @see org.eclipse.variantmodel.FeatureSelection#getState()
    * @see #getFeatureSelection()
    * @generated
    */
-  EAttribute getFeatureSelection_Bound();
+  EAttribute getFeatureSelection_State();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.variantmodel.AttributeValue <em>Attribute Value</em>}'.
+   * Returns the meta object for the reference '{@link org.eclipse.variantmodel.FeatureSelection#getFeature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Attribute Value</em>'.
-   * @see org.eclipse.variantmodel.AttributeValue
+   * @return the meta object for the reference '<em>Feature</em>'.
+   * @see org.eclipse.variantmodel.FeatureSelection#getFeature()
+   * @see #getFeatureSelection()
    * @generated
    */
-  EClass getAttributeValue();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.eclipse.variantmodel.AttributeValue#getId <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see org.eclipse.variantmodel.AttributeValue#getId()
-   * @see #getAttributeValue()
-   * @generated
-   */
-  EAttribute getAttributeValue_Id();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.variantmodel.AttributeValue#getAttribute <em>Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Attribute</em>'.
-   * @see org.eclipse.variantmodel.AttributeValue#getAttribute()
-   * @see #getAttributeValue()
-   * @generated
-   */
-  EReference getAttributeValue_Attribute();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.variantmodel.AttributeValue#getContent <em>Content</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Content</em>'.
-   * @see org.eclipse.variantmodel.AttributeValue#getContent()
-   * @see #getAttributeValue()
-   * @generated
-   */
-  EReference getAttributeValue_Content();
+  EReference getFeatureSelection_Feature();
 
   /**
    * Returns the meta object for enum '{@link org.eclipse.variantmodel.SelectionState <em>Selection State</em>}'.
@@ -530,20 +539,46 @@ public interface VariantModelPackage extends EPackage {
     EClass VARIANT_SELECTION = eINSTANCE.getVariantSelection();
 
     /**
-     * The meta object literal for the '<em><b>State</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Bound</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIANT_SELECTION__STATE = eINSTANCE.getVariantSelection_State();
+    EAttribute VARIANT_SELECTION__BOUND = eINSTANCE.getVariantSelection_Bound();
 
     /**
-     * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+     * The meta object literal for the '{@link org.eclipse.variantmodel.impl.VariantValueImpl <em>Variant Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipse.variantmodel.impl.VariantValueImpl
+     * @see org.eclipse.variantmodel.impl.VariantModelPackageImpl#getVariantValue()
+     * @generated
+     */
+    EClass VARIANT_VALUE = eINSTANCE.getVariantValue();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARIANT_SELECTION__FEATURE = eINSTANCE.getVariantSelection_Feature();
+    EAttribute VARIANT_VALUE__ID = eINSTANCE.getVariantValue_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Attribute</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIANT_VALUE__ATTRIBUTE = eINSTANCE.getVariantValue_Attribute();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIANT_VALUE__VALUE = eINSTANCE.getVariantValue_Value();
 
     /**
      * The meta object literal for the '{@link org.eclipse.variantmodel.impl.VariantModelImpl <em>Variant Model</em>}' class.
@@ -622,46 +657,20 @@ public interface VariantModelPackage extends EPackage {
     EAttribute FEATURE_SELECTION__ID = eINSTANCE.getFeatureSelection_Id();
 
     /**
-     * The meta object literal for the '<em><b>Bound</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>State</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FEATURE_SELECTION__BOUND = eINSTANCE.getFeatureSelection_Bound();
+    EAttribute FEATURE_SELECTION__STATE = eINSTANCE.getFeatureSelection_State();
 
     /**
-     * The meta object literal for the '{@link org.eclipse.variantmodel.impl.AttributeValueImpl <em>Attribute Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.eclipse.variantmodel.impl.AttributeValueImpl
-     * @see org.eclipse.variantmodel.impl.VariantModelPackageImpl#getAttributeValue()
-     * @generated
-     */
-    EClass ATTRIBUTE_VALUE = eINSTANCE.getAttributeValue();
-
-    /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATTRIBUTE_VALUE__ID = eINSTANCE.getAttributeValue_Id();
-
-    /**
-     * The meta object literal for the '<em><b>Attribute</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATTRIBUTE_VALUE__ATTRIBUTE = eINSTANCE.getAttributeValue_Attribute();
-
-    /**
-     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATTRIBUTE_VALUE__CONTENT = eINSTANCE.getAttributeValue_Content();
+    EReference FEATURE_SELECTION__FEATURE = eINSTANCE.getFeatureSelection_Feature();
 
     /**
      * The meta object literal for the '{@link org.eclipse.variantmodel.SelectionState <em>Selection State</em>}' enum.

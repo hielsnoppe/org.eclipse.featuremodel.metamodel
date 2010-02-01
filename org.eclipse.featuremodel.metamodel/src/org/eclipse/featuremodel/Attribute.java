@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.featuremodel.Attribute#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.Attribute#isSetable <em>Setable</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.Attribute#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.featuremodel.Attribute#getDefaultvalue <em>Defaultvalue</em>}</li>
+ *   <li>{@link org.eclipse.featuremodel.Attribute#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.Attribute#getType <em>Type</em>}</li>
  * </ul>
  * </p>
@@ -136,30 +136,30 @@ public interface Attribute extends EObject {
   void setDescription(Description value);
 
   /**
-   * Returns the value of the '<em><b>Defaultvalue</b></em>' containment reference.
+   * Returns the value of the '<em><b>Default Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Defaultvalue</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Default Value</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Defaultvalue</em>' containment reference.
-   * @see #setDefaultvalue(AttributeValue)
-   * @see org.eclipse.featuremodel.FeatureModelPackage#getAttribute_Defaultvalue()
+   * @return the value of the '<em>Default Value</em>' containment reference.
+   * @see #setDefaultValue(AttributeValue)
+   * @see org.eclipse.featuremodel.FeatureModelPackage#getAttribute_DefaultValue()
    * @model containment="true" required="true" transient="true"
    * @generated
    */
-  AttributeValue getDefaultvalue();
+  AttributeValue getDefaultValue();
 
   /**
-   * Sets the value of the '{@link org.eclipse.featuremodel.Attribute#getDefaultvalue <em>Defaultvalue</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.featuremodel.Attribute#getDefaultValue <em>Default Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Defaultvalue</em>' containment reference.
-   * @see #getDefaultvalue()
+   * @param value the new value of the '<em>Default Value</em>' containment reference.
+   * @see #getDefaultValue()
    * @generated
    */
-  void setDefaultvalue(AttributeValue value);
+  void setDefaultValue(AttributeValue value);
 
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.

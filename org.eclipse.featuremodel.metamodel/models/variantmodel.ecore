@@ -32,7 +32,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//ID"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
-        eType="ecore:EClass featuremodel.ecore#//Attribute" containment="true"/>
+        eType="ecore:EClass featuremodel.ecore#//Attribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass featuremodel.ecore#//AttributeValue"
         containment="true"/>
   </eClassifiers>

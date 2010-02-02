@@ -71,6 +71,7 @@ public class VariantValueItemProvider
       super.getPropertyDescriptors(object);
 
       addIdPropertyDescriptor(object);
+      addAttributePropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -98,6 +99,28 @@ public class VariantValueItemProvider
   }
 
   /**
+   * This adds a property descriptor for the Attribute feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addAttributePropertyDescriptor(Object object) {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_VariantValue_attribute_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_VariantValue_attribute_feature", "_UI_VariantValue_type"),
+         VariantModelPackage.Literals.VARIANT_VALUE__ATTRIBUTE,
+         true,
+         false,
+         true,
+         null,
+         null,
+         null));
+  }
+
+  /**
    * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
    * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
    * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -109,7 +132,6 @@ public class VariantValueItemProvider
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
     if (childrenFeatures == null) {
       super.getChildrenFeatures(object);
-      childrenFeatures.add(VariantModelPackage.Literals.VARIANT_VALUE__ATTRIBUTE);
       childrenFeatures.add(VariantModelPackage.Literals.VARIANT_VALUE__VALUE);
     }
     return childrenFeatures;
@@ -168,7 +190,6 @@ public class VariantValueItemProvider
       case VariantModelPackage.VARIANT_VALUE__ID:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
-      case VariantModelPackage.VARIANT_VALUE__ATTRIBUTE:
       case VariantModelPackage.VARIANT_VALUE__VALUE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
         return;
@@ -186,11 +207,6 @@ public class VariantValueItemProvider
   @Override
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
     super.collectNewChildDescriptors(newChildDescriptors, object);
-
-    newChildDescriptors.add
-      (createChildParameter
-        (VariantModelPackage.Literals.VARIANT_VALUE__ATTRIBUTE,
-         FeatureModelFactory.eINSTANCE.createAttribute()));
 
     newChildDescriptors.add
       (createChildParameter

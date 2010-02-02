@@ -58,7 +58,7 @@ public class VariantValueImpl extends EObjectImpl implements VariantValue {
   protected String id = ID_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' containment reference.
+   * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAttribute()
@@ -123,6 +123,14 @@ public class VariantValueImpl extends EObjectImpl implements VariantValue {
    * @generated
    */
   public Attribute getAttribute() {
+    if (attribute != null && attribute.eIsProxy()) {
+      InternalEObject oldAttribute = (InternalEObject)attribute;
+      attribute = (Attribute)eResolveProxy(oldAttribute);
+      if (attribute != oldAttribute) {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariantModelPackage.VARIANT_VALUE__ATTRIBUTE, oldAttribute, attribute));
+      }
+    }
     return attribute;
   }
 
@@ -131,14 +139,8 @@ public class VariantValueImpl extends EObjectImpl implements VariantValue {
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAttribute(Attribute newAttribute, NotificationChain msgs) {
-    Attribute oldAttribute = attribute;
-    attribute = newAttribute;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VariantModelPackage.VARIANT_VALUE__ATTRIBUTE, oldAttribute, newAttribute);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+  public Attribute basicGetAttribute() {
+    return attribute;
   }
 
   /**
@@ -147,17 +149,10 @@ public class VariantValueImpl extends EObjectImpl implements VariantValue {
    * @generated
    */
   public void setAttribute(Attribute newAttribute) {
-    if (newAttribute != attribute) {
-      NotificationChain msgs = null;
-      if (attribute != null)
-        msgs = ((InternalEObject)attribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VariantModelPackage.VARIANT_VALUE__ATTRIBUTE, null, msgs);
-      if (newAttribute != null)
-        msgs = ((InternalEObject)newAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VariantModelPackage.VARIANT_VALUE__ATTRIBUTE, null, msgs);
-      msgs = basicSetAttribute(newAttribute, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.VARIANT_VALUE__ATTRIBUTE, newAttribute, newAttribute));
+    Attribute oldAttribute = attribute;
+    attribute = newAttribute;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.VARIANT_VALUE__ATTRIBUTE, oldAttribute, attribute));
   }
 
   /**
@@ -211,8 +206,6 @@ public class VariantValueImpl extends EObjectImpl implements VariantValue {
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
     switch (featureID) {
-      case VariantModelPackage.VARIANT_VALUE__ATTRIBUTE:
-        return basicSetAttribute(null, msgs);
       case VariantModelPackage.VARIANT_VALUE__VALUE:
         return basicSetValue(null, msgs);
     }
@@ -230,7 +223,8 @@ public class VariantValueImpl extends EObjectImpl implements VariantValue {
       case VariantModelPackage.VARIANT_VALUE__ID:
         return getId();
       case VariantModelPackage.VARIANT_VALUE__ATTRIBUTE:
-        return getAttribute();
+        if (resolve) return getAttribute();
+        return basicGetAttribute();
       case VariantModelPackage.VARIANT_VALUE__VALUE:
         return getValue();
     }

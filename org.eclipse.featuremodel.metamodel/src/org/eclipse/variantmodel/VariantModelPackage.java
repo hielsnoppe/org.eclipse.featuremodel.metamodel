@@ -255,7 +255,7 @@ public interface VariantModelPackage extends EPackage {
   int VARIANT_VALUE__ID = 0;
 
   /**
-   * The feature id for the '<em><b>Attribute</b></em>' containment reference.
+   * The feature id for the '<em><b>Attribute</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -345,10 +345,10 @@ public interface VariantModelPackage extends EPackage {
   EAttribute getVariantValue_Id();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.variantmodel.VariantValue#getAttribute <em>Attribute</em>}'.
+   * Returns the meta object for the reference '{@link org.eclipse.variantmodel.VariantValue#getAttribute <em>Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Attribute</em>'.
+   * @return the meta object for the reference '<em>Attribute</em>'.
    * @see org.eclipse.variantmodel.VariantValue#getAttribute()
    * @see #getVariantValue()
    * @generated
@@ -565,7 +565,7 @@ public interface VariantModelPackage extends EPackage {
     EAttribute VARIANT_VALUE__ID = eINSTANCE.getVariantValue_Id();
 
     /**
-     * The meta object literal for the '<em><b>Attribute</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

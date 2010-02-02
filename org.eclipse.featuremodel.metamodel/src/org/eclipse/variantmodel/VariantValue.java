@@ -57,26 +57,26 @@ public interface VariantValue extends EObject {
   void setId(String value);
 
   /**
-   * Returns the value of the '<em><b>Attribute</b></em>' containment reference.
+   * Returns the value of the '<em><b>Attribute</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Attribute</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Attribute</em>' containment reference.
+   * @return the value of the '<em>Attribute</em>' reference.
    * @see #setAttribute(Attribute)
    * @see org.eclipse.variantmodel.VariantModelPackage#getVariantValue_Attribute()
-   * @model containment="true" required="true"
+   * @model required="true"
    * @generated
    */
   Attribute getAttribute();
 
   /**
-   * Sets the value of the '{@link org.eclipse.variantmodel.VariantValue#getAttribute <em>Attribute</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.variantmodel.VariantValue#getAttribute <em>Attribute</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Attribute</em>' containment reference.
+   * @param value the new value of the '<em>Attribute</em>' reference.
    * @see #getAttribute()
    * @generated
    */

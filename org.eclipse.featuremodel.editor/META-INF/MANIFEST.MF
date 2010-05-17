@@ -5,7 +5,6 @@ Bundle-SymbolicName: org.eclipse.featuremodel.metamodel.editor; singleton:=true
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Bundle-Activator: org.eclipse.featuremodel.presentation.FeatureModelEditorPlugin$Implementation
-Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.eclipse.featuremodel.presentation,
  org.eclipse.variantmodel.presentation

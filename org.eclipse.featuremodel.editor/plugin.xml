@@ -47,11 +47,11 @@
     </category>
     <wizard
       id = "org.eclipse.variantmodel.presentation.VariantModelModelWizardID"
-      name = "%_UI_VariantmodelModelWizard_label"
+      name = "%_UI_VariantModelModelWizard_label"
       class = "org.eclipse.variantmodel.presentation.VariantModelModelWizard"
       category = "org.eclipse.emf.ecore.Wizard.category.ID"
       icon = "icons/full/obj16/VariantModelModelFile.gif">
-      <description>%_UI_VariantmodelModelWizard_description</description>
+      <description>%_UI_VariantModelModelWizard_description</description>
       <selection class = "org.eclipse.core.resources.IResource" />
     </wizard>
   </extension>
@@ -59,7 +59,7 @@
   <extension point = "org.eclipse.ui.editors">
     <editor
         id = "org.eclipse.variantmodel.presentation.VariantModelEditorID"
-        name = "%_UI_VariantmodelEditor_label"
+        name = "%_UI_VariantModelEditor_label"
         icon = "icons/full/obj16/VariantModelModelFile.gif"
         extensions = "variantmodel"
         class = "org.eclipse.variantmodel.presentation.VariantModelEditor" 

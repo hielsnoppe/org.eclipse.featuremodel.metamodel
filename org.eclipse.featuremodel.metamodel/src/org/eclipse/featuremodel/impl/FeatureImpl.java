@@ -326,7 +326,7 @@ public class FeatureImpl extends EObjectImpl implements Feature {
   public Group getParentGroup() {
     Group group = null;
     EObject container = eContainer();
-    if (container instanceof FeatureModel) {
+    if (container instanceof Group) {
       group = (Group) container;
     }
     return group;

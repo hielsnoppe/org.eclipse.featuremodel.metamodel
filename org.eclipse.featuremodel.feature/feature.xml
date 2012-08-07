@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.featuremodel.feature"
       label="EMF Feature Model"
-      version="0.7.0">
+      version="0.7.1">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]

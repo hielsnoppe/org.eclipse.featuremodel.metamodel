@@ -3,14 +3,14 @@
   
   <parent>
   	<groupId>org.eclipse.featuremodel.metamodel</groupId>
-  	<artifactId>org.eclipse.featuremodel.metamodel.tycho</artifactId>
+  	<artifactId>org.eclipse.featuremodel.metamodel</artifactId>
   	<version>1.0.1-SNAPSHOT</version>
   	<relativePath>../de.itemis.imes.releng.tycho/pom.xml</relativePath>
   </parent>
   
   <groupId>org.eclipse.featuremodel.metamodel</groupId>
   <artifactId>org.eclipse.featuremodel.metamodel</artifactId>
-  <version>0.7.0</version>
+  <version>0.7.1</version>
   <packaging>eclipse-plugin</packaging>
  	
   <properties>

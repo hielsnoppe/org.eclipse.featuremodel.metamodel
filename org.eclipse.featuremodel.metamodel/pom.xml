@@ -2,8 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   
   <parent>
-  	<groupId>org.eclipse.featuremodel.metamodel</groupId>
-  	<artifactId>org.eclipse.featuremodel.metamodel</artifactId>
+  	<groupId>org.eclipse.featuremodel.metamodel.tycho</groupId>
+  	<artifactId>org.eclipse.featuremodel.metamodel.tycho</artifactId>
   	<version>1.0.1-SNAPSHOT</version>
   	<relativePath>../de.itemis.imes.releng.tycho/pom.xml</relativePath>
   </parent>

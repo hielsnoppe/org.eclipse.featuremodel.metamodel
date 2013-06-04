@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.featuremodel.feature_0.7.1.jar" id="org.eclipse.featuremodel.feature" version="0.7.1">
+      <category name="org.eclipse.featuremodel"/>
+   </feature>
+   <category-def name="org.eclipse.featuremodel" label="Feature Model"/>
+</site>

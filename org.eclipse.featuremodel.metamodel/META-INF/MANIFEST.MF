@@ -13,4 +13,4 @@ Export-Package: org.eclipse.featuremodel,
  org.eclipse.variantmodel.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
-Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy

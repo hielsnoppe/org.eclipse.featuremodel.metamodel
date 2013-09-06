@@ -9,6 +9,5 @@
   </parent>
   
   <artifactId>org.eclipse.featuremodel.feature</artifactId>
-  <version>0.7.1</version>
   <packaging>eclipse-feature</packaging>
 </project>

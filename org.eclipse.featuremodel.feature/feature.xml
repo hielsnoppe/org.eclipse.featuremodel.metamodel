@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.featuremodel.feature"
       label="EMF Feature Meta Model"
-      version="0.8.0"
+      version="0.8.1.qualifier"
       provider-name="Eclipse Modeling Project">
 
    <license url="http://www.eclipse.org/legal/epl-v10.html">

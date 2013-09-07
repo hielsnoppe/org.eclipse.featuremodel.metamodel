@@ -14,8 +14,8 @@
   <extension
     point = "org.eclipse.ui.newWizards">
     <category
-      id = "org.eclipse.emf.ecore.Wizard.category.ID"
-      name="%_UI_Wizard_category">
+      id = "org.eclipse.featuremodel.wizard.category"
+      name="EMF Feature Model">
     </category>
     <wizard
       id = "org.eclipse.featuremodel.presentation.FeatureModelModelWizardID"
@@ -42,8 +42,8 @@
   <extension
     point = "org.eclipse.ui.newWizards">
     <category
-      id = "org.eclipse.emf.ecore.Wizard.category.ID"
-      name="%_UI_Wizard_category">
+      id = "org.eclipse.featuremodel.wizard.category"
+      name="EMF Feature Model">
     </category>
     <wizard
       id = "org.eclipse.variantmodel.presentation.VariantModelModelWizardID"

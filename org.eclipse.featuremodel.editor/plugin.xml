@@ -21,7 +21,7 @@
       id = "org.eclipse.featuremodel.presentation.FeatureModelModelWizardID"
       name = "%_UI_FeatureModelModelWizard_label"
       class = "org.eclipse.featuremodel.presentation.FeatureModelModelWizard"
-      category = "org.eclipse.emf.ecore.Wizard.category.ID"
+      category = "org.eclipse.featuremodel.wizard.category"
       icon = "icons/full/obj16/FeatureModelModelFile.gif">
       <description>%_UI_FeaturemodelModelWizard_description</description>
       <selection class = "org.eclipse.core.resources.IResource" />
@@ -49,7 +49,7 @@
       id = "org.eclipse.variantmodel.presentation.VariantModelModelWizardID"
       name = "%_UI_VariantModelModelWizard_label"
       class = "org.eclipse.variantmodel.presentation.VariantModelModelWizard"
-      category = "org.eclipse.emf.ecore.Wizard.category.ID"
+      category = "org.eclipse.featuremodel.wizard.category"
       icon = "icons/full/obj16/VariantModelModelFile.gif">
       <description>%_UI_VariantModelModelWizard_description</description>
       <selection class = "org.eclipse.core.resources.IResource" />

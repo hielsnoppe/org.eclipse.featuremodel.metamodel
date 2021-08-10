@@ -25,260 +25,260 @@ import org.eclipse.variantmodel.VariantModelPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.variantmodel.impl.FeatureSelectionImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.variantmodel.impl.FeatureSelectionImpl#getState <em>State</em>}</li>
  *   <li>{@link org.eclipse.variantmodel.impl.FeatureSelectionImpl#getFeature <em>Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class FeatureSelectionImpl extends EObjectImpl implements FeatureSelection {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String ID_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
   protected String id = ID_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getState() <em>State</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getState()
-   * @generated
-   * @ordered
-   */
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
   protected static final SelectionState STATE_EDEFAULT = SelectionState.UNSELECTED;
 
   /**
-   * The cached value of the '{@link #getState() <em>State</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getState()
-   * @generated
-   * @ordered
-   */
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
   protected SelectionState state = STATE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFeature()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFeature()
+	 * @generated
+	 * @ordered
+	 */
   protected Feature feature;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected FeatureSelectionImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return VariantModelPackage.Literals.FEATURE_SELECTION;
-  }
+		return VariantModelPackage.Literals.FEATURE_SELECTION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getId() {
-    return id;
-  }
+		return id;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setId(String newId) {
-    String oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.FEATURE_SELECTION__ID, oldId, id));
-  }
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.FEATURE_SELECTION__ID, oldId, id));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SelectionState getState() {
-    return state;
-  }
+		return state;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setState(SelectionState newState) {
-    SelectionState oldState = state;
-    state = newState == null ? STATE_EDEFAULT : newState;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.FEATURE_SELECTION__STATE, oldState, state));
-  }
+		SelectionState oldState = state;
+		state = newState == null ? STATE_EDEFAULT : newState;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.FEATURE_SELECTION__STATE, oldState, state));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Feature getFeature() {
-    if (feature != null && feature.eIsProxy()) {
-      InternalEObject oldFeature = (InternalEObject)feature;
-      feature = (Feature)eResolveProxy(oldFeature);
-      if (feature != oldFeature) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariantModelPackage.FEATURE_SELECTION__FEATURE, oldFeature, feature));
-      }
-    }
-    return feature;
-  }
+		if (feature != null && feature.eIsProxy()) {
+			InternalEObject oldFeature = (InternalEObject)feature;
+			feature = (Feature)eResolveProxy(oldFeature);
+			if (feature != oldFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VariantModelPackage.FEATURE_SELECTION__FEATURE, oldFeature, feature));
+			}
+		}
+		return feature;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Feature basicGetFeature() {
-    return feature;
-  }
+		return feature;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setFeature(Feature newFeature) {
-    Feature oldFeature = feature;
-    feature = newFeature;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.FEATURE_SELECTION__FEATURE, oldFeature, feature));
-  }
+		Feature oldFeature = feature;
+		feature = newFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VariantModelPackage.FEATURE_SELECTION__FEATURE, oldFeature, feature));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case VariantModelPackage.FEATURE_SELECTION__ID:
-        return getId();
-      case VariantModelPackage.FEATURE_SELECTION__STATE:
-        return getState();
-      case VariantModelPackage.FEATURE_SELECTION__FEATURE:
-        if (resolve) return getFeature();
-        return basicGetFeature();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case VariantModelPackage.FEATURE_SELECTION__ID:
+				return getId();
+			case VariantModelPackage.FEATURE_SELECTION__STATE:
+				return getState();
+			case VariantModelPackage.FEATURE_SELECTION__FEATURE:
+				if (resolve) return getFeature();
+				return basicGetFeature();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case VariantModelPackage.FEATURE_SELECTION__ID:
-        setId((String)newValue);
-        return;
-      case VariantModelPackage.FEATURE_SELECTION__STATE:
-        setState((SelectionState)newValue);
-        return;
-      case VariantModelPackage.FEATURE_SELECTION__FEATURE:
-        setFeature((Feature)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case VariantModelPackage.FEATURE_SELECTION__ID:
+				setId((String)newValue);
+				return;
+			case VariantModelPackage.FEATURE_SELECTION__STATE:
+				setState((SelectionState)newValue);
+				return;
+			case VariantModelPackage.FEATURE_SELECTION__FEATURE:
+				setFeature((Feature)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case VariantModelPackage.FEATURE_SELECTION__ID:
-        setId(ID_EDEFAULT);
-        return;
-      case VariantModelPackage.FEATURE_SELECTION__STATE:
-        setState(STATE_EDEFAULT);
-        return;
-      case VariantModelPackage.FEATURE_SELECTION__FEATURE:
-        setFeature((Feature)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case VariantModelPackage.FEATURE_SELECTION__ID:
+				setId(ID_EDEFAULT);
+				return;
+			case VariantModelPackage.FEATURE_SELECTION__STATE:
+				setState(STATE_EDEFAULT);
+				return;
+			case VariantModelPackage.FEATURE_SELECTION__FEATURE:
+				setFeature((Feature)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case VariantModelPackage.FEATURE_SELECTION__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case VariantModelPackage.FEATURE_SELECTION__STATE:
-        return state != STATE_EDEFAULT;
-      case VariantModelPackage.FEATURE_SELECTION__FEATURE:
-        return feature != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case VariantModelPackage.FEATURE_SELECTION__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case VariantModelPackage.FEATURE_SELECTION__STATE:
+				return state != STATE_EDEFAULT;
+			case VariantModelPackage.FEATURE_SELECTION__FEATURE:
+				return feature != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (id: ");
-    result.append(id);
-    result.append(", state: ");
-    result.append(state);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", state: ");
+		result.append(state);
+		result.append(')');
+		return result.toString();
+	}
 
 } //FeatureSelectionImpl

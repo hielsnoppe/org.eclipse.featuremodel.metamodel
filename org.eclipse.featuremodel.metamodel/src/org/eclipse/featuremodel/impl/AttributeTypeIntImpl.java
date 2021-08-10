@@ -15,29 +15,27 @@ import org.eclipse.featuremodel.FeatureModelPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Attribute Type Int</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public class AttributeTypeIntImpl extends AttributeTypeImpl implements AttributeTypeInt {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AttributeTypeIntImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return FeatureModelPackage.Literals.ATTRIBUTE_TYPE_INT;
-  }
+		return FeatureModelPackage.Literals.ATTRIBUTE_TYPE_INT;
+	}
 
 } //AttributeTypeIntImpl

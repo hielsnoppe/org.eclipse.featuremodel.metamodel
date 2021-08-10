@@ -15,29 +15,27 @@ import org.eclipse.featuremodel.FeatureModelPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Attribute Type String</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public class AttributeTypeStringImpl extends AttributeTypeImpl implements AttributeTypeString {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AttributeTypeStringImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return FeatureModelPackage.Literals.ATTRIBUTE_TYPE_STRING;
-  }
+		return FeatureModelPackage.Literals.ATTRIBUTE_TYPE_STRING;
+	}
 
 } //AttributeTypeStringImpl

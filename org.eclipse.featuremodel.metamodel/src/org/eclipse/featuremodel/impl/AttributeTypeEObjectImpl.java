@@ -15,29 +15,27 @@ import org.eclipse.featuremodel.FeatureModelPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Attribute Type EObject</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public class AttributeTypeEObjectImpl extends AttributeTypeImpl implements AttributeTypeEObject {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AttributeTypeEObjectImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return FeatureModelPackage.Literals.ATTRIBUTE_TYPE_EOBJECT;
-  }
+		return FeatureModelPackage.Literals.ATTRIBUTE_TYPE_EOBJECT;
+	}
 
 } //AttributeTypeEObjectImpl

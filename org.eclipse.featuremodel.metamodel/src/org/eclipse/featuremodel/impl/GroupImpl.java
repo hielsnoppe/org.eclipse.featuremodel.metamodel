@@ -32,303 +32,303 @@ import org.eclipse.featuremodel.Group;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.featuremodel.impl.GroupImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.impl.GroupImpl#getLower <em>Lower</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.impl.GroupImpl#getUpper <em>Upper</em>}</li>
  *   <li>{@link org.eclipse.featuremodel.impl.GroupImpl#getFeatures <em>Features</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class GroupImpl extends EObjectImpl implements Group {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String ID_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
   protected String id = ID_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getLower() <em>Lower</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLower() <em>Lower</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLower()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLower()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int LOWER_EDEFAULT = -1;
 
   /**
-   * The cached value of the '{@link #getLower() <em>Lower</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLower() <em>Lower</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLower()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLower()
+	 * @generated
+	 * @ordered
+	 */
   protected int lower = LOWER_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getUpper() <em>Upper</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getUpper() <em>Upper</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUpper()
-   * @generated
-   * @ordered
-   */
+	 * @see #getUpper()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int UPPER_EDEFAULT = -1;
 
   /**
-   * The cached value of the '{@link #getUpper() <em>Upper</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getUpper() <em>Upper</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUpper()
-   * @generated
-   * @ordered
-   */
+	 * @see #getUpper()
+	 * @generated
+	 * @ordered
+	 */
   protected int upper = UPPER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFeatures()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFeatures()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Feature> features;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected GroupImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return FeatureModelPackage.Literals.GROUP;
-  }
+		return FeatureModelPackage.Literals.GROUP;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getId() {
-    return id;
-  }
+		return id;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setId(String newId) {
-    String oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.GROUP__ID, oldId, id));
-  }
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.GROUP__ID, oldId, id));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getLower() {
-    return lower;
-  }
+		return lower;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setLower(int newLower) {
-    int oldLower = lower;
-    lower = newLower;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.GROUP__LOWER, oldLower, lower));
-  }
+		int oldLower = lower;
+		lower = newLower;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.GROUP__LOWER, oldLower, lower));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getUpper() {
-    return upper;
-  }
+		return upper;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setUpper(int newUpper) {
-    int oldUpper = upper;
-    upper = newUpper;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.GROUP__UPPER, oldUpper, upper));
-  }
+		int oldUpper = upper;
+		upper = newUpper;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FeatureModelPackage.GROUP__UPPER, oldUpper, upper));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Feature> getFeatures() {
-    if (features == null) {
-      features = new EObjectContainmentEList<Feature>(Feature.class, this, FeatureModelPackage.GROUP__FEATURES);
-    }
-    return features;
-  }
+		if (features == null) {
+			features = new EObjectContainmentEList<Feature>(Feature.class, this, FeatureModelPackage.GROUP__FEATURES);
+		}
+		return features;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case FeatureModelPackage.GROUP__FEATURES:
-        return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case FeatureModelPackage.GROUP__FEATURES:
+				return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case FeatureModelPackage.GROUP__ID:
-        return getId();
-      case FeatureModelPackage.GROUP__LOWER:
-        return new Integer(getLower());
-      case FeatureModelPackage.GROUP__UPPER:
-        return new Integer(getUpper());
-      case FeatureModelPackage.GROUP__FEATURES:
-        return getFeatures();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case FeatureModelPackage.GROUP__ID:
+				return getId();
+			case FeatureModelPackage.GROUP__LOWER:
+				return getLower();
+			case FeatureModelPackage.GROUP__UPPER:
+				return getUpper();
+			case FeatureModelPackage.GROUP__FEATURES:
+				return getFeatures();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case FeatureModelPackage.GROUP__ID:
-        setId((String)newValue);
-        return;
-      case FeatureModelPackage.GROUP__LOWER:
-        setLower(((Integer)newValue).intValue());
-        return;
-      case FeatureModelPackage.GROUP__UPPER:
-        setUpper(((Integer)newValue).intValue());
-        return;
-      case FeatureModelPackage.GROUP__FEATURES:
-        getFeatures().clear();
-        getFeatures().addAll((Collection<? extends Feature>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case FeatureModelPackage.GROUP__ID:
+				setId((String)newValue);
+				return;
+			case FeatureModelPackage.GROUP__LOWER:
+				setLower((Integer)newValue);
+				return;
+			case FeatureModelPackage.GROUP__UPPER:
+				setUpper((Integer)newValue);
+				return;
+			case FeatureModelPackage.GROUP__FEATURES:
+				getFeatures().clear();
+				getFeatures().addAll((Collection<? extends Feature>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case FeatureModelPackage.GROUP__ID:
-        setId(ID_EDEFAULT);
-        return;
-      case FeatureModelPackage.GROUP__LOWER:
-        setLower(LOWER_EDEFAULT);
-        return;
-      case FeatureModelPackage.GROUP__UPPER:
-        setUpper(UPPER_EDEFAULT);
-        return;
-      case FeatureModelPackage.GROUP__FEATURES:
-        getFeatures().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case FeatureModelPackage.GROUP__ID:
+				setId(ID_EDEFAULT);
+				return;
+			case FeatureModelPackage.GROUP__LOWER:
+				setLower(LOWER_EDEFAULT);
+				return;
+			case FeatureModelPackage.GROUP__UPPER:
+				setUpper(UPPER_EDEFAULT);
+				return;
+			case FeatureModelPackage.GROUP__FEATURES:
+				getFeatures().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case FeatureModelPackage.GROUP__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case FeatureModelPackage.GROUP__LOWER:
-        return lower != LOWER_EDEFAULT;
-      case FeatureModelPackage.GROUP__UPPER:
-        return upper != UPPER_EDEFAULT;
-      case FeatureModelPackage.GROUP__FEATURES:
-        return features != null && !features.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case FeatureModelPackage.GROUP__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case FeatureModelPackage.GROUP__LOWER:
+				return lower != LOWER_EDEFAULT;
+			case FeatureModelPackage.GROUP__UPPER:
+				return upper != UPPER_EDEFAULT;
+			case FeatureModelPackage.GROUP__FEATURES:
+				return features != null && !features.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (id: ");
-    result.append(id);
-    result.append(", lower: ");
-    result.append(lower);
-    result.append(", upper: ");
-    result.append(upper);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", lower: ");
+		result.append(lower);
+		result.append(", upper: ");
+		result.append(upper);
+		result.append(')');
+		return result.toString();
+	}
 
 } //GroupImpl

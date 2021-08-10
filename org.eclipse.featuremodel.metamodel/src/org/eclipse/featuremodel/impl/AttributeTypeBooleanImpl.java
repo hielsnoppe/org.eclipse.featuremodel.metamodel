@@ -15,29 +15,27 @@ import org.eclipse.featuremodel.FeatureModelPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Attribute Type Boolean</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public class AttributeTypeBooleanImpl extends AttributeTypeImpl implements AttributeTypeBoolean {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AttributeTypeBooleanImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return FeatureModelPackage.Literals.ATTRIBUTE_TYPE_BOOLEAN;
-  }
+		return FeatureModelPackage.Literals.ATTRIBUTE_TYPE_BOOLEAN;
+	}
 
 } //AttributeTypeBooleanImpl

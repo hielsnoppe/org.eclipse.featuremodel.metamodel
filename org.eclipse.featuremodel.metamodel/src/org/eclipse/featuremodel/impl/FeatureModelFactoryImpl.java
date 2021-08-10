@@ -25,302 +25,326 @@ import org.eclipse.featuremodel.*;
  */
 public class FeatureModelFactoryImpl extends EFactoryImpl implements FeatureModelFactory {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static FeatureModelFactory init() {
-    try {
-      FeatureModelFactory theFeatureModelFactory = (FeatureModelFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/featuremodel"); 
-      if (theFeatureModelFactory != null) {
-        return theFeatureModelFactory;
-      }
-    }
-    catch (Exception exception) {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new FeatureModelFactoryImpl();
-  }
+		try {
+			FeatureModelFactory theFeatureModelFactory = (FeatureModelFactory)EPackage.Registry.INSTANCE.getEFactory(FeatureModelPackage.eNS_URI);
+			if (theFeatureModelFactory != null) {
+				return theFeatureModelFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new FeatureModelFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public FeatureModelFactoryImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass) {
-    switch (eClass.getClassifierID()) {
-      case FeatureModelPackage.RULE: return createRule();
-      case FeatureModelPackage.FEATURE_MODEL: return createFeatureModel();
-      case FeatureModelPackage.CONSTRAINT: return createConstraint();
-      case FeatureModelPackage.GROUP: return createGroup();
-      case FeatureModelPackage.FEATURE: return createFeature();
-      case FeatureModelPackage.ATTRIBUTE: return createAttribute();
-      case FeatureModelPackage.DESCRIPTION: return createDescription();
-      case FeatureModelPackage.ATTRIBUTE_TYPE_INT: return createAttributeTypeInt();
-      case FeatureModelPackage.ATTRIBUTE_TYPE_STRING: return createAttributeTypeString();
-      case FeatureModelPackage.ATTRIBUTE_TYPE_BOOLEAN: return createAttributeTypeBoolean();
-      case FeatureModelPackage.ATTRIBUTE_TYPE_EOBJECT: return createAttributeTypeEObject();
-      case FeatureModelPackage.ATTRIBUTE_VALUE_INT: return createAttributeValueInt();
-      case FeatureModelPackage.ATTRIBUTE_VALUE_STRING: return createAttributeValueString();
-      case FeatureModelPackage.ATTRIBUTE_VALUE_BOOLEAN: return createAttributeValueBoolean();
-      case FeatureModelPackage.ATTRIBUTE_VALUE_EOBJECT: return createAttributeValueEObject();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			case FeatureModelPackage.RULE: return createRule();
+			case FeatureModelPackage.FEATURE_MODEL: return createFeatureModel();
+			case FeatureModelPackage.CONSTRAINT: return createConstraint();
+			case FeatureModelPackage.GROUP: return createGroup();
+			case FeatureModelPackage.FEATURE: return createFeature();
+			case FeatureModelPackage.ATTRIBUTE: return createAttribute();
+			case FeatureModelPackage.DESCRIPTION: return createDescription();
+			case FeatureModelPackage.ATTRIBUTE_TYPE_INT: return createAttributeTypeInt();
+			case FeatureModelPackage.ATTRIBUTE_TYPE_STRING: return createAttributeTypeString();
+			case FeatureModelPackage.ATTRIBUTE_TYPE_BOOLEAN: return createAttributeTypeBoolean();
+			case FeatureModelPackage.ATTRIBUTE_TYPE_EOBJECT: return createAttributeTypeEObject();
+			case FeatureModelPackage.ATTRIBUTE_VALUE_INT: return createAttributeValueInt();
+			case FeatureModelPackage.ATTRIBUTE_VALUE_STRING: return createAttributeValueString();
+			case FeatureModelPackage.ATTRIBUTE_VALUE_BOOLEAN: return createAttributeValueBoolean();
+			case FeatureModelPackage.ATTRIBUTE_VALUE_EOBJECT: return createAttributeValueEObject();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object createFromString(EDataType eDataType, String initialValue) {
-    switch (eDataType.getClassifierID()) {
-      case FeatureModelPackage.VARIABILITY_TYPE:
-        return createVariabilityTypeFromString(eDataType, initialValue);
-      case FeatureModelPackage.ID:
-        return createIDFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case FeatureModelPackage.VARIABILITY_TYPE:
+				return createVariabilityTypeFromString(eDataType, initialValue);
+			case FeatureModelPackage.CONSTRAINT_TYPE:
+				return createConstraintTypeFromString(eDataType, initialValue);
+			case FeatureModelPackage.ID:
+				return createIDFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String convertToString(EDataType eDataType, Object instanceValue) {
-    switch (eDataType.getClassifierID()) {
-      case FeatureModelPackage.VARIABILITY_TYPE:
-        return convertVariabilityTypeToString(eDataType, instanceValue);
-      case FeatureModelPackage.ID:
-        return convertIDToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case FeatureModelPackage.VARIABILITY_TYPE:
+				return convertVariabilityTypeToString(eDataType, instanceValue);
+			case FeatureModelPackage.CONSTRAINT_TYPE:
+				return convertConstraintTypeToString(eDataType, instanceValue);
+			case FeatureModelPackage.ID:
+				return convertIDToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Rule createRule() {
-    RuleImpl rule = new RuleImpl();
-    return rule;
-  }
+		RuleImpl rule = new RuleImpl();
+		return rule;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public FeatureModel createFeatureModel() {
-    FeatureModelImpl featureModel = new FeatureModelImpl();
-    return featureModel;
-  }
+		FeatureModelImpl featureModel = new FeatureModelImpl();
+		return featureModel;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Constraint createConstraint() {
-    ConstraintImpl constraint = new ConstraintImpl();
-    return constraint;
-  }
+		ConstraintImpl constraint = new ConstraintImpl();
+		return constraint;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Group createGroup() {
-    GroupImpl group = new GroupImpl();
-    return group;
-  }
+		GroupImpl group = new GroupImpl();
+		return group;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Feature createFeature() {
-    FeatureImpl feature = new FeatureImpl();
-    return feature;
-  }
+		FeatureImpl feature = new FeatureImpl();
+		return feature;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Attribute createAttribute() {
-    AttributeImpl attribute = new AttributeImpl();
-    return attribute;
-  }
+		AttributeImpl attribute = new AttributeImpl();
+		return attribute;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Description createDescription() {
-    DescriptionImpl description = new DescriptionImpl();
-    return description;
-  }
+		DescriptionImpl description = new DescriptionImpl();
+		return description;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AttributeTypeInt createAttributeTypeInt() {
-    AttributeTypeIntImpl attributeTypeInt = new AttributeTypeIntImpl();
-    return attributeTypeInt;
-  }
+		AttributeTypeIntImpl attributeTypeInt = new AttributeTypeIntImpl();
+		return attributeTypeInt;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AttributeTypeString createAttributeTypeString() {
-    AttributeTypeStringImpl attributeTypeString = new AttributeTypeStringImpl();
-    return attributeTypeString;
-  }
+		AttributeTypeStringImpl attributeTypeString = new AttributeTypeStringImpl();
+		return attributeTypeString;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AttributeTypeBoolean createAttributeTypeBoolean() {
-    AttributeTypeBooleanImpl attributeTypeBoolean = new AttributeTypeBooleanImpl();
-    return attributeTypeBoolean;
-  }
+		AttributeTypeBooleanImpl attributeTypeBoolean = new AttributeTypeBooleanImpl();
+		return attributeTypeBoolean;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AttributeTypeEObject createAttributeTypeEObject() {
-    AttributeTypeEObjectImpl attributeTypeEObject = new AttributeTypeEObjectImpl();
-    return attributeTypeEObject;
-  }
+		AttributeTypeEObjectImpl attributeTypeEObject = new AttributeTypeEObjectImpl();
+		return attributeTypeEObject;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AttributeValueInt createAttributeValueInt() {
-    AttributeValueIntImpl attributeValueInt = new AttributeValueIntImpl();
-    return attributeValueInt;
-  }
+		AttributeValueIntImpl attributeValueInt = new AttributeValueIntImpl();
+		return attributeValueInt;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AttributeValueString createAttributeValueString() {
-    AttributeValueStringImpl attributeValueString = new AttributeValueStringImpl();
-    return attributeValueString;
-  }
+		AttributeValueStringImpl attributeValueString = new AttributeValueStringImpl();
+		return attributeValueString;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AttributeValueBoolean createAttributeValueBoolean() {
-    AttributeValueBooleanImpl attributeValueBoolean = new AttributeValueBooleanImpl();
-    return attributeValueBoolean;
-  }
+		AttributeValueBooleanImpl attributeValueBoolean = new AttributeValueBooleanImpl();
+		return attributeValueBoolean;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AttributeValueEObject createAttributeValueEObject() {
-    AttributeValueEObjectImpl attributeValueEObject = new AttributeValueEObjectImpl();
-    return attributeValueEObject;
-  }
+		AttributeValueEObjectImpl attributeValueEObject = new AttributeValueEObjectImpl();
+		return attributeValueEObject;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public VariabilityType createVariabilityTypeFromString(EDataType eDataType, String initialValue) {
-    VariabilityType result = VariabilityType.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		VariabilityType result = VariabilityType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertVariabilityTypeToString(EDataType eDataType, Object instanceValue) {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConstraintType createConstraintTypeFromString(EDataType eDataType, String initialValue) {
+		ConstraintType result = ConstraintType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertConstraintTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String createIDFromString(EDataType eDataType, String initialValue) {
-    return (String)super.createFromString(eDataType, initialValue);
-  }
+		return (String)super.createFromString(eDataType, initialValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertIDToString(EDataType eDataType, Object instanceValue) {
-    return super.convertToString(eDataType, instanceValue);
-  }
+		return super.convertToString(eDataType, instanceValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public FeatureModelPackage getFeatureModelPackage() {
-    return (FeatureModelPackage)getEPackage();
-  }
+		return (FeatureModelPackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static FeatureModelPackage getPackage() {
-    return FeatureModelPackage.eINSTANCE;
-  }
+		return FeatureModelPackage.eINSTANCE;
+	}
 
 } //FeatureModelFactoryImpl

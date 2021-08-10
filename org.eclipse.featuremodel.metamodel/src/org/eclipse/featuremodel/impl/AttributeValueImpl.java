@@ -17,29 +17,27 @@ import org.eclipse.featuremodel.FeatureModelPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Attribute Value</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public abstract class AttributeValueImpl extends EObjectImpl implements AttributeValue {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AttributeValueImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return FeatureModelPackage.Literals.ATTRIBUTE_VALUE;
-  }
+		return FeatureModelPackage.Literals.ATTRIBUTE_VALUE;
+	}
 
 } //AttributeValueImpl

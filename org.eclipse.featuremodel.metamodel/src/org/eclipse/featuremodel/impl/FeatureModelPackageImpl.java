@@ -28,6 +28,7 @@ import org.eclipse.featuremodel.AttributeValueEObject;
 import org.eclipse.featuremodel.AttributeValueInt;
 import org.eclipse.featuremodel.AttributeValueString;
 import org.eclipse.featuremodel.Constraint;
+import org.eclipse.featuremodel.ConstraintType;
 import org.eclipse.featuremodel.Description;
 import org.eclipse.featuremodel.Feature;
 import org.eclipse.featuremodel.FeatureModel;
@@ -49,904 +50,952 @@ import org.eclipse.variantmodel.impl.VariantModelPackageImpl;
  */
 public class FeatureModelPackageImpl extends EPackageImpl implements FeatureModelPackage {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass ruleEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass featureModelEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass constraintEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass groupEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass featureEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass attributeEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass descriptionEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass attributeTypeEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass attributeTypeIntEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass attributeTypeStringEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass attributeTypeBooleanEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass attributeTypeEObjectEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass attributeValueEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass attributeValueIntEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass attributeValueStringEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass attributeValueBooleanEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass attributeValueEObjectEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EEnum variabilityTypeEEnum = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum constraintTypeEEnum = null;
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EDataType idEDataType = null;
 
   /**
-   * Creates an instance of the model <b>Package</b>, registered with
-   * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-   * package URI value.
-   * <p>Note: the correct way to create the package is via the static
-   * factory method {@link #init init()}, which also performs
-   * initialization of the package, or returns the registered package,
-   * if one already exists.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.eclipse.emf.ecore.EPackage.Registry
-   * @see org.eclipse.featuremodel.FeatureModelPackage#eNS_URI
-   * @see #init()
-   * @generated
-   */
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see org.eclipse.featuremodel.FeatureModelPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
   private FeatureModelPackageImpl() {
-    super(eNS_URI, FeatureModelFactory.eINSTANCE);
-  }
+		super(eNS_URI, FeatureModelFactory.eINSTANCE);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private static boolean isInited = false;
 
   /**
-   * Creates, registers, and initializes the <b>Package</b> for this
-   * model, and for any others upon which it depends.  Simple
-   * dependencies are satisfied by calling this method on all
-   * dependent packages before doing anything else.  This method drives
-   * initialization for interdependent packages directly, in parallel
-   * with this package, itself.
-   * <p>Of this package and its interdependencies, all packages which
-   * have not yet been registered by their URI values are first created
-   * and registered.  The packages are then initialized in two steps:
-   * meta-model objects for all of the packages are created before any
-   * are initialized, since one package's meta-model objects may refer to
-   * those of another.
-   * <p>Invocation of this method will not affect any packages that have
-   * already been initialized.
-   * <!-- begin-user-doc -->
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>This method is used to initialize {@link FeatureModelPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #eNS_URI
-   * @see #createPackageContents()
-   * @see #initializePackageContents()
-   * @generated
-   */
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
   public static FeatureModelPackage init() {
-    if (isInited) return (FeatureModelPackage)EPackage.Registry.INSTANCE.getEPackage(FeatureModelPackage.eNS_URI);
+		if (isInited) return (FeatureModelPackage)EPackage.Registry.INSTANCE.getEPackage(FeatureModelPackage.eNS_URI);
 
-    // Obtain or create and register package
-    FeatureModelPackageImpl theFeatureModelPackage = (FeatureModelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(eNS_URI) instanceof FeatureModelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(eNS_URI) : new FeatureModelPackageImpl());
+		// Obtain or create and register package
+		Object registeredFeatureModelPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		FeatureModelPackageImpl theFeatureModelPackage = registeredFeatureModelPackage instanceof FeatureModelPackageImpl ? (FeatureModelPackageImpl)registeredFeatureModelPackage : new FeatureModelPackageImpl();
 
-    isInited = true;
+		isInited = true;
 
-    // Initialize simple dependencies
-    EcorePackage.eINSTANCE.eClass();
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 
-    // Obtain or create and register interdependencies
-    VariantModelPackageImpl theVariantModelPackage = (VariantModelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VariantModelPackage.eNS_URI) instanceof VariantModelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VariantModelPackage.eNS_URI) : VariantModelPackage.eINSTANCE);
+		// Obtain or create and register interdependencies
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(VariantModelPackage.eNS_URI);
+		VariantModelPackageImpl theVariantModelPackage = (VariantModelPackageImpl)(registeredPackage instanceof VariantModelPackageImpl ? registeredPackage : VariantModelPackage.eINSTANCE);
 
-    // Create package meta-data objects
-    theFeatureModelPackage.createPackageContents();
-    theVariantModelPackage.createPackageContents();
+		// Create package meta-data objects
+		theFeatureModelPackage.createPackageContents();
+		theVariantModelPackage.createPackageContents();
 
-    // Initialize created meta-data
-    theFeatureModelPackage.initializePackageContents();
-    theVariantModelPackage.initializePackageContents();
+		// Initialize created meta-data
+		theFeatureModelPackage.initializePackageContents();
+		theVariantModelPackage.initializePackageContents();
 
-    // Mark meta-data to indicate it can't be changed
-    theFeatureModelPackage.freeze();
+		// Mark meta-data to indicate it can't be changed
+		theFeatureModelPackage.freeze();
 
-    return theFeatureModelPackage;
-  }
+		// Update the registry and return the package
+		EPackage.Registry.INSTANCE.put(FeatureModelPackage.eNS_URI, theFeatureModelPackage);
+		return theFeatureModelPackage;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getRule() {
-    return ruleEClass;
-  }
+		return ruleEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getRule_Language() {
-    return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getRule_Code() {
-    return (EAttribute)ruleEClass.getEStructuralFeatures().get(1);
-  }
+		return (EAttribute)ruleEClass.getEStructuralFeatures().get(1);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getFeatureModel() {
-    return featureModelEClass;
-  }
+		return featureModelEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getFeatureModel_Id() {
-    return (EAttribute)featureModelEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)featureModelEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getFeatureModel_Version() {
-    return (EAttribute)featureModelEClass.getEStructuralFeatures().get(1);
-  }
+		return (EAttribute)featureModelEClass.getEStructuralFeatures().get(1);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getFeatureModel_Description() {
-    return (EReference)featureModelEClass.getEStructuralFeatures().get(2);
-  }
+		return (EReference)featureModelEClass.getEStructuralFeatures().get(2);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getFeatureModel_Attributes() {
-    return (EReference)featureModelEClass.getEStructuralFeatures().get(3);
-  }
+		return (EReference)featureModelEClass.getEStructuralFeatures().get(3);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getFeatureModel_Root() {
-    return (EReference)featureModelEClass.getEStructuralFeatures().get(4);
-  }
+		return (EReference)featureModelEClass.getEStructuralFeatures().get(4);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getFeatureModel_Constraints() {
-    return (EReference)featureModelEClass.getEStructuralFeatures().get(5);
-  }
+		return (EReference)featureModelEClass.getEStructuralFeatures().get(5);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getConstraint() {
-    return constraintEClass;
-  }
+		return constraintEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getConstraint_Id() {
-    return (EAttribute)constraintEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)constraintEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getConstraint_Description() {
-    return (EReference)constraintEClass.getEStructuralFeatures().get(1);
-  }
+		return (EReference)constraintEClass.getEStructuralFeatures().get(1);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConstraint_LeftSideFeature() {
+		return (EReference)constraintEClass.getEStructuralFeatures().get(2);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConstraint_RightSideFeature() {
+		return (EReference)constraintEClass.getEStructuralFeatures().get(3);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConstraint_Relationship() {
+		return (EAttribute)constraintEClass.getEStructuralFeatures().get(4);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getGroup() {
-    return groupEClass;
-  }
+		return groupEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getGroup_Id() {
-    return (EAttribute)groupEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)groupEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getGroup_Lower() {
-    return (EAttribute)groupEClass.getEStructuralFeatures().get(1);
-  }
+		return (EAttribute)groupEClass.getEStructuralFeatures().get(1);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getGroup_Upper() {
-    return (EAttribute)groupEClass.getEStructuralFeatures().get(2);
-  }
+		return (EAttribute)groupEClass.getEStructuralFeatures().get(2);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getGroup_Features() {
-    return (EReference)groupEClass.getEStructuralFeatures().get(3);
-  }
+		return (EReference)groupEClass.getEStructuralFeatures().get(3);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getFeature() {
-    return featureEClass;
-  }
+		return featureEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getFeature_Id() {
-    return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getFeature_Name() {
-    return (EAttribute)featureEClass.getEStructuralFeatures().get(1);
-  }
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(1);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getFeature_Type() {
-    return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
-  }
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getFeature_Description() {
-    return (EReference)featureEClass.getEStructuralFeatures().get(3);
-  }
+		return (EReference)featureEClass.getEStructuralFeatures().get(3);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getFeature_Attributes() {
-    return (EReference)featureEClass.getEStructuralFeatures().get(4);
-  }
+		return (EReference)featureEClass.getEStructuralFeatures().get(4);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getFeature_Children() {
-    return (EReference)featureEClass.getEStructuralFeatures().get(5);
-  }
+		return (EReference)featureEClass.getEStructuralFeatures().get(5);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getAttribute() {
-    return attributeEClass;
-  }
+		return attributeEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getAttribute_Id() {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getAttribute_Name() {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
-  }
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getAttribute_Setable() {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
-  }
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getAttribute_Description() {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(3);
-  }
+		return (EReference)attributeEClass.getEStructuralFeatures().get(3);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getAttribute_DefaultValue() {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(4);
-  }
+		return (EReference)attributeEClass.getEStructuralFeatures().get(4);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getAttribute_Type() {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(5);
-  }
+		return (EReference)attributeEClass.getEStructuralFeatures().get(5);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getDescription() {
-    return descriptionEClass;
-  }
+		return descriptionEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getDescription_Id() {
-    return (EAttribute)descriptionEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)descriptionEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getDescription_Text() {
-    return (EAttribute)descriptionEClass.getEStructuralFeatures().get(1);
-  }
+		return (EAttribute)descriptionEClass.getEStructuralFeatures().get(1);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getAttributeType() {
-    return attributeTypeEClass;
-  }
+		return attributeTypeEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getAttributeTypeInt() {
-    return attributeTypeIntEClass;
-  }
+		return attributeTypeIntEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getAttributeTypeString() {
-    return attributeTypeStringEClass;
-  }
+		return attributeTypeStringEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getAttributeTypeBoolean() {
-    return attributeTypeBooleanEClass;
-  }
+		return attributeTypeBooleanEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getAttributeTypeEObject() {
-    return attributeTypeEObjectEClass;
-  }
+		return attributeTypeEObjectEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getAttributeValue() {
-    return attributeValueEClass;
-  }
+		return attributeValueEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getAttributeValueInt() {
-    return attributeValueIntEClass;
-  }
+		return attributeValueIntEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getAttributeValueInt_Value() {
-    return (EAttribute)attributeValueIntEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)attributeValueIntEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getAttributeValueString() {
-    return attributeValueStringEClass;
-  }
+		return attributeValueStringEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getAttributeValueString_Value() {
-    return (EAttribute)attributeValueStringEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)attributeValueStringEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getAttributeValueBoolean() {
-    return attributeValueBooleanEClass;
-  }
+		return attributeValueBooleanEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getAttributeValueBoolean_Value() {
-    return (EAttribute)attributeValueBooleanEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)attributeValueBooleanEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getAttributeValueEObject() {
-    return attributeValueEObjectEClass;
-  }
+		return attributeValueEObjectEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getAttributeValueEObject_Value() {
-    return (EReference)attributeValueEObjectEClass.getEStructuralFeatures().get(0);
-  }
+		return (EReference)attributeValueEObjectEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EEnum getVariabilityType() {
-    return variabilityTypeEEnum;
-  }
+		return variabilityTypeEEnum;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getConstraintType() {
+		return constraintTypeEEnum;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EDataType getID() {
-    return idEDataType;
-  }
+		return idEDataType;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public FeatureModelFactory getFeatureModelFactory() {
-    return (FeatureModelFactory)getEFactoryInstance();
-  }
+		return (FeatureModelFactory)getEFactoryInstance();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private boolean isCreated = false;
 
   /**
-   * Creates the meta-model objects for the package.  This method is
-   * guarded to have no affect on any invocation but its first.
-   * <!-- begin-user-doc -->
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void createPackageContents() {
-    if (isCreated) return;
-    isCreated = true;
+		if (isCreated) return;
+		isCreated = true;
 
-    // Create classes and their features
-    ruleEClass = createEClass(RULE);
-    createEAttribute(ruleEClass, RULE__LANGUAGE);
-    createEAttribute(ruleEClass, RULE__CODE);
+		// Create classes and their features
+		ruleEClass = createEClass(RULE);
+		createEAttribute(ruleEClass, RULE__LANGUAGE);
+		createEAttribute(ruleEClass, RULE__CODE);
 
-    featureModelEClass = createEClass(FEATURE_MODEL);
-    createEAttribute(featureModelEClass, FEATURE_MODEL__ID);
-    createEAttribute(featureModelEClass, FEATURE_MODEL__VERSION);
-    createEReference(featureModelEClass, FEATURE_MODEL__DESCRIPTION);
-    createEReference(featureModelEClass, FEATURE_MODEL__ATTRIBUTES);
-    createEReference(featureModelEClass, FEATURE_MODEL__ROOT);
-    createEReference(featureModelEClass, FEATURE_MODEL__CONSTRAINTS);
+		featureModelEClass = createEClass(FEATURE_MODEL);
+		createEAttribute(featureModelEClass, FEATURE_MODEL__ID);
+		createEAttribute(featureModelEClass, FEATURE_MODEL__VERSION);
+		createEReference(featureModelEClass, FEATURE_MODEL__DESCRIPTION);
+		createEReference(featureModelEClass, FEATURE_MODEL__ATTRIBUTES);
+		createEReference(featureModelEClass, FEATURE_MODEL__ROOT);
+		createEReference(featureModelEClass, FEATURE_MODEL__CONSTRAINTS);
 
-    constraintEClass = createEClass(CONSTRAINT);
-    createEAttribute(constraintEClass, CONSTRAINT__ID);
-    createEReference(constraintEClass, CONSTRAINT__DESCRIPTION);
+		constraintEClass = createEClass(CONSTRAINT);
+		createEAttribute(constraintEClass, CONSTRAINT__ID);
+		createEReference(constraintEClass, CONSTRAINT__DESCRIPTION);
+		createEReference(constraintEClass, CONSTRAINT__LEFT_SIDE_FEATURE);
+		createEReference(constraintEClass, CONSTRAINT__RIGHT_SIDE_FEATURE);
+		createEAttribute(constraintEClass, CONSTRAINT__RELATIONSHIP);
 
-    groupEClass = createEClass(GROUP);
-    createEAttribute(groupEClass, GROUP__ID);
-    createEAttribute(groupEClass, GROUP__LOWER);
-    createEAttribute(groupEClass, GROUP__UPPER);
-    createEReference(groupEClass, GROUP__FEATURES);
+		groupEClass = createEClass(GROUP);
+		createEAttribute(groupEClass, GROUP__ID);
+		createEAttribute(groupEClass, GROUP__LOWER);
+		createEAttribute(groupEClass, GROUP__UPPER);
+		createEReference(groupEClass, GROUP__FEATURES);
 
-    featureEClass = createEClass(FEATURE);
-    createEAttribute(featureEClass, FEATURE__ID);
-    createEAttribute(featureEClass, FEATURE__NAME);
-    createEAttribute(featureEClass, FEATURE__TYPE);
-    createEReference(featureEClass, FEATURE__DESCRIPTION);
-    createEReference(featureEClass, FEATURE__ATTRIBUTES);
-    createEReference(featureEClass, FEATURE__CHILDREN);
+		featureEClass = createEClass(FEATURE);
+		createEAttribute(featureEClass, FEATURE__ID);
+		createEAttribute(featureEClass, FEATURE__NAME);
+		createEAttribute(featureEClass, FEATURE__TYPE);
+		createEReference(featureEClass, FEATURE__DESCRIPTION);
+		createEReference(featureEClass, FEATURE__ATTRIBUTES);
+		createEReference(featureEClass, FEATURE__CHILDREN);
 
-    attributeEClass = createEClass(ATTRIBUTE);
-    createEAttribute(attributeEClass, ATTRIBUTE__ID);
-    createEAttribute(attributeEClass, ATTRIBUTE__NAME);
-    createEAttribute(attributeEClass, ATTRIBUTE__SETABLE);
-    createEReference(attributeEClass, ATTRIBUTE__DESCRIPTION);
-    createEReference(attributeEClass, ATTRIBUTE__DEFAULT_VALUE);
-    createEReference(attributeEClass, ATTRIBUTE__TYPE);
+		attributeEClass = createEClass(ATTRIBUTE);
+		createEAttribute(attributeEClass, ATTRIBUTE__ID);
+		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
+		createEAttribute(attributeEClass, ATTRIBUTE__SETABLE);
+		createEReference(attributeEClass, ATTRIBUTE__DESCRIPTION);
+		createEReference(attributeEClass, ATTRIBUTE__DEFAULT_VALUE);
+		createEReference(attributeEClass, ATTRIBUTE__TYPE);
 
-    descriptionEClass = createEClass(DESCRIPTION);
-    createEAttribute(descriptionEClass, DESCRIPTION__ID);
-    createEAttribute(descriptionEClass, DESCRIPTION__TEXT);
+		descriptionEClass = createEClass(DESCRIPTION);
+		createEAttribute(descriptionEClass, DESCRIPTION__ID);
+		createEAttribute(descriptionEClass, DESCRIPTION__TEXT);
 
-    attributeTypeEClass = createEClass(ATTRIBUTE_TYPE);
+		attributeTypeEClass = createEClass(ATTRIBUTE_TYPE);
 
-    attributeTypeIntEClass = createEClass(ATTRIBUTE_TYPE_INT);
+		attributeTypeIntEClass = createEClass(ATTRIBUTE_TYPE_INT);
 
-    attributeTypeStringEClass = createEClass(ATTRIBUTE_TYPE_STRING);
+		attributeTypeStringEClass = createEClass(ATTRIBUTE_TYPE_STRING);
 
-    attributeTypeBooleanEClass = createEClass(ATTRIBUTE_TYPE_BOOLEAN);
+		attributeTypeBooleanEClass = createEClass(ATTRIBUTE_TYPE_BOOLEAN);
 
-    attributeTypeEObjectEClass = createEClass(ATTRIBUTE_TYPE_EOBJECT);
+		attributeTypeEObjectEClass = createEClass(ATTRIBUTE_TYPE_EOBJECT);
 
-    attributeValueEClass = createEClass(ATTRIBUTE_VALUE);
+		attributeValueEClass = createEClass(ATTRIBUTE_VALUE);
 
-    attributeValueIntEClass = createEClass(ATTRIBUTE_VALUE_INT);
-    createEAttribute(attributeValueIntEClass, ATTRIBUTE_VALUE_INT__VALUE);
+		attributeValueIntEClass = createEClass(ATTRIBUTE_VALUE_INT);
+		createEAttribute(attributeValueIntEClass, ATTRIBUTE_VALUE_INT__VALUE);
 
-    attributeValueStringEClass = createEClass(ATTRIBUTE_VALUE_STRING);
-    createEAttribute(attributeValueStringEClass, ATTRIBUTE_VALUE_STRING__VALUE);
+		attributeValueStringEClass = createEClass(ATTRIBUTE_VALUE_STRING);
+		createEAttribute(attributeValueStringEClass, ATTRIBUTE_VALUE_STRING__VALUE);
 
-    attributeValueBooleanEClass = createEClass(ATTRIBUTE_VALUE_BOOLEAN);
-    createEAttribute(attributeValueBooleanEClass, ATTRIBUTE_VALUE_BOOLEAN__VALUE);
+		attributeValueBooleanEClass = createEClass(ATTRIBUTE_VALUE_BOOLEAN);
+		createEAttribute(attributeValueBooleanEClass, ATTRIBUTE_VALUE_BOOLEAN__VALUE);
 
-    attributeValueEObjectEClass = createEClass(ATTRIBUTE_VALUE_EOBJECT);
-    createEReference(attributeValueEObjectEClass, ATTRIBUTE_VALUE_EOBJECT__VALUE);
+		attributeValueEObjectEClass = createEClass(ATTRIBUTE_VALUE_EOBJECT);
+		createEReference(attributeValueEObjectEClass, ATTRIBUTE_VALUE_EOBJECT__VALUE);
 
-    // Create enums
-    variabilityTypeEEnum = createEEnum(VARIABILITY_TYPE);
+		// Create enums
+		variabilityTypeEEnum = createEEnum(VARIABILITY_TYPE);
+		constraintTypeEEnum = createEEnum(CONSTRAINT_TYPE);
 
-    // Create data types
-    idEDataType = createEDataType(ID);
-  }
+		// Create data types
+		idEDataType = createEDataType(ID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private boolean isInitialized = false;
 
   /**
-   * Complete the initialization of the package and its meta-model.  This
-   * method is guarded to have no affect on any invocation but its first.
-   * <!-- begin-user-doc -->
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void initializePackageContents() {
-    if (isInitialized) return;
-    isInitialized = true;
+		if (isInitialized) return;
+		isInitialized = true;
 
-    // Initialize package
-    setName(eNAME);
-    setNsPrefix(eNS_PREFIX);
-    setNsURI(eNS_URI);
+		// Initialize package
+		setName(eNAME);
+		setNsPrefix(eNS_PREFIX);
+		setNsURI(eNS_URI);
 
-    // Obtain other dependent packages
-    EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		// Obtain other dependent packages
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
-    // Create type parameters
+		// Create type parameters
 
-    // Set bounds for type parameters
+		// Set bounds for type parameters
 
-    // Add supertypes to classes
-    constraintEClass.getESuperTypes().add(this.getRule());
-    attributeTypeIntEClass.getESuperTypes().add(this.getAttributeType());
-    attributeTypeStringEClass.getESuperTypes().add(this.getAttributeType());
-    attributeTypeBooleanEClass.getESuperTypes().add(this.getAttributeType());
-    attributeTypeEObjectEClass.getESuperTypes().add(this.getAttributeType());
-    attributeValueIntEClass.getESuperTypes().add(this.getAttributeValue());
-    attributeValueStringEClass.getESuperTypes().add(this.getAttributeValue());
-    attributeValueBooleanEClass.getESuperTypes().add(this.getAttributeValue());
-    attributeValueEObjectEClass.getESuperTypes().add(this.getAttributeValue());
+		// Add supertypes to classes
+		constraintEClass.getESuperTypes().add(this.getRule());
+		attributeTypeIntEClass.getESuperTypes().add(this.getAttributeType());
+		attributeTypeStringEClass.getESuperTypes().add(this.getAttributeType());
+		attributeTypeBooleanEClass.getESuperTypes().add(this.getAttributeType());
+		attributeTypeEObjectEClass.getESuperTypes().add(this.getAttributeType());
+		attributeValueIntEClass.getESuperTypes().add(this.getAttributeValue());
+		attributeValueStringEClass.getESuperTypes().add(this.getAttributeValue());
+		attributeValueBooleanEClass.getESuperTypes().add(this.getAttributeValue());
+		attributeValueEObjectEClass.getESuperTypes().add(this.getAttributeValue());
 
-    // Initialize classes and features; add operations and parameters
-    initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRule_Language(), ecorePackage.getEString(), "language", null, 1, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRule_Code(), ecorePackage.getEString(), "code", null, 1, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		// Initialize classes and features; add operations and parameters
+		initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRule_Language(), ecorePackage.getEString(), "language", null, 1, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRule_Code(), ecorePackage.getEString(), "code", null, 1, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(featureModelEClass, FeatureModel.class, "FeatureModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFeatureModel_Id(), this.getID(), "id", null, 1, 1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeatureModel_Version(), ecorePackage.getEString(), "version", null, 1, 1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeatureModel_Description(), this.getDescription(), null, "description", null, 0, 1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeatureModel_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeatureModel_Root(), this.getFeature(), null, "root", null, 1, 1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeatureModel_Constraints(), this.getConstraint(), null, "constraints", null, 0, -1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(featureModelEClass, FeatureModel.class, "FeatureModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFeatureModel_Id(), this.getID(), "id", null, 1, 1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeatureModel_Version(), ecorePackage.getEString(), "version", null, 1, 1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureModel_Description(), this.getDescription(), null, "description", null, 0, 1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureModel_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureModel_Root(), this.getFeature(), null, "root", null, 1, 1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureModel_Constraints(), this.getConstraint(), null, "constraints", null, 0, -1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getConstraint_Id(), this.getID(), "id", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConstraint_Description(), this.getDescription(), null, "description", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConstraint_Id(), this.getID(), "id", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConstraint_Description(), this.getDescription(), null, "description", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConstraint_LeftSideFeature(), this.getFeature(), null, "leftSideFeature", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConstraint_RightSideFeature(), this.getFeature(), null, "rightSideFeature", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConstraint_Relationship(), this.getConstraintType(), "relationship", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    addEOperation(constraintEClass, this.getFeatureModel(), "getModel", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(constraintEClass, this.getFeatureModel(), "getModel", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-    initEClass(groupEClass, Group.class, "Group", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGroup_Id(), this.getID(), "id", null, 1, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGroup_Lower(), ecorePackage.getEInt(), "lower", "-1", 1, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGroup_Upper(), ecorePackage.getEInt(), "upper", "-1", 1, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGroup_Features(), this.getFeature(), null, "features", null, 1, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(groupEClass, Group.class, "Group", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGroup_Id(), this.getID(), "id", null, 1, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGroup_Lower(), ecorePackage.getEInt(), "lower", "-1", 1, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGroup_Upper(), ecorePackage.getEInt(), "upper", "-1", 1, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGroup_Features(), this.getFeature(), null, "features", null, 1, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFeature_Id(), this.getID(), "id", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeature_Type(), ecorePackage.getEString(), "type", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeature_Description(), this.getDescription(), null, "description", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeature_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeature_Children(), this.getGroup(), null, "children", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFeature_Id(), this.getID(), "id", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_Type(), ecorePackage.getEString(), "type", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_Description(), this.getDescription(), null, "description", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_Children(), this.getGroup(), null, "children", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    addEOperation(featureEClass, this.getFeature(), "getParent", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(featureEClass, this.getFeature(), "getParent", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-    addEOperation(featureEClass, this.getGroup(), "getParentGroup", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(featureEClass, this.getGroup(), "getParentGroup", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    addEOperation(featureEClass, this.getFeatureModel(), "getModel", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(featureEClass, this.getFeatureModel(), "getModel", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-    addEOperation(featureEClass, this.getVariabilityType(), "getVariabilityType", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(featureEClass, this.getVariabilityType(), "getVariabilityType", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-    initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttribute_Id(), this.getID(), "id", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAttribute_Setable(), ecorePackage.getEBoolean(), "setable", "false", 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttribute_Description(), this.getDescription(), null, "description", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttribute_DefaultValue(), this.getAttributeValue(), null, "defaultValue", null, 1, 1, Attribute.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttribute_Type(), this.getAttributeType(), null, "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAttribute_Id(), this.getID(), "id", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_Setable(), ecorePackage.getEBoolean(), "setable", "false", 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttribute_Description(), this.getDescription(), null, "description", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttribute_DefaultValue(), this.getAttributeValue(), null, "defaultValue", null, 1, 1, Attribute.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttribute_Type(), this.getAttributeType(), null, "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(descriptionEClass, Description.class, "Description", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDescription_Id(), this.getID(), "id", null, 1, 1, Description.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDescription_Text(), ecorePackage.getEString(), "text", null, 1, 1, Description.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(descriptionEClass, Description.class, "Description", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDescription_Id(), this.getID(), "id", null, 1, 1, Description.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDescription_Text(), ecorePackage.getEString(), "text", null, 1, 1, Description.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(attributeTypeEClass, AttributeType.class, "AttributeType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(attributeTypeEClass, AttributeType.class, "AttributeType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(attributeTypeIntEClass, AttributeTypeInt.class, "AttributeTypeInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(attributeTypeIntEClass, AttributeTypeInt.class, "AttributeTypeInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(attributeTypeStringEClass, AttributeTypeString.class, "AttributeTypeString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(attributeTypeStringEClass, AttributeTypeString.class, "AttributeTypeString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(attributeTypeBooleanEClass, AttributeTypeBoolean.class, "AttributeTypeBoolean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(attributeTypeBooleanEClass, AttributeTypeBoolean.class, "AttributeTypeBoolean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(attributeTypeEObjectEClass, AttributeTypeEObject.class, "AttributeTypeEObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(attributeTypeEObjectEClass, AttributeTypeEObject.class, "AttributeTypeEObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(attributeValueEClass, AttributeValue.class, "AttributeValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(attributeValueEClass, AttributeValue.class, "AttributeValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(attributeValueIntEClass, AttributeValueInt.class, "AttributeValueInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttributeValueInt_Value(), theEcorePackage.getEInt(), "value", null, 0, 1, AttributeValueInt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(attributeValueIntEClass, AttributeValueInt.class, "AttributeValueInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAttributeValueInt_Value(), theEcorePackage.getEInt(), "value", null, 0, 1, AttributeValueInt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(attributeValueStringEClass, AttributeValueString.class, "AttributeValueString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttributeValueString_Value(), theEcorePackage.getEString(), "value", null, 0, 1, AttributeValueString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(attributeValueStringEClass, AttributeValueString.class, "AttributeValueString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAttributeValueString_Value(), theEcorePackage.getEString(), "value", null, 0, 1, AttributeValueString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(attributeValueBooleanEClass, AttributeValueBoolean.class, "AttributeValueBoolean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttributeValueBoolean_Value(), theEcorePackage.getEBoolean(), "value", null, 0, 1, AttributeValueBoolean.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(attributeValueBooleanEClass, AttributeValueBoolean.class, "AttributeValueBoolean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAttributeValueBoolean_Value(), theEcorePackage.getEBoolean(), "value", null, 0, 1, AttributeValueBoolean.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(attributeValueEObjectEClass, AttributeValueEObject.class, "AttributeValueEObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAttributeValueEObject_Value(), theEcorePackage.getEObject(), null, "value", null, 0, 1, AttributeValueEObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(attributeValueEObjectEClass, AttributeValueEObject.class, "AttributeValueEObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAttributeValueEObject_Value(), theEcorePackage.getEObject(), null, "value", null, 0, 1, AttributeValueEObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    // Initialize enums and add enum literals
-    initEEnum(variabilityTypeEEnum, VariabilityType.class, "VariabilityType");
-    addEEnumLiteral(variabilityTypeEEnum, VariabilityType.MANDATORY);
-    addEEnumLiteral(variabilityTypeEEnum, VariabilityType.OPTIONAL);
-    addEEnumLiteral(variabilityTypeEEnum, VariabilityType.ALTERNATIVE);
-    addEEnumLiteral(variabilityTypeEEnum, VariabilityType.OR);
+		// Initialize enums and add enum literals
+		initEEnum(variabilityTypeEEnum, VariabilityType.class, "VariabilityType");
+		addEEnumLiteral(variabilityTypeEEnum, VariabilityType.MANDATORY);
+		addEEnumLiteral(variabilityTypeEEnum, VariabilityType.OPTIONAL);
+		addEEnumLiteral(variabilityTypeEEnum, VariabilityType.ALTERNATIVE);
+		addEEnumLiteral(variabilityTypeEEnum, VariabilityType.OR);
 
-    // Initialize data types
-    initEDataType(idEDataType, String.class, "ID", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEEnum(constraintTypeEEnum, ConstraintType.class, "ConstraintType");
+		addEEnumLiteral(constraintTypeEEnum, ConstraintType.REQUIRES);
+		addEEnumLiteral(constraintTypeEEnum, ConstraintType.EXCLUDES);
 
-    // Create resource
-    createResource(eNS_URI);
-  }
+		// Initialize data types
+		initEDataType(idEDataType, String.class, "ID", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+
+		// Create resource
+		createResource(eNS_URI);
+	}
 
 } //FeatureModelPackageImpl
